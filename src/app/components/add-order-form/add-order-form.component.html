@@ -1,0 +1,144 @@
+<div class="flex-container">
+    <div>
+        <button id="adminMenuBTN" routerLink="/carsArea" routerLinkActive="active"> <span> Manage Cars </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/carTypesArea" routerLinkActive="active"> <span> Manage Types of Cars
+            </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/usersArea" routerLinkActive="active"> <span> Manage Users </span>
+        </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/ordersArea" routerLinkActive="active"> <span> Manage Orders </span>
+        </button>
+    </div>
+</div>
+
+<div class="adminCoverDiv">
+    <div class="ordersFormContentDiv">
+        <div class="AddOrderDiv">
+            <form class="Order" #AdminAddOrderForm="ngForm">
+                <div class="spacerOrderDiv"></div>
+                <label id="orderLBLfont" class="LBL-User-Identification-Number-positioning"> User Identification Number:
+                </label>
+                <div class="spacerDiv">
+                    <div class="form-group">
+                        <input id="inputOrderUserID" type="text" placeholder="ID of User..." name="userId"
+                            [(ngModel)]="order.userId"
+                            [ngClass]="{'is-invalid':userIdInfo.errors && userIdInfo.touched, 'is-valid': userIdInfo.valid}"
+                            required #userIdInfo="ngModel" class="form-control is-invalid is-valid" minlength="1"
+                            maxlength="9">
+                        <div class="invalid-feedback" id="invalid-order-feedback-userId"
+                            [hidden]="!userIdInfo.errors?.required">
+                            ID of User Required
+                        </div>
+                        <div class="invalid-feedback" id="invalid-order-feedback-userId"
+                            [hidden]="!userIdInfo.errors?.minlength">
+                            Must be 9 characters
+                        </div>
+                        <div class="valid-feedback" id="valid-order-feedback-userId" [hidden]="userIdInfo.invalid">
+                            Okay!
+                        </div>
+                    </div>
+                </div>
+                <label id="orderLBLfont" class="LBL-Vehicle-Identification-Number-positioning"> Vehicle Identification
+                    Number: </label>
+                <div class="spacerDiv">
+                    <div class="form-group">
+                        <input id="inputOrderVin" type="text" placeholder="vin of car..." name="vin" [(ngModel)]="order.vin"
+                            [ngClass]="{'is-invalid':vinInfo.errors && vinInfo.touched, 'is-valid': vinInfo.valid}" required
+                            #vinInfo="ngModel" class="form-control is-invalid is-valid" minlength="7" maxlength="7">
+                        <div class="invalid-feedback" id="invalid-order-feedback-vin" [hidden]="!vinInfo.errors?.required">
+                            Vin of car Required
+                        </div>
+                        <div class="invalid-feedback" id="invalid-order-feedback-vin" [hidden]="!vinInfo.errors?.minlength">
+                            Must be 7 characters
+                        </div>
+                        <div class="valid-feedback" id="invalid-order-feedback-vin" [hidden]="vinInfo.invalid">
+                            Okay!
+                        </div>
+                    </div>
+                </div>
+                <label id="orderLBLfont" class="LBL-Id-of-car-positioning"> Id of car: </label>
+                <div class="spacerDiv">
+                    <div class="form-group">
+                        <input id="inputCarId" type="text" placeholder="car id..." name="carId" [(ngModel)]="order.carId"
+                            [ngClass]="{'is-invalid':carIdInfo.errors && carIdInfo.touched, 'is-valid': carIdInfo.valid}"
+                            required #carIdInfo="ngModel" class="form-control is-invalid is-valid" minlength="1">
+                        <div class="invalid-feedback" id="invalid-order-feedback-cardId"
+                            [hidden]="!carIdInfo.errors?.required">
+                            id of car Required
+                        </div>
+                        <div class="invalid-feedback" id="invalid-order-feedback-cardId"
+                            [hidden]="!carIdInfo.errors?.minlength">
+                            Must be 1 character
+                        </div>
+                        <div class="valid-feedback" id="invalid-order-feedback-cardId" [hidden]="carIdInfo.invalid">
+                            Okay!
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <label id="orderLBLfont" class="LBL-Start-Date-positioning"> Start Date: </label>
+                <div class="spacerDiv">
+                    <div class="form-group">
+                        <input id="inputStartDate" type="date" name="startDate" [(ngModel)]="order.startDate"
+                            [ngClass]="{'is-invalid':startDateInfo.errors && startDateInfo.touched, 'is-valid': startDateInfo.valid}"
+                            required #startDateInfo="ngModel" class="form-control is-invalid is-valid">
+                        <div class="invalid-feedback" id="invalid-feedback-start-date"
+                            [hidden]="!startDateInfo.errors?.required">
+                            Start date required
+                        </div>
+                        <div class="valid-feedback" id="valid-feedback-start-date" [hidden]="startDateInfo.invalid">
+                            Okay!
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="spacerOrderDiv"></div>
+                <label id="orderLBLfont" class="LBL-End-Date-positioning"> End Date: </label>
+                <div class="spacerDiv">
+                    <div class="form-group">
+                        <input id="inputEndDate" type="date" name="endDate" [(ngModel)]="order.endDate"
+                            [ngClass]="{'is-invalid':endDateInfo.errors && endDateInfo.touched, 'is-valid': endDateInfo.valid}"
+                            required #endDateInfo="ngModel" class="form-control is-invalid is-valid">
+                        <div class="invalid-feedback" id="invalid-feedback-end-date"
+                            [hidden]="!endDateInfo.errors?.required">
+                            End date required
+                        </div>
+                        <div class="valid-feedback" id="valid-feedback-end-date" [hidden]="endDateInfo.invalid">
+                            Okay!
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="spacerOrderDiv"></div>
+                <label id="orderLBLfont" class="LBL-Actual-Return-Date-positioning"> Actual Return Date: </label>
+                <div class="spacerDiv">
+                    <div class="form-group">
+                        <input id="inputActualReturnDate" type="date" name="actualReturnDate"
+                            [(ngModel)]="order.actualReturnDate"
+                            [ngClass]="{'is-invalid':actualReturnDateInfo.errors && actualReturnDateInfo.touched, 'is-valid': actualReturnDateInfo.valid}"
+                            required #actualReturnDateInfo="ngModel" class="form-control is-invalid is-valid">
+                        <div class="invalid-feedback" id="invalid-feedback-actual-return-date"
+                            [hidden]="!actualReturnDateInfo.errors?.required">
+                            Actual return date required
+                        </div>
+                        <div class="valid-feedback" id="valid-feedback-actual-return-date"
+                            [hidden]="actualReturnDateInfo.invalid">
+                            Okay!
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="btn-flex-container-add-car-form">
+                <button routerLink="/ordersArea" routerLinkActive="active"> Close </button>
+                <button [disabled]="AdminAddOrderForm.form.invalid" (click)="AddOrder()"> Submit </button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

@@ -1,0 +1,25 @@
+div {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 50px 1fr 400px;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: aliceblue;
+}
+
+div, div > * {
+    border: 1px black solid;
+}
+
+header {
+    grid-column: span 12;
+    background-color: black;
+}
+
+main {
+    grid-column: span 12;
+}
+
+footer {
+    grid-column: span 12;
+    background-color: black;
+}

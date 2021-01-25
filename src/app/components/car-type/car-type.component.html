@@ -1,0 +1,64 @@
+<div class="flex-container">
+    <div>
+        <button id="adminMenuBTN" routerLink="/carsArea" routerLinkActive="active"> <span> Manage Cars </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/carTypesArea" routerLinkActive="active"> <span> Manage Types of Cars
+            </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/usersArea" routerLinkActive="active"> <span> Manage Users </span>
+        </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/ordersArea" routerLinkActive="active"> <span> Manage Orders </span>
+        </button>
+    </div>
+</div>
+
+<div class="adminCoverDiv">
+    <div class="carTypeFormContentDiv">
+
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search"
+                            placeholder="Enter Vehicle Type..." aria-label="Search"
+                            (change)="onTextChange($event)">
+                        <button class="btn btn-outline-success" type="submit"> Search </button>
+                    </form>
+                </div>
+            </nav>
+
+        <div class="carTypeFormContentMainDiv">
+            <table>
+                <tr>
+                    <th> Icon </th>
+                    <th> Manufacturer </th>
+                    <th> Model </th>
+                    <th> Daily Cost </th>
+                    <th> Delay Cost </th>
+                    <th> Year Of Manufacture </th>
+                    <th> Gear Box </th>
+                </tr>
+                <tr *ngFor="let ct of CarTypes" (click)="Selected(ct.carTypeId)" tabindex="0">
+                    <td>
+                        <img src="{{ImageCarsTypeURL + ct.iconFileName}}" width="100px" height="100px">
+                    </td>
+                    <td> {{ct.manufacturer}} </td>
+                    <td> {{ct.model}} </td>
+                    <td> {{ct.dailyCost  | currency:"ILS":true}} </td>
+                    <td> {{ct.delayCost  | currency:"ILS":true}} </td>
+                    <td> {{ct.yearOfManufacture}} </td>
+                    <td> {{ct.gearBox}} </td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn-flex-container" style="position: absolute; bottom: 0;">
+            <button id="adminMenuBTN"> <span (click)="DeleteCarType()"> Delete </span> </button>
+            <button id="adminMenuBTN"> <span> Edit </span> </button>
+            <button id="adminMenuBTN" routerLink="/UpdateCarTypeForm/{{selected}}" routerLinkActive="active"> <span> Update </span> </button>
+            <button id="adminMenuBTN" routerLink="/AddCarTypeForm" routerLinkActive="active"> <span> Add </span> </button>
+        </div>
+    </div>
+</div>

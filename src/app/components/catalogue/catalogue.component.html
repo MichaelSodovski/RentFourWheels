@@ -1,0 +1,36 @@
+<div class="carCatalogueCoverIMGDiv"></div>
+
+<div class="searchBarDiv">
+
+</div>
+
+<table>
+    <tr>
+        <th> Image </th>
+        <th> Manufacturer </th>
+        <th> Model </th>
+        <th> Year Of Manufacture </th>
+        <th> Current Kilometrage </th>
+        <th> VIN </th>
+        <th> Branch </th>
+        <th> GearBox </th>
+        <th> Usability </th>
+        <th> Availability </th>
+    </tr>
+    <tr *ngFor="let c of allCars" tabindex="0">
+        <td>
+            <img src="{{ImageCarsURL + c.imageFileName}}" width="100px" height="100px">
+        </td>
+        <td> {{c.manufacturer}} </td>
+        <td> {{c.model}} </td>
+        <td> {{c.yearOfManufacture}} </td>
+        <td> {{c.kilometrage}} </td>
+        <td> {{c.vin}} </td>
+        <td> {{c.branchName}} </td>
+        <td> {{c.gearBox}} </td>
+        <td> {{c.availability}} </td>
+        <td> {{c.usability}} </td>
+    </tr>
+</table>
+
+<div class="previousSearchDiv"> </div>

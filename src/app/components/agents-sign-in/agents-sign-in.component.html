@@ -1,0 +1,21 @@
+<div class="adminCoverDiv"></div>
+
+<div class="adminDesktopDiv">
+    <form [formGroup]="oppoSuitsForm" (ngSubmit)="onSubmit()">
+
+        <select formControlName="name" (change)="changeSuit($event)">
+          <option value=""> Manage Cars </option>
+          <option *ngFor="let suit of oppoSuits">{{suit}}</option>
+        </select>
+      
+        <div class="error-block" *ngIf="submitted && handleError('name', 'required')">
+          You must provide a value!
+        </div>
+      
+        <button>Submit</button>
+      </form>
+
+      <div class="someform">
+          
+      </div>
+</div>

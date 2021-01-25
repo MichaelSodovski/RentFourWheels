@@ -1,0 +1,68 @@
+<div class="flex-container">
+    <div>
+        <button id="adminMenuBTN" routerLink="/carsArea" routerLinkActive="active"> <span> Manage Cars </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/carTypesArea" routerLinkActive="active"> <span> Manage Types of Cars
+            </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/usersArea" routerLinkActive="active"> <span> Manage Users </span>
+        </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/ordersArea" routerLinkActive="active"> <span> Manage Orders </span>
+        </button>
+    </div>
+</div>
+
+<div class="adminCoverDiv">
+    <div class="ordersFormContentDiv">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search"
+                        placeholder="Enter order id..." aria-label="Search"
+                        (change)="onTextChange($event)">
+                    <button class="btn btn-outline-success" type="submit"> Search </button>
+                </form>
+            </div>
+        </nav>
+        <div class="ordersFormContentMainDiv">
+            <table>
+                <tr>
+                    <th> Image </th>
+                    <th> First Name </th>
+                    <th> Last Name </th>
+                    <th> Email </th>
+                    <th> Order Id </th>
+                    <th> Start Date </th>
+                    <th> End Date </th>
+                    <th> Actual Return Date </th>
+                    <th> VIN </th>
+                    <th> Car Id </th>
+                </tr>
+                <tr *ngFor="let o of Orders" (click)="Selected(o.orderId)" tabindex="0">
+                    <td>
+                        <img src="{{o.avatar}}" width="100px" height="100px">
+                    </td>
+                    <td> {{o.firstName}} </td>
+                    <td> {{o.lastName}} </td>
+                    <td> {{o.email}} </td>
+                    <td> {{o.orderId}} </td>
+                    <td> {{o.startDate  | date:'shortDate' }} </td>
+                    <td> {{o.endDate  | date:'shortDate' }} </td>
+                    <td> {{ o.actualReturnDate | date:'shortDate' }} </td>
+                    <td> {{o.vin}} </td>
+                    <td> {{o.carId}} </td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn-flex-container" style="position: absolute; bottom:0;">
+            <button id="adminMenuBTN" (click)="DeleteOrder()"> <span> Delete </span> </button>
+            <button id="adminMenuBTN"> <span> Edit </span> </button>
+            <button id="adminMenuBTN" > <span routerLink="/UpdateOrderForm/{{selected}}" > Update </span> </button>
+            <button id="adminMenuBTN" routerLink="/AddOrderForm" routerLinkActive="active"> <span> Add </span> </button>
+        </div>
+    </div>
+</div>

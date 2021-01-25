@@ -1,0 +1,65 @@
+<div class="flex-container">
+    <div>
+        <button id="adminMenuBTN" routerLink="/carsArea" routerLinkActive="active"> <span> Manage Cars </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/carTypesArea" routerLinkActive="active"> <span> Manage Types of Cars </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/usersArea" routerLinkActive="active"> <span> Manage Users </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/ordersArea" routerLinkActive="active"> <span> Manage Orders </span> </button>
+    </div>
+</div>
+
+<div class="adminCoverDiv">
+    <div class="usersFormContentDiv">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search"
+                        placeholder="Enter user Identification number..." aria-label="Search"
+                        (change)="onTextChange($event)">
+                    <button class="btn btn-outline-success" type="submit"> Search </button>
+                </form>
+            </div>
+        </nav>
+        <div class="usersFormContentMainDiv">
+            <table>
+                <tr>
+                    <th> Image </th>
+                    <th> First Name </th>
+                    <th> Last Name </th>
+                    <th> ID </th>
+                    <th> User Name </th>
+                    <th> Date Of Birth </th>
+                    <th> Gender </th>
+                    <th> Email </th>
+                    <th> Password </th>
+                    <th> Role </th>
+                </tr>
+                <tr *ngFor="let u of Users" (click)="Selected(u.userId)" tabindex="0">
+                    <td>
+                        <img src="{{ImageURL + u.imageFileName }}" width="100px" height="100px">
+                    </td>
+                    <td> {{u.firstName}} </td>
+                    <td> {{u.lastName}} </td>
+                    <td> {{u.identificationNumber}} </td>
+                    <td> {{u.userName}} </td>
+                    <td> {{u.dateOfBirth   | date:'shortDate' }} </td>
+                    <td> {{u.gender}} </td>
+                    <td> {{u.email}} </td>
+                    <td> {{u.passWord}} </td>
+                    <td> {{u.roleId}} </td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn-flex-container" style="position: absolute; bottom: 0;">
+            <button id="adminMenuBTN" (click)="DeleteUser()"> <span> Delete </span> </button>
+            <button id="adminMenuBTN"> <span > Edit </span> </button>
+            <button id="adminMenuBTN" routerLink="/UpdateUserForm/{{selected}}" routerLinkActive="active"> <span > Update </span> </button>
+            <button id="adminMenuBTN" routerLink="/AddUserForm" routerLinkActive="active"> <span> Add </span> </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,183 @@
+<div class="flex-container">
+    <div>
+        <button id="adminMenuBTN" routerLink="/carsArea" routerLinkActive="active"> <span> Manage Cars </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/carTypesArea" routerLinkActive="active"> <span> Manage Types of Cars </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/usersArea" routerLinkActive="active"> <span> Manage Users </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/ordersArea" routerLinkActive="active"> <span> Manage Orders </span> </button>
+    </div>
+</div>
+
+<div class="adminCoverDiv">
+    <div class="carTypeFormContentDiv">
+        <div class="AddCarTypeDiv">
+            <form class="CarType" #AdminAddCarTypeForm="ngForm">
+                <br><br>
+                <label id="userLBLfont" class="LBL-positioning" class="LBL-Car-Type-Manufacturer-positioning"> Manufacturer: </label>
+                <div class="spacerCarDiv">
+                    <div class="form-group ">
+                        <input 
+                        id="inputFirstName"
+                        type="text" 
+                        [(ngModel)]="type.manufacturer"
+                        class="form-control is-invalid is-valid flex-feedback"
+                        name="Manufacturer"
+                        required 
+                        pattern="[a-zA-Z]+"
+                        #ManufacturerInfo="ngModel"
+                        placeholder="Manufacturer..." 
+                        maxlength="50"
+                        [ngClass]="{'is-invalid': ManufacturerInfo.errors && ManufacturerInfo.touched, 'is-valid': ManufacturerInfo.valid}">
+                            <div class="invalid-feedback" id="invalid-feedback-Manufacturer-required" [hidden]="!ManufacturerInfo.errors?.required">
+                                Manufacturer required
+                            </div>
+                            <div class="invalid-feedback" id="invalid-feedback-Manufacturer-Letters-only" [hidden]="!ManufacturerInfo.errors?.pattern">
+                                Letters only
+                            </div>
+                            <div class="valid-feedback" id="valid-feedback-Manufacturer-okay" [hidden]="ManufacturerInfo.invalid">
+                                Okay!
+                            </div>
+                        </div>
+                </div> 
+        
+                <label id="userLBLfont" class="LBL-positioning" class="LBL-Car-Type-Model-positioning"> Model: </label>
+                <div class="spacerCarDiv">
+                    <div class="form-group ">
+                        <input 
+                        id="inputFirstName"
+                        type="text" 
+                        [(ngModel)]="type.model" 
+                        class="form-control is-invalid is-valid flex-feedback"
+                        name="Model"
+                        required 
+                        pattern="[a-zA-Z]+"
+                        #ModelInfo="ngModel"
+                        placeholder="Model..." 
+                        maxlength="50"
+                        [ngClass]="{'is-invalid': ModelInfo.errors && ModelInfo.touched, 'is-valid': ModelInfo.valid}">
+                            <div class="invalid-feedback" id="invalid-feedback-Model-required" [hidden]="!ModelInfo.errors?.required">
+                                Model required
+                            </div>
+                            <div class="invalid-feedback" id="invalid-feedback-Model-letters-only" [hidden]="!ModelInfo.errors?.pattern">
+                                Letters only
+                            </div>
+                            <div class="valid-feedback" id="invalid-feedback-Model" [hidden]="ModelInfo.invalid">
+                                Okay!
+                            </div>
+                        </div>
+                </div>
+        
+                <label id="orderLBLfont" class="LBL-YearOfManufacture-positioning"> Year Of Manufacture: </label>
+                <div class="spacerDiv">
+                    <div class="form-group">
+                        <input 
+                        type="text" 
+                        name="YearOfManufacture" 
+                        [(ngModel)]="type.yearOfManufacture"
+                        [ngClass]="{'is-invalid':YearOfManufactureInfo.errors && YearOfManufactureInfo.touched, 'is-valid': YearOfManufactureInfo.valid}"
+                        required
+                        #YearOfManufactureInfo="ngModel" 
+                        class="form-control is-invalid is-valid"              
+                        >
+                        <div class="invalid-feedback" id="invalid-feedback-YearOfManufacture-requied"  [hidden]="!YearOfManufactureInfo.errors?.required">
+                            Year Of Manufacture required
+                        </div>
+                        <div class="valid-feedback" id="valid-feedback-YearOfManufacture-okay" [hidden]="YearOfManufactureInfo.invalid">
+                            Okay!
+                        </div>
+                    </div>
+                </div>
+        
+                <label id="orderLBLfont" class="LBL-GearBox-positioning"> Gear Box: </label>
+                <div class="spacerDiv">
+                    <div class="form-group">
+                        <input 
+                        type="text" 
+                        name="GearBox" 
+                        [(ngModel)]="type.gearBox" 
+                        [ngClass]="{'is-invalid':GearBoxInfo.errors && GearBoxInfo.touched, 'is-valid': GearBoxInfo.valid}"
+                        required
+                        #GearBoxInfo="ngModel" 
+                        class="form-control is-invalid is-valid"              
+                        >
+                        <div class="invalid-feedback" id="invalid-feedback-GearBox-required"  [hidden]="!GearBoxInfo.errors?.required">
+                            Gear Box required
+                        </div>
+                        <div class="valid-feedback" id="valid-feedback-GearBox-okay" [hidden]="GearBoxInfo.invalid">
+                            Okay!
+                        </div>
+                    </div>
+                </div>
+        
+                <label id="orderLBLfont" class="LBL-DailyCost-positioning"> Daily Cost: </label>
+                <div class="spacerDiv">
+                    <div class="form-group">
+                        <input 
+                        type="text" 
+                        name="DailyCost" 
+                        [(ngModel)]="type.dailyCost" 
+                        [ngClass]="{'is-invalid':DailyCostInfo.errors && DailyCostInfo.touched, 'is-valid': DailyCostInfo.valid}"
+                        required
+                        #DailyCostInfo="ngModel" 
+                        class="form-control is-invalid is-valid"              
+                        >
+                        <div class="invalid-feedback" id="invalid-feedback-DailyCost-daily-cost"  [hidden]="!DailyCostInfo.errors?.required">
+                            Daily Cost required
+                        </div>
+                        <div class="valid-feedback" id="valid-feedback-DailyCost-okay" [hidden]="DailyCostInfo.invalid">
+                            Okay!
+                        </div>
+                    </div>
+                </div>
+        
+                <label id="orderLBLfont" class="LBL-DelayCost-positioning"> Delay Cost: </label>
+                <div class="spacerDiv">
+                    <div class="form-group">
+                        <input 
+                        type="text" 
+                        name="DelayCost" 
+                        [(ngModel)]="type.delayCost" 
+                        [ngClass]="{'is-invalid':DelayCostInfo.errors && DelayCostInfo.touched, 'is-valid': DelayCostInfo.valid}"
+                        required
+                        #DelayCostInfo="ngModel" 
+                        class="form-control is-invalid is-valid"              
+                        >
+                        <div class="invalid-feedback" id="invalid-feedback-DelayCost-delay-cost"  [hidden]="!DelayCostInfo.errors?.required">
+                            Delay Cost required
+                        </div>
+                        <div class="valid-feedback" id="valid-feedback-DelayCost-okay" [hidden]="DelayCostInfo.invalid">
+                            Okay!
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="imgPreviewCarTypeDiv">
+                    <img src="{{previewCarType}}">
+                    <input 
+                    required 
+                    type="file" 
+                    accept="image/*" 
+                    #imageBoxCarType 
+                    name="icon" 
+                    id="avatarinput"
+                    [(ngModel)]="type.icon" 
+                    #imageBoxCarTypeInfo="ngModel" 
+                    (change)="DisplayPreviewAddCarType($event)" 
+                    class="form-control is-invalid is-valid" 
+                    [ngClass]="{'is-invalid':imageBoxCarTypeInfo.errors && imageBoxCarTypeInfo.touched , 'is-valid': imageBoxCarTypeInfo.valid}">
+                    <button pButton pRipple type="button" label="Icon" class="p-button-raised" id="avatarInputBTN" (click)="imageBoxCarType.click()"></button>
+                </div>
+        
+            </form>
+            <div class="btn-flex-container-add-car-form">
+                <button routerLink="/carTypesArea"> Close </button>
+                <button type="submit" [disabled]="AdminAddCarTypeForm.form.invalid" (click)="UpdateCarType()"> Update Car Type </button>
+            </div>
+        </div>
+    </div>
+</div>

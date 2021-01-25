@@ -1,0 +1,227 @@
+#adminMenuBTN {
+    height: 30px;
+    width: 380px;
+    border-radius: 7px;
+    color: #007BFF;
+    background-color: black;
+}
+
+#SrchBTN {
+    height: 35px;
+    width: 200px;
+    border-radius: 7px;
+    color: #007BFF;
+    background-color: black;
+}
+
+.adminCoverDiv {
+    border: solid black 1px;
+    width: 100%;
+    height: 640px;
+    background-image: url(../../../assets/imgonline-com-ua-resize-vkWVRMwkLM7AOIZ.jpg);
+    background-repeat: no-repeat;
+    background-position: 0% 75%;
+    background-size: cover;
+}
+
+.carFormContentDiv {
+    position: relative;
+    width: 100%;
+    height: 635px;
+    border-radius: 5px;
+    background-color: #EAEAEA;
+    box-shadow: 5px 5px;
+    opacity: 0.95;
+}
+
+.carFormContentVINDiv {
+    border: black solid 1px;
+    background-color: #6D7B8D;
+    color: whitesmoke;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+#SrchBTN {
+    height: 35px;
+    width: 200px;
+    border-radius: 7px;
+    color: #007BFF;
+    background-color: black;
+}
+
+#formLBL {
+    color: black;
+}
+
+.btn-flex-container {
+    border: solid black 1px;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #6D7B8D;
+    color: whitesmoke;
+}
+
+.btn-flex-container>button {
+    height: 65px;
+    width: 100%;
+    border-radius: 7px;
+    color: #007BFF;
+    background-color: black;
+}
+
+.carFormContentMainDiv {
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 100%;
+    height: 90%;
+    background-color: whitesmoke;
+    overflow: auto;
+    display: inline-block;
+}
+
+::placeholder {
+    font-size: 13px;
+    font-style: italic;
+}
+
+input:focus {
+    border-color: #000;
+}
+
+form li+li {
+    margin-top: 0.7em;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    white-space: nowrap;
+    color: #007BFF;
+}
+
+table {
+    table-layout: fixed;
+}
+
+td {
+    width: 10%;
+}
+
+th {
+    width: 10%;
+    background-color: #E6E6FA;
+}
+
+td:first-child {
+    text-align: center;
+}
+
+tr:nth-of-type(even) {
+    background-color: whitesmoke;
+}
+
+tr:nth-of-type(odd) {
+    background-color: lightgrey;
+}
+
+tr:first-of-type {
+    background-color: lightslategrey;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    opacity: 100%;
+    background-image: url(../../../assets/images.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.flex-container {
+    border: solid black 1px;
+    background-color: #6D7B8D;
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#formLBL {
+    color: black;
+}
+
+.btn-flex-container {
+    border: solid black 1px;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #6D7B8D;
+    color: whitesmoke;
+}
+
+.btn-flex-container>button {
+    height: 65px;
+    width: 100%;
+    border-radius: 7px;
+    color: #007BFF;
+    background-color: black;
+}
+
+#adminMenuBTN span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+#adminMenuBTN span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#adminMenuBTN:hover span {
+    padding-right: 25px;
+}
+
+#adminMenuBTN:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+tr:hover {
+    background-color: #98AFC7;
+    opacity: 0.8;
+}
+
+tr:focus {
+    background-color: #98AFC7;
+    outline: 0;
+}
+
+/* ------------------------------------------------------------------------------------ */
+.form-control {
+    width: 500px;
+}
+.d-flex {
+    position: relative;
+    left: 425px;
+}

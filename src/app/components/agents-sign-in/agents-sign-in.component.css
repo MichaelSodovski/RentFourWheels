@@ -1,0 +1,15 @@
+.adminCoverDiv {
+    border: solid black 1px;
+    width: 100%;
+    height: 250px;
+    /* background-image: url(../../../assets/box-catalogo-supercar-4505494530627.jpg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.adminDesktopDiv {
+    border: solid black 1px;
+    width: 100%;
+    height: 420px;
+}

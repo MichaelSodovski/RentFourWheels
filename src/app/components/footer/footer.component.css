@@ -1,0 +1,65 @@
+.copyRightP {
+    color: white;
+    line-height: 1.5;
+    font-size: small;
+    position: relative;
+    top: 30px;
+}
+.copyRightC {
+    color: white;
+    line-height: 1.5;
+    font-size: small;
+    position: relative;
+    top: 40px;
+}
+.importantInfoDiv {
+    margin: auto;
+    width: 1000px;
+    border: white solid 1px;
+    border-radius: 10px;
+    background-color: #8C8C8C;
+    position: relative;
+    top: 10px;
+}
+.impornantInfoMainP {
+    color: white;
+    line-height: 1.5;
+    font-size: small;
+    bottom: 100px;
+    left: 35px;
+    text-decoration: underline;
+}
+.impornantInfoP {
+    color: white;
+    line-height: 1.5;
+    font-size: small;
+    bottom: 20px;
+    left: 28px;
+}
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.flex-container > div {
+    border: white solid 1px;
+    background-color: #8C8C8C;
+    border-radius: 10px;
+    width: 400px;
+    height: 100px;
+    margin: 10px;
+    text-align: center;
+    
+  }
+
+  .contactUsH, .openingHoursH {
+      text-decoration: underline;
+      padding-bottom: 5px;
+  }
+
+  h6 {
+    font-size: large;
+    line-height: 10px;
+    margin-top: 10px;
+    color: whitesmoke;
+  }

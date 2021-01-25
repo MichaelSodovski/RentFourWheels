@@ -1,0 +1,71 @@
+<div class="flex-container">
+    <div>
+        <button id="adminMenuBTN" routerLink="/carsArea" routerLinkActive="active"> <span> Manage Cars </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/carTypesArea" routerLinkActive="active"> <span> Manage Types of Cars
+            </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/usersArea" routerLinkActive="active"> <span> Manage Users </span>
+        </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/ordersArea" routerLinkActive="active"> <span> Manage Orders </span>
+        </button>
+    </div>
+</div>
+
+<div class="adminCoverDiv">
+    <div class="carFormContentDiv">
+
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search"
+                            placeholder="Enter Vehicle Identification number..." aria-label="Search"
+                            (change)="onTextChange($event)">
+                        <button class="btn btn-outline-success" type="submit"> Search </button>
+                    </form>
+                </div>
+            </nav>
+
+        <div class="carFormContentMainDiv">
+            <table>
+                <tr>
+                    <th> Image </th>
+                    <th> Manufacturer </th>
+                    <th> Model </th>
+                    <th> Year Of Manufacture </th>
+                    <th> Current Kilometrage </th>
+                    <th> VIN </th>
+                    <th> Branch </th>
+                    <th> GearBox </th>
+                    <th> Usability </th>
+                    <th> Availability </th>
+                </tr>
+                <tr *ngFor="let c of allCars" (click)="Selected(c.id)" tabindex="0">
+                    <td>
+                        <img src="{{ImageCarsURL + c.imageFileName}}">
+                    </td>
+                    <td> {{c.manufacturer}} </td>
+                    <td> {{c.model}} </td>
+                    <td> {{c.yearOfManufacture}} </td>
+                    <td> {{c.kilometrage}} </td>
+                    <td> {{c.vin}} </td>
+                    <td> {{c.branchName}} </td>
+                    <td> {{c.gearBox}} </td>
+                    <td> {{c.availability}} </td>
+                    <td> {{c.usability}} </td>
+                </tr>
+            </table>
+        </div>
+        <div class="btn-flex-container" style="position: absolute; bottom: 0;">
+            <button id="adminMenuBTN" (click)="CarDelete()"> <span> Delete </span> </button>
+            <button id="adminMenuBTN"> <span> Edit </span> </button>
+            <button id="adminMenuBTN" routerLink="/UpdateCarForm/{{selected}}" routerLinkActive="active"> <span> Update
+                </span> </button>
+            <button id="adminMenuBTN" routerLink="/AddCarForm" routerLinkActive="active"> <span> Add </span> </button>
+        </div>
+    </div>
+</div>
