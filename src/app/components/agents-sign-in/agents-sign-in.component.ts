@@ -1,35 +1,76 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from "@angular/forms";
+import { CarsService } from 'src/services/cars.service';
+import { environment } from 'src/environments/environment';
+import { NotificationService } from '@progress/kendo-angular-notification';
+import { addCarModel } from 'src/app/models/addCarModel';
 
 @Component({
-  selector: 'app-agents-sign-in',
-  templateUrl: './agents-sign-in.component.html',
-  styleUrls: ['./agents-sign-in.component.css']
+    selector: 'app-agents-sign-in',
+    templateUrl: './agents-sign-in.component.html',
+    styleUrls: ['./agents-sign-in.component.css']
 })
 
 export class AgentsSignInComponent {
-  public submitted = false;
-  public oppoSuits: any = ['Handle VIN of the car', 'Women', 'Boys', 'Inspiration']
+    public car: addCarModel = new addCarModel();
+    public inputID: number = null as any;
+    public fileName?: string = "default_car.jpg";
+    public ImageCarsURL: string = environment.carsURL + "/images/";
+    public AvailabilityStatus: string = "blank.png";
+    public available: string = "available.jpg"; 
+    public notAvailable: string = "notAvailable.jpg"; 
+    public UsabilityStatus: string = "blank.png";
+    public usable: string = "Usable.jpg";
+    public notUsable: string = "notUsable.jpg";  
 
-  constructor(public fb: FormBuilder) { }
+    constructor(
+        private carService: CarsService, 
+        private notification: NotificationService
+        ){}
 
-  public oppoSuitsForm: any = this.fb.group({
-    name: ['', [Validators.required]]
-  })
+    async ngOnInit() { 
+    }
 
-  changeSuit(e: any) {
-    this.oppoSuitsForm.get('name').setValue(e.target.value, {
-      onlySelf: true
-    })
-  }
+    public GetIpnut(event: any) {
+        this.inputID = event.target.value;
+    }
+    public async GetCar(vin: number) {
+        try {
+            this.car = await this.carService.getCarByVin(vin);
+            this.fileName = this.car.imageFileName;
+            console.log(this.car);
+        }
+        catch (err) {
+            alert("something went wrong! GerCar");
+        }
+        this.changeAvailabilityStatus();
+        this.changeUsabilityStatus();
+    }
 
-  /* Select Dropdown error handling */
-  public handleError = (controlName: string, errorName: string) => {
-    return this.oppoSuitsForm.controls[controlName].hasError(errorName);
-  }
+    public changeAvailabilityStatus() {
+        if(this.car.availability == "y") {
+            this.AvailabilityStatus = this.available;
+        }
+        else this.AvailabilityStatus = this.notAvailable;
+    }
+    public changeUsabilityStatus() {
+        if(this.car.usability == "y") {
+            this.UsabilityStatus = this.usable;
+        }
+        else this.UsabilityStatus = this.notUsable;
+    }
 
-  onSubmit() {
-    this.submitted = true;
-    alert(JSON.stringify(this.oppoSuitsForm.value))
-  }
+    public async updateCar() {
+        try {
+            const confirmUpdate = confirm("Are you sure you want to update the details of this car?");
+            if (!confirmUpdate) {
+                return;
+            }
+            const updatedCar = await this.carService.updatePartialCar(this.car);
+            alert("car has been updated");
+            location.reload()
+        }
+        catch (err) {
+            alert(err.message);
+        }
+    }
 }

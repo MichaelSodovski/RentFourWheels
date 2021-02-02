@@ -11,7 +11,6 @@ import { NotificationService } from '@progress/kendo-angular-notification';
 export class AddOrderFormComponent implements OnInit {
     public Orders?: ordersModel[];
     public order = new ordersModel();
-    public orders: string = "orders";
 
     constructor(private OrdersService: OrdersService, private notification: NotificationService) { }
 

@@ -25,6 +25,55 @@
 
 <p-gmap [options]="options" [style]="{'width':'100%','height':'350px'}"></p-gmap>
 
-<div class="descriptionDiv"> 
-
+<div class="descriptionDiv">
+    <div class="r4wDescription">
+        <header>
+            <div class="overlay">
+                <h1>Simply The Best</h1>
+                <h3>Thanks for Choosing Rent 4 Wheels</h3>
+            </div>
+        </header>
+        <div class="pointersDiv">
+            <li> Financing the purchase of a car </li>
+            <li> Full insurance package available in Israel (AC/OC/NNW/KR) </li>
+            <li> All-inclusive technical service </li>
+            <li> Substitute car in case of a mechanical failure/accident </li>
+            <li> Accident service (repair and cost management) </li>
+            <li> Assistance in case of a mechanical failure/accident </li>
+            <li> Seasonal tire change</li>
+            <li> Car handling after the expiry of the contract </li>
+            <li> Risk management of the value loss </li>
+        </div>
+    </div>
+    <div class="carouselDiv">
+        <ngb-carousel *ngIf="images">
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="images[0]" alt="Random first slide" [style]="{'width':'550px','height':'500px'}">
+                </div>
+                <div class="carousel-caption">
+                    <h3>Honda Civic</h3>
+                    <p>Special offer.</p>
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="images[1]" alt="Random second slide" [style]="{'width':'550px','height':'500px'}">
+                </div>
+                <div class="carousel-caption">
+                    <h3>Hyundai Tucson</h3>
+                    <p>For a special experience for you and your family.</p>
+                </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                    <img [src]="images[2]" alt="Random third slide" [style]="{'width':'550px','height':'500px'}">
+                </div>
+                <div class="carousel-caption">
+                    <h3>Hyundai Tucson</h3>
+                    <p>Newest cars for the best experience.</p>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
 </div>

@@ -13,5 +13,6 @@ export class userModel {
         public image?: File,
         public imageFileName?: string,
         public roleId?: number,
+        public role?: string
         ) {}
 }

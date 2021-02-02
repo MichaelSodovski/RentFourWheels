@@ -15,14 +15,44 @@ export class CatalogueComponent implements OnInit {
     public original: carsModel[] = [];
     public textToSearch: string = '';
     public ImageCarsURL: string = environment.carsURL + "/images/";
+    a: any;
+    b: any;
+    c: any;
+    public images:string[] = [];
     // private unsubscribe!: Unsubscribe;
+    public responsiveOptions: any = null as any;
 
-    constructor(private carsService: CarsService) { }
+    constructor(private carsService: CarsService) {
+        this.responsiveOptions = [
+            {
+                breakpoint: '1000px',
+                numVisible: 3,
+                numScroll: 3
+            },
+            {
+                breakpoint: '100px',
+                numVisible: 2,
+                numScroll: 2
+            },
+            {
+                breakpoint: '100px',
+                numVisible: 1,
+                numScroll: 1
+            }
+        ];
+     }
 
     async ngOnInit() {
         this.GetAllCars();
         this.original = await this.carsService.getAllCars();
         this.allCars = this.original;
+
+        for(const prop of this.allCars) {
+            this.a = this.allCars[0].imageFileName;
+            this.b = this.allCars[1].imageFileName;
+            this.c = this.allCars[2].imageFileName;
+        }
+        this.images = [this.a, this.b, this.c].map((n) => `https://localhost:44370/api/cars/images/${n}`);
 
         //     this.unsubscribe = store.subscribe(() => {
         //         this.cars = store.getState().cars;
@@ -60,4 +90,7 @@ export class CatalogueComponent implements OnInit {
         }
             this.allCars = this.original.filter(c => c.manufacturer?.toLowerCase().includes(searchPhrase.value.toLowerCase()));
     }
+
+    
 }
+

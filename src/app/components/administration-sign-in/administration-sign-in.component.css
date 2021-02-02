@@ -664,7 +664,34 @@ img {
     left: 50px;
 }
 
-
+*{padding: 0; margin: 0; box-sizing: border-box;}
+body{height: 900px;}
+header {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+    position: relative;
+    bottom: 265px;
+	overflow: hidden;
+	
+}
+header .overlay{
+    position: relative;
+	width: 100%;
+	height: 100%;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg, #566D7E 10%,#6D7B8D 100%);
+	opacity: 0.8;
+}
+h1 {
+    position: relative;
+	font-family: 'Dancing Script', cursive;
+    font-size: 80px;
+    top: 235px;
+}
     
 
 

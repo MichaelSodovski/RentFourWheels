@@ -41,6 +41,12 @@ import { AddCarFormComponent } from './components/add-car-form/add-car-form.comp
 import { AddUserFormComponent } from './components/add-user-form/add-user-form.component';
 import { AddCarTypeFormComponent } from './components/add-car-type-form/add-car-type-form.component';
 import { AddOrderFormComponent } from './components/add-order-form/add-order-form.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselModule } from 'primeng/carousel';
+import { RouterModule } from '@angular/router';
+import { VinPipePipe } from './pipes/vin-pipe.pipe';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 
 @NgModule({
@@ -65,7 +71,8 @@ import { AddOrderFormComponent } from './components/add-order-form/add-order-for
         AddCarFormComponent, 
         AddUserFormComponent, 
         AddCarTypeFormComponent, 
-        AddOrderFormComponent
+        AddOrderFormComponent, 
+        VinPipePipe,
     ],
     imports: [
         BrowserModule, 
@@ -87,8 +94,16 @@ import { AddOrderFormComponent } from './components/add-order-form/add-order-for
         FormsModule, 
         ReactiveFormsModule, 
         NotificationModule, 
+        CarouselModule,
+        NgbModule, 
+        MessagesModule,
+        MessageModule
+],exports: [
+    RouterModule
 ],
+
     providers: [],
     bootstrap: [LayoutComponent]
 })
+
 export class AppModule { }

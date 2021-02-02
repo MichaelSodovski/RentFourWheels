@@ -2,7 +2,7 @@
     border: solid black 1px;
     width: 100%;
     height: 250px;
-    /* background-image: url(../../../assets/box-catalogo-supercar-4505494530627.jpg); */
+    background-image: url(../../../assets/1584436900458.jfif);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -11,5 +11,338 @@
 .adminDesktopDiv {
     border: solid black 1px;
     width: 100%;
-    height: 420px;
+    height: 546px;
+    background-image: linear-gradient( 135deg, #B6B6B4 5%,#E5E4E2 15%);
+}
+
+.agentMainMenu {
+    position: relative;
+    left: 500px;
+    border: black solid 1px;
+    width: 500px;
+    height: 100%;
+}
+
+.inputVIN {
+    width: 80%;
+}
+
+table {
+    position: relative;
+    border: black solid 1px;
+    text-align: center;
+    background-color:whitesmoke;
+    height: 464px;
+}
+
+th {
+    width: 500px;
+    background-color:whitesmoke;
+    border: black solid 1px;
+    height: 25px;
+}
+
+tr {
+    border: black solid 1px;
+    height: 25px;
+    background-color:whitesmoke;
+}
+
+img {
+    height: 250px;
+    width: 250px;
+}
+
+td:first-child {
+    text-align: center;
+}
+
+tr:nth-of-type(even) {
+    background-color: whitesmoke;
+}
+
+tr:nth-of-type(odd) {
+    background-color: lightgrey;
+}
+
+tr:first-of-type {
+    background-color: lightslategrey;
+}
+
+.p-button-warning {
+    height: 25px;
+}
+.editDiv {
+    height: 25px;
+    width: 500px;
+    position: relative;
+    bottom: 28px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:whitesmoke;
+}
+#kilometrageLBL {
+    position: relative;
+    left: 10px;
+}
+#kilometrageinfo {
+    position: relative;
+    left: 20px;
+}
+#Vehicle-identification-numberLBL {
+    position: relative;
+    left: 10px;
+}
+#Vehicle-identification-number-info {
+    position: relative;
+    right: 20px;
+}
+#BranchNameLBL {
+    position: relative;
+    left: 10px;
+}
+#BranchNameinfo {
+    position: absolute;
+    right: 135px;
+}
+#AvailabilityLBL {
+    position: relative;
+    left: 10px;
+}
+#UsabilityLBL {
+    position: relative;
+    left: 10px;
+}
+
+.availability-img {
+    position: absolute;
+    z-index: 100;
+    width: 100px;
+    height: 27px;
+    left: 272px;
+}
+
+.Usability-img {
+    position: absolute;
+    z-index: 100;
+    width: 100px;
+    height: 27px;
+    left: 272px;
+}
+
+#carModelP {
+    font-family: 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
+}
+
+.headerCarDiv { 
+    height: 40px;
+    background-color: #F5F5F5;
+}
+
+#headerCarTh {
+    height: 40px;
+    background-color: #F5F5F5;
+    border: none;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.s003 {
+    position: relative;
+    min-height: -30vh;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center center;
+    padding:10px;
+    width: 504px;
+    border: black solid 0.5px;
+}
+.s003 form {
+    width: 100%;
+    max-width: 790px;
+    margin-bottom: 0;
+}
+.s003 form .inner-form {
+    background: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+}
+.s003 form .inner-form .input-field {
+    height: 58px;
+}
+.s003 form .inner-form .input-field input {
+    height: 100%;
+    background: transparent;
+    border: 0;
+    display: block;
+    width: 100%;
+    padding: 10px 32px;
+    font-size: 16px;
+    color: #555;
+}
+.s003 form .inner-form .input-field input.placeholder {
+    color: #888;
+    font-size: 16px;
+}
+.s003 form .inner-form .input-field input:-moz-placeholder {
+    color: #888;
+    font-size: 16px;
+}
+.s003 form .inner-form .input-field input::-webkit-input-placeholder {
+    color: #888;
+    font-size: 16px;
+}
+.s003 form .inner-form .input-field input:hover, .s003 form .inner-form .input-field input:focus {
+    box-shadow: none;
+    outline: 0;
+    border-color: #fff;
+}
+.s003 form .inner-form .input-field.first-wrap {
+    width: 200px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.s003 form .inner-form .input-field.first-wrap .choices__inner {
+    background: transparent;
+    border-radius: 0;
+    border: 0;
+    height: 100%;
+    color: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 10px 30px;
+}
+.s003 form .inner-form .input-field.first-wrap .choices__inner .choices__list.choices__list--single {
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+}
+.s003 form .inner-form .input-field.first-wrap .choices__inner .choices__item.choices__item--selectable.choices__placeholder {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    opacity: 1;
+    color: #888;
+}
+.s003 form .inner-form .input-field.first-wrap .choices__inner .choices__list--single .choices__item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    color: #555;
+}
+.s003 form .inner-form .input-field.first-wrap .choices[data-type*="select-one"]:after {
+    right: 30px;
+    border-color: #e5e5e5 transparent transparent transparent;
+}
+.s003 form .inner-form .input-field.first-wrap .choices__list.choices__list--dropdown {
+    border: 0;
+    background: #fff;
+    padding: 20px 30px;
+    margin-top: 2px;
+    border-radius: 4px;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+.s003 form .inner-form .input-field.first-wrap .choices__list.choices__list--dropdown .choices__item--selectable {
+    padding-right: 0;
+}
+.s003 form .inner-form .input-field.first-wrap .choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background: #fff;
+    color: #63c76a;
+}
+.s003 form .inner-form .input-field.first-wrap .choices__list--dropdown .choices__item {
+    color: #555;
+    min-height: 24px;
+}
+.s003 form .inner-form .input-field.second-wrap {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+.s003 form .inner-form .input-field.third-wrap {
+    width: 74px;
+}
+.s003 form .inner-form .input-field.third-wrap .btn-search {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    background: #63c76a;
+    transition: all .2s ease-out, color .2s ease-out;
+}
+.s003 form .inner-form .input-field.third-wrap .btn-search svg {
+    width: 16px;
+}
+.s003 form .inner-form .input-field.third-wrap .btn-search:hover {
+    background: #50c058;
+}
+.s003 form .inner-form .input-field.third-wrap .btn-search:focus {
+    outline: 0;
+    box-shadow: none;
+}
+@media screen and (max-width: 992px) {
+    .s003 form .inner-form .input-field {
+        height: 50px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .s003 form .inner-form {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    .s003 form .inner-form .input-field {
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .s003 form .inner-form .input-field input {
+        padding: 10px 15px;
+    }
+    .s003 form .inner-form .input-field.first-wrap {
+        width: 100%;
+        border-right: 0;
+    }
+    .s003 form .inner-form .input-field.first-wrap .choices__inner {
+        padding: 10px 15px;
+    }
+    .s003 form .inner-form .input-field.first-wrap .choices[data-type*="select-one"]:after {
+        right: 11.5px;
+        border-color: #e5e5e5 transparent transparent transparent;
+    }
+    .s003 form .inner-form .input-field.second-wrap {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .s003 form .inner-form .input-field.second-wrap input {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .s003 form .inner-form .input-field.third-wrap {
+        margin-bottom: 0;
+        width: 100%;
+    }
 }

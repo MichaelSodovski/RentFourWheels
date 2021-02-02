@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarsService } from 'src/services/cars.service';
 import { carsModel } from 'src/app/models/cars.model';
 import { environment } from 'src/environments/environment';
@@ -36,7 +36,6 @@ export class CarComponent implements OnInit {
     public Selected(id: any) {
         this.selected = id;
     }
-
     public async CarDelete() {
         try {
             const confirmDeletion = confirm("Are you sure you want to delete this car?");

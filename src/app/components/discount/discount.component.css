@@ -1,0 +1,197 @@
+.roadImgDiv {
+    width: 100%;
+    height: 670px;
+    background-image: url(../../../assets/road-wallpapers-40500-5094869.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.SubmitOrderDiv {
+    border: black solid 1px;
+    background-color: whitesmoke;
+    opacity: 0.8;
+    width: 30%;
+    height: 600px;
+    position: absolute;
+    border-radius: 5px;
+    bottom: 35px;
+    right: 40px;
+}
+
+h6 {
+    position: relative;
+    left: 125px;
+}
+
+.form-group {
+    height: 70px;
+    width: 100%;
+}
+#UserIdentificationNumberInput {
+    margin-bottom: 100%;
+    width: 409px;
+}
+.p-inputgroup-addon {
+    margin-bottom: 100%;
+    height: 42px;
+}
+#invalid-feedback-UserIdentificationNumber-Required {
+    width: 250px;
+    position: relative;
+    bottom: 455px;
+    left: 200px;
+}
+#invalid-feedback-UserIdentificationNumber-Must-be-9-characters-AND-Numbers-only {
+    width: 250px;
+    position: relative;
+    bottom: 455px;
+    left: 200px;
+}
+#valid-feedback-UserIdentificationNumber-ok {
+    width: 100px;
+    position: relative;
+    bottom: 455px;
+    left: 345px;
+}
+/* ------------------------------------------------------------------------------------------------------------------------- */
+.btn {
+    background-image: url(../../../assets/z0hlpkbmwk431.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 45px;
+    height: 43px;
+    margin-bottom: 100%;
+}
+#startDate, #EndDate {
+    width: 407.75px;
+}
+#invalid-feedback-startDate-Required, #invalid-feedback-endDate-Required {
+    width: 130px;
+    position: relative;
+    left: 315px;
+    bottom: 50px;
+}
+#valid-feedback-startDate-ok, #valid-feedback-endDate-ok {
+    border: 1px black solid;
+    width: 100px;
+    position: relative;
+    bottom: 455px;
+    left: 345px;
+    z-index: 1000;
+}
+
+#VehicleIdentificationNumberInput {
+    margin-bottom: 100%;
+    width: 409px;
+}
+#vinBTNImg {
+    background-image: url(../../../assets/raceway-kia-vin-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 45px;
+    height: 43px;
+    margin-bottom: 100%;
+    bottom: 204px;
+}
+#invalid-feedback-Vehicle-Identification-Number-required {
+    width: 100px;
+    position: relative;
+    left: 180px;
+    bottom: 455px;
+    white-space: nowrap;
+}
+#invalid-feedback-Vehicle-Identification-Number-Numbers-only {
+    width: 100px;
+    position: relative;
+    left: 350px;
+    bottom: 455px;
+    white-space: nowrap;
+}
+#valid-feedback-Vehicle-Identification-Number-Okay {
+    width: 100px;
+    position: relative;
+    left: 350px;
+    bottom: 455px;
+    white-space: nowrap;
+}
+
+#totalIMg {
+    background-image: url(../../../assets/Icon_Turnierdatum.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 45px;
+    height: 43px;
+    margin-bottom: 100%;
+}
+.flex-container-total {
+    display: flex;
+    width: 100%;
+    height: 43px;
+}
+.spacerDiv {
+    width: 100%;
+    height: 30px;
+}
+
+#idBTNImg {
+    background-image: url(../../../assets/png-transparent-silhouette-of-person-illustration-computer-icons-user-iconfinder-symbol-account-profile-icon-miscellaneous-silhouette-technology-thumbnail.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 45px;
+    height: 43px;
+    bottom: 205px;
+}
+
+#totalCostIMg {
+    background-image: url(../../../assets/xxx013-512.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 45px;
+    height: 43px;
+    
+}
+
+.p-button-raised {
+    position: relative;
+    top: 10px;
+    width: 200px;
+}
+
+.warningPopUp {
+    position: relative;
+    top: 5px;
+    width: 100%;
+    height: 82px;
+}
+
+.btnDiv {
+    width: 100%;
+    height: 70px;
+    position: relative;
+    top: 5px;
+}
+
+.ngbPopUP {
+    position:relative;
+    bottom: 20px;
+    background-color: tomato;
+}
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.carouselDiv {
+    opacity: 0.9;
+    position: relative;
+    top: 85px;
+    left: 40px;
+    width: 35%;
+    height: 250px;
+    border: none;
+}

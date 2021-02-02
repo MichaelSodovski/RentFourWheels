@@ -21,6 +21,11 @@ export class UserService {
         return observable.toPromise();
     }
 
+    public GetSingleUserByIdentificationNumber(identificationNumber: number): Promise<userModel> {
+        const observable = this.myHttpClient.get<userModel>(environment.usersURL + "/GetSingleUserByIdentificationNumber" + "/" + identificationNumber);
+        return observable.toPromise();
+    }
+
     public AddUser(user: userModel): Promise<userModel> {
         const formData = new FormData();
         formData.append("firstName", user.firstName as string);

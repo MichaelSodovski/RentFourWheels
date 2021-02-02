@@ -28,19 +28,7 @@
     background-color: black;
 }
 
-#SrchBTN {
-    height: 35px;
-    width: 200px;
-    border-radius: 7px;
-    color: #007BFF;
-    background-color: black;
-}
-
-#formLBL {
-    color: black;
-}
-
-.carTypeFormContentDiv, .usersFormContentDiv, .ordersFormContentDiv {
+.ordersFormContentDiv {
     position: relative;
     width: 100%;
     height: 635px;
@@ -50,7 +38,7 @@
     opacity: 0.95;
 }
 
-.carTypeFormContentVINDiv, .usersFormContentVINDiv, .ordersFormContentVINDiv {
+.ordersFormContentVINDiv {
     border: black solid 1px;
     background-color: #6D7B8D;
     color: whitesmoke;
@@ -60,6 +48,8 @@
 }
 
 .btn-flex-container {
+    position: relative;
+    top: 95%;
     border: solid black 1px;
     width: 100%;
     height: 35px;
@@ -80,26 +70,14 @@
     background-color: black;
 }
 
-.carTypeFormContentMainDiv, .usersFormContentMainDiv, .ordersFormContentMainDiv {
+.ordersFormContentMainDiv {
     border: solid black 1px;
     border-radius: 5px;
     width: 100%;
-    height: 90%;
+    height: 87%;
     background-color: whitesmoke;
     overflow: auto;
     display: inline-block;
-}
-
-.UpdateUserDiv {
-    border: solid black 1px;
-    width: 100%;
-    height: 369px;
-    border-radius: 5px;
-    background-color: whitesmoke;
-}
-
-.welcomeh1 {
-    color: white;
 }
 
 input, select {
@@ -143,6 +121,7 @@ td {
 th {
     width: 10%;
     background-color: #E6E6FA;
+    white-space: nowrap;
 }
 
 td:first-child {
@@ -180,6 +159,7 @@ tr:first-of-type {
 #adminMenuBTN:hover span {
     padding-right: 25px;
 }
+
 #adminMenuBTN:hover span:after {
     opacity: 1;
     right: 0;
@@ -189,12 +169,13 @@ tr:hover {
     background-color: #98AFC7;
     opacity: 0.8;
 }
+
 tr:focus {
     background-color: #98AFC7;
     outline: 0;
 }
 
-.AddCarTypeDiv, .AddUserDiv, .AddOrderDiv {
+.AddOrderDiv {
     font-size: smaller;
     border: black solid 1px;
     background-color: whitesmoke;
@@ -206,7 +187,7 @@ tr:focus {
     border-radius: 5px;
 }
 
-.CarType, .User, .Order {
+.Order {
     margin: 0px auto;
     position: absolute;
     left: 500px;
@@ -219,25 +200,6 @@ tr:focus {
     display: block;
     text-align: center;
     border-spacing: 0 0px;
-
-}
-
-.btn-flex-container-add-car-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    position: relative;
-    top: 605px;
-    border: black solid 1xp;
-}
-.btn-flex-container-add-car-form>button {
-    height: 30px;
-    width: 100%;
-    border-radius: 7px;
-    color: #007BFF;
-    background-color: black;
 }
 
 .flex-feedback {
@@ -245,19 +207,12 @@ tr:focus {
     flex-direction: row;
 }
 
-.spacerDiv{ 
+.spacerDiv {
     height: 40px;
 }
+
 .spacerDivflex {
     height: 55px;
-}
-
-#inputFirstName, #inputLastName, #inputUserID, #inputUserName {
-    width: 67%;
-}
-
-#inputUserName {
-    width: 95%;
 }
 
 .spacerOrderDiv {
@@ -268,415 +223,162 @@ tr:focus {
     height: 60px;
 }
 
-.form-group>input,select {
-    
+.form-group > input, select {
     width: 95%;
     display: flex;
     flex-direction: column;
     height: 30px;
 }
 
-
-.inputsdobandgenderDiv {
-    width: 96.5%;
-    height: 60px;
-    margin-left: 5px;
-    display: flex;
-    flex-direction: row;
-}
-.inputsDateOfBirthDiv {
-    width: 50%;
-    height: 60px;
-}
-.inputsGenderDiv {
-    width: 50%;
-    height: 60px;
-    margin-top: 0.5px;
-}
-
-#invalid-feedback-date-of-birth {
-    position: relative;
-    width: 130px;
-    left: 145px;
-}
-#valid-feedback-date-of-birth {
-    position: relative;
-    width: 35px;
-    left: 240px;
-}
-#invalid-feedback-gender {
-    position: relative;
-    width: 150px;
-    left: 145px;
-}
-#valid-feedback-gender {
-    position: relative;
-    width: 35px;
-    left: 240px;
-}
-
-#invalid-feedback-firstName {
-    position: relative;
-    left: 50px;
-}
-#valid-feedback-firstName {
-    position: relative;
-    left: 50px;
-}
-#invalid-feedback-lastName {
-    position: relative;
-    left: 50px;
-}
-#valid-feedback-lastName {
-    position: relative;
-    left: 50px;
-}
-#invalid-feedback-userId {
-    position:relative;
-    left: 50px;
-}
-#valid-feedback-userId {
-    position:relative;
-    left: 50px;
-}
-#invalid-feedback-userName {
-    position: relative;
-    left: 200px;
-}
-#valid-feedback-userName {
-    position: relative;
-    left: 220px;
-}
-#invalid-feedback-email {
-    position: relative;
-    left: 220px;
-}
-#valid-feedback-email {
-    position: relative;
-    left: 250px;
-}
-#invalid-feedback-passWord {
-    position: relative;
-    left: 220px;
-}
-#valid-feedback-passWord {
-    position: relative;
-    left: 250px;
-}
-#invalid-feedback-role {
-    position: relative;
-    left: 220px;
-}
-#valid-feedback-role {
-    position: relative;
-    left: 250px;
-}
-
-#avatarInputBTN {
-    border-radius: 5px;
-    box-shadow: 1px 1px;
-    width: 153px;
-    height: 30px;
-    box-sizing: border-box;
-    border: 1px solid #999;
-}
-img {
-    width: 150px;
-    height: 150px;
-    opacity: 100%;
-    background-image: url(../../../assets/images.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-#avatarinput {
-    display: none;
-}
-#avatarLbL {
-    display: none;
-}
-.imgPreviewDiv {
-    position: absolute;
-    left: 70.5%;
-    bottom: 66.80%;
-    width: 152px;
-    height: 180px;
-}
-#inputRole,#inputGender,#inputDateOfBirth {
-    height: 36px;
-}
-
-#orderLBLfont,#userLBLfont {
+#orderLBLfont {
     color: black;
     font-size: 12px;
 }
 
 .LBL-User-Identification-Number-positioning {
-    position:relative;
+    position: relative;
     right: 220px;
 }
+
 .LBL-Vehicle-Identification-Number-positioning {
-    position:relative;
+    position: relative;
     right: 210px;
 }
+
 .LBL-Id-of-car-positioning {
-    position:relative;
+    position: relative;
     right: 265px;
 }
+
 .LBL-Start-Date-positioning {
-    position:relative;
+    position: relative;
     right: 260px;
 }
+
 .LBL-End-Date-positioning {
-    position:relative;
+    position: relative;
     right: 260px;
 }
+
 .LBL-Actual-Return-Date-positioning {
-    position:relative;
+    position: relative;
     right: 240px;
 }
 
-.flex-LBL-gender-dateOfBirth {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around; 
-}
-
-.LBLFirstName-positioning {
-    position:relative;
-    right: 260px;
-}
-.LBLlastName-positioning {
-    position:relative;
-    right: 260px;
-}
 .LBLId-positioning {
-    position:relative;
+    position: relative;
     right: 218px;
-}
-.LBLuserName-positioning {
-    position:relative;
-    right: 258px;
-}
-.LBLdateOfBirth-positioning {
-    position:relative;
-    right: 110px;
-}
-.LBLgender-positioning {
-    position:relative;
-    right: 135px;
-}
-.LBLemail-positioning {
-    position:relative;
-    right: 270px;
-}
-.LBLpassWord-positioning {
-    position:relative;
-    right: 260px;
-}
-.LBLuserRole-positioning {
-    position:relative;
-    right: 260px;
 }
 
 #invalid-order-feedback-userId {
-    position:relative;
+    position: relative;
     left: 220px;
 }
+
 #valid-order-feedback-userId {
-    position:relative;
+    position: relative;
     left: 220px;
 }
+
 #invalid-order-feedback-vin {
-    position:relative;
+    position: relative;
     left: 220px;
 }
+
 #valid-order-feedback-vin {
-    position:relative;
+    position: relative;
     left: 220px;
 }
+
 #invalid-order-feedback-cardId {
-    position:relative;
+    position: relative;
     left: 220px;
 }
+
 #valid-order-feedback-cardId {
-    position:relative;
+    position: relative;
     left: 220px;
 }
+
 #invalid-feedback-start-date, #invalid-feedback-end-date, #invalid-feedback-actual-return-date {
-    position:relative;
+    position: relative;
     left: 220px;
 }
+
 #valid-feedback-start-date, #valid-feedback-end-date, #valid-feedback-actual-return-date {
-    position:relative;
+    position: relative;
     left: 220px;
 }
 
 .LBLCurrent-Kilometrage-positioning {
-    position:relative;
+    position: relative;
     right: 235px;
 }
+
 #invalid-feedback-Current-Kilometrage {
-    position:relative;
+    position: relative;
     left: 10px;
 }
-.imgPreviewCarDiv {
-    position: absolute;
-    left: 70.5%;
-    bottom: 62%;
-    width: 152px;
-    height: 180px;
-}
-.imgCar {
-    width: 150px;
-    height: 150px;
-    opacity: 100%;
-    background-image: url(../../../assets/default_car.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.spacerCarDiv { 
+
+.spacerCarDiv {
     height: 50px;
 }
+
 .LBL-positioning {
-    position:relative;
+    position: relative;
     right: 260px;
 }
+
 .LBL-Car-Id-positioning {
-    position:relative;
+    position: relative;
     right: 270px;
 }
+
 .LBL-Car-Type-Id-positioning {
-    position:relative;
+    position: relative;
     right: 260px;
 }
-.LBL-Current-Kilometrage-positioning {
-    position:relative;
-    right: 235px;
-}
-.LBL-Usability-positioning {
-    position:relative;
-    right: 265px;
-}
-.LBL-Availability-positioning {
-    position:relative;
-    right: 260px;
-}
+
 .LBL-Vehicle-Identification-Number-positioning {
-    position:relative;
+    position: relative;
     right: 210px;
 }
-.LBL-branch-positioning {
-    position:relative;
-    right: 270px;
-}
-#invalid-feedback-Current-Kilometrage-Required {
-    position:relative;
-    left: 20px;
-}
-#invalid-feedback-Current-Kilometrage-numbers-only {
-    position:relative;
-    left: 45px;
-}
-#invalid-feedback-Usability-Required {
-    position:relative;
-    left: 20px;
-}
-#invalid-feedback-Usability-Letters-only {
-    position:relative;
-    left: 45px;
-}
-#valid-feedback-Usability-Okay {
-    position:relative;
-    left: 90px;
-}
-#invalid-feedback-Availability-required, #invalid-feedback-branch-required {
-    position:relative;
-    left: 210px;
-}
-#invalid-feedback-Availability-Letters-only, #invalid-feedback-branch-Numbers-only {
-    position:relative;
-    left: 230px;
-}
-#valid-feedback-Availability-Okay, #valid-feedback-Vehicle-Identification-Number-Okay, #valid-feedback-branch-Okay {
-    position:relative;
+
+#valid-feedback-Vehicle-Identification-Number-Okay {
+    position: relative;
     left: 250px;
 }
+
 #invalid-feedback-Vehicle-Identification-Number-required {
-    position:relative;
+    position: relative;
     left: 150px;
 }
+
 #invalid-feedback-Vehicle-Identification-Number-Numbers-only {
-    position:relative;
+    position: relative;
     left: 220px;
-}
-
-.imgPreviewCarTypeDiv {
-    position: absolute;
-    left: 70.5%;
-    bottom: 62%;
-    width: 152px;
-    height: 180px;
-}
-.LBL-Car-Type-Manufacturer-positioning {
-    position: relative;
-    right: 255px;
-}
-.LBL-Car-Type-Model-positioning {
-    position: relative;
-    right: 270px;
-}
-.LBL-YearOfManufacture-positioning {
-    position: relative;
-    right: 235px;
-}
-.LBL-GearBox-positioning {
-    position: relative;
-    right: 265px;
-}
-.LBL-DailyCost-positioning {
-    position: relative;
-    right: 260px;
-}
-.LBL-DelayCost-positioning {
-    position: relative;
-    right: 260px;
-}
-
-#invalid-feedback-Manufacturer-required {
-    position: relative;
-    left: 30px;
-}
-#invalid-feedback-Manufacturer-Letters-only {
-    position: relative;
-    left: 30px;
-}
-#invalid-feedback-Model {
-    position: relative;
-    left: 30px;
-}
-#valid-feedback-Manufacturer {
-    position: relative;
-    left: 30px;
 }
 
 #invalid-feedback-YearOfManufacture-required {
     position: relative;
     left: 190px;
 }
+
 #invalid-feedback-GearBox-required {
     position: relative;
     left: 210px;
 }
+
 #invalid-feedback-DailyCost-daily-cost {
     position: relative;
     left: 210px;
 }
+
 #invalid-feedback-DelayCost-delay-cost {
     position: relative;
     left: 210px;
 }
+
 #invalid-feedback-Model-required {
     position: relative;
     left: 50px;
@@ -695,7 +397,234 @@ img {
 .form-control {
     width: 500px;
 }
+
 .d-flex {
     position: relative;
     left: 425px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.s003 {
+    position: relative;
+    min-height: -30vh;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    background-size: cover;
+    background-position: center center;
+    padding: 10px;
+    width: 504px;
+    border: black solid 0.5px;
+    left: 500px;
+}
+
+.s003 form {
+    width: 100%;
+    max-width: 790px;
+    margin-bottom: 0;
+}
+
+.s003 form .inner-form {
+    background: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+}
+
+.s003 form .inner-form .input-field {
+    height: 58px;
+}
+
+.s003 form .inner-form .input-field input {
+    height: 100%;
+    background: transparent;
+    border: 0;
+    display: block;
+    width: 100%;
+    padding: 10px 32px;
+    font-size: 16px;
+    color: #555;
+}
+
+.s003 form .inner-form .input-field input.placeholder {
+    color: #888;
+    font-size: 16px;
+}
+
+.s003 form .inner-form .input-field input:-moz-placeholder {
+    color: #888;
+    font-size: 16px;
+}
+
+.s003 form .inner-form .input-field input::-webkit-input-placeholder {
+    color: #888;
+    font-size: 16px;
+}
+
+.s003 form .inner-form .input-field input:hover, .s003 form .inner-form .input-field input:focus {
+    box-shadow: none;
+    outline: 0;
+    border-color: #fff;
+}
+
+.s003 form .inner-form .input-field.first-wrap {
+    width: 200px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.s003 form .inner-form .input-field.first-wrap .choices__inner {
+    background: transparent;
+    border-radius: 0;
+    border: 0;
+    height: 100%;
+    color: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+.s003 form .inner-form .input-field.first-wrap .choices__inner .choices__list.choices__list--single {
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+}
+
+.s003 form .inner-form .input-field.first-wrap .choices__inner .choices__item.choices__item--selectable.choices__placeholder {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    opacity: 1;
+    color: #888;
+}
+
+.s003 form .inner-form .input-field.first-wrap .choices__inner .choices__list--single .choices__item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    color: #555;
+}
+
+.s003 form .inner-form .input-field.first-wrap .choices[data-type*="select-one"]:after {
+    right: 30px;
+    border-color: #e5e5e5 transparent transparent transparent;
+}
+
+.s003 form .inner-form .input-field.first-wrap .choices__list.choices__list--dropdown {
+    border: 0;
+    background: #fff;
+    padding: 20px 30px;
+    margin-top: 2px;
+    border-radius: 4px;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.s003 form .inner-form .input-field.first-wrap .choices__list.choices__list--dropdown .choices__item--selectable {
+    padding-right: 0;
+}
+
+.s003 form .inner-form .input-field.first-wrap .choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background: #fff;
+    color: #63c76a;
+}
+
+.s003 form .inner-form .input-field.first-wrap .choices__list--dropdown .choices__item {
+    color: #555;
+    min-height: 24px;
+}
+
+.s003 form .inner-form .input-field.second-wrap {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.s003 form .inner-form .input-field.third-wrap {
+    width: 74px;
+}
+
+.s003 form .inner-form .input-field.third-wrap .btn-search {
+    height: 100%;
+    width: 100%;
+    white-space: nowrap;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    background: #63c76a;
+    transition: all .2s ease-out, color .2s ease-out;
+}
+
+.s003 form .inner-form .input-field.third-wrap .btn-search svg {
+    width: 16px;
+}
+
+.s003 form .inner-form .input-field.third-wrap .btn-search:hover {
+    background: #50c058;
+}
+
+.s003 form .inner-form .input-field.third-wrap .btn-search:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 992px) {
+    .s003 form .inner-form .input-field {
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .s003 form .inner-form {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    .s003 form .inner-form .input-field {
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .s003 form .inner-form .input-field input {
+        padding: 10px 15px;
+    }
+    .s003 form .inner-form .input-field.first-wrap {
+        width: 100%;
+        border-right: 0;
+    }
+    .s003 form .inner-form .input-field.first-wrap .choices__inner {
+        padding: 10px 15px;
+    }
+    .s003 form .inner-form .input-field.first-wrap .choices[data-type*="select-one"]:after {
+        right: 11.5px;
+        border-color: #e5e5e5 transparent transparent transparent;
+    }
+    .s003 form .inner-form .input-field.second-wrap {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .s003 form .inner-form .input-field.second-wrap input {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .s003 form .inner-form .input-field.third-wrap {
+        margin-bottom: 0;
+        width: 100%;
+    }
 }

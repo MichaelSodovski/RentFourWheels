@@ -3,7 +3,6 @@ import { userModel } from 'src/app/models/user.model';
 import { UserService } from 'src/services/userService';
 import { NotificationS } from '../../../services/notificationService';
 
-
 @Component({
     selector: 'app-signup',
     templateUrl: './signup.component.html',
@@ -11,7 +10,6 @@ import { NotificationS } from '../../../services/notificationService';
 
 })
 export class SignupComponent {
-
     public user = new userModel();
     public preview?: string;
     public files: any = null as any;
