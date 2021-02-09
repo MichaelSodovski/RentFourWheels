@@ -1,23 +1,23 @@
 <div class="muscleImageDiv"></div>
 
-<form class="usertSignInForm">
+<form class="usertSignInForm" #loginForm="ngForm">
     <h1> Fill in your details </h1>
     <ul>
         <li>
             <label>User name: </label>
-            <input type="text">
+            <input type="text" name="userName" placeholder="User Name..." #userNameInfo="ngModel"
+                [(ngModel)]="credentials.userName" required minlength="8" maxlength="16" pattern="[A-Za-z0-9]+">
         </li>
         <li>
             <label>Password: </label>
-            <input type="text">
+            <input type="password" name="passWord" placeholder="Password..." #PasswordInfo="ngModel"
+                [(ngModel)]="credentials.passWord" required pattern="[A-Za-z0-9]+" minlength="8" maxlength="16">
         </li>
     </ul>
-    <button class="loginBTN">Sign In</button>
+    <button class=" loginBTN" type="button" (click)="Login()">Sign In</button>
     <br>
     <a> Forgot your password? </a>
     <hr>
     <p>Don't have an account yet? tap here to create one! </p>
-    <button class="signUpBTN" routerLink="/signUp" routerLinkActive="active"> Sign Up </button>
-
+    <button class="signUpBTN" type="button" routerLink="/signUp" routerLinkActive="active"> Sign Up </button>
 </form>
-

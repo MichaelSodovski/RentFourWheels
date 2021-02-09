@@ -1,9 +1,11 @@
-import { carsModel } from '../models/cars.model';
+import { userModel } from '../models/user.model';
 
 export class appState {
-    public cars: carsModel[];
-
+    public user: userModel = null as any;
+    
     public constructor() {
-        this.cars = [];
+        this.user = JSON.parse(sessionStorage.getItem("user")!);
     }
 }
+
+export const defaultAppState = new appState();

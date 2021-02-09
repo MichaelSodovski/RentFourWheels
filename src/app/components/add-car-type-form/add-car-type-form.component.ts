@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarTypesModel } from 'src/app/models/carTypes.model';
 import { CarTypeService } from 'src/services/carTypeService';
 import { environment } from 'src/environments/environment';
-import { NotificationService } from '@progress/kendo-angular-notification';
+import { NotificationS } from '../../../services/notificationService';
 
 @Component({
     selector: 'app-add-car-type-form',
@@ -17,14 +17,14 @@ export class AddCarTypeFormComponent implements OnInit {
     public filesCarType: any = null as any;
 
     constructor(private carTypeService: CarTypeService,
-        private notification: NotificationService) { }
+        private notificationService: NotificationS) { }
 
     ngOnInit(): void { }
 
     public async AddCarType() {
         try {
             await this.carTypeService.AddCarType(this.type);
-            this.showAddCarType()
+            this.notificationService.showAddCarType();
             setTimeout(() => {
                 location.reload()
             }, 1500);
@@ -32,16 +32,6 @@ export class AddCarTypeFormComponent implements OnInit {
         catch (err) {
             alert(err.message);
         }
-    }
-    public showAddCarType(): void {
-        this.notification.show({
-            content: 'Car Type has been added',
-            cssClass: 'button-notification',
-            animation: { type: 'slide', duration: 400 },
-            position: { horizontal: 'center', vertical: 'top' },
-            type: { style: 'success', icon: true },
-            closable: true
-        });
     }
     public DisplayPreviewAddCarType(e: Event): void {
         const target = e.target as HTMLInputElement;

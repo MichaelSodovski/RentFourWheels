@@ -5,5 +5,6 @@ export const environment = {
   carTypesURL: "https://Rent4Wheels.com/api/CarType",
   ordersURL: "https://Rent4Wheels.com/api/Orders",
   usersURL: "https://Rent4Wheels.com/api/Users",
-  userTypesURL: "https://Rent4Wheels.com/api/UserTypes"
+  userTypesURL: "https://Rent4Wheels.com/api/UserTypes",
+  authURL: "https://Rent4Wheels.com/api/Auth",
 };

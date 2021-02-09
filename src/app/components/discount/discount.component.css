@@ -29,8 +29,10 @@ h6 {
     width: 100%;
 }
 #UserIdentificationNumberInput {
+    position: relative;
     margin-bottom: 100%;
     width: 409px;
+    left: 1px;
 }
 .p-inputgroup-addon {
     margin-bottom: 100%;
@@ -63,6 +65,7 @@ h6 {
     width: 45px;
     height: 43px;
     margin-bottom: 100%;
+    border: none;
 }
 #startDate, #EndDate {
     width: 407.75px;
@@ -145,6 +148,7 @@ h6 {
     width: 45px;
     height: 43px;
     bottom: 205px;
+    left: 1px;
 }
 
 #totalCostIMg {

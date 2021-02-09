@@ -9,7 +9,8 @@ export const environment = {
   carTypesURL: "https://localhost:44370/api/CarType",
   ordersURL: "https://localhost:44370/api/Orders",
   usersURL: "https://localhost:44370/api/users",
-  userTypesURL: "https://localhost:44370/api/UserTypes"
+  userTypesURL: "https://localhost:44370/api/UserTypes",
+  authURL: "https://localhost:44370/api/Auth",
 };
 
 /*

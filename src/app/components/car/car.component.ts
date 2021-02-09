@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarsService } from 'src/services/cars.service';
 import { carsModel } from 'src/app/models/cars.model';
 import { environment } from 'src/environments/environment';
-import { NotificationService } from '@progress/kendo-angular-notification';
-import { EventEmitterService } from '../../../services/event-emitter.service'
+import { NotificationS } from '../../../services/notificationService';
 
 @Component({
     selector: 'app-car',
@@ -17,14 +16,13 @@ export class CarComponent implements OnInit {
     public selected: number = null as any;
     public original: carsModel[] = [];
 
-    constructor(private carService: CarsService, private notification: NotificationService, private eventEmitterService: EventEmitterService) { }
+    constructor(private carService: CarsService, private notificationService: NotificationS) { }
 
     async ngOnInit() {
         this.GetAllCars();
         this.original = await this.carService.getAllCars();
         this.allCars = this.original;
     }
-
     async GetAllCars() {
         try {
             this.allCars = await this.carService.getAllCars();
@@ -44,7 +42,7 @@ export class CarComponent implements OnInit {
             }
             if (this.selected !== null) {
                 await this.carService.DeleteCar(this.selected!);
-                this.showDeleteCar();
+                this.notificationService.showDeleteCar();
             }
             setTimeout(() => {
                 location.reload()
@@ -54,17 +52,6 @@ export class CarComponent implements OnInit {
             alert(err.message);
         }
     }
-    public showDeleteCar(): void {
-        this.notification.show({
-            content: 'Car has been Deleted',
-            cssClass: 'button-notification',
-            animation: { type: 'slide', duration: 400 },
-            position: { horizontal: 'center', vertical: 'top' },
-            type: { style: 'success', icon: true },
-            closable: true
-        });
-    }
-
     public onTextChange(event: Event) {
         let searchPhrase: any;
         if (event.target !== null) {

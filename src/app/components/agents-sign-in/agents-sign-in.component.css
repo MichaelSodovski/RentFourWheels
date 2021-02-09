@@ -13,14 +13,19 @@
     width: 100%;
     height: 546px;
     background-image: linear-gradient( 135deg, #B6B6B4 5%,#E5E4E2 15%);
+    background-image: url(../../../assets/car-rental-at-mountains.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .agentMainMenu {
     position: relative;
-    left: 500px;
+    left: 700px;
     border: black solid 1px;
     width: 500px;
     height: 100%;
+    z-index: 20;
 }
 
 .inputVIN {
@@ -51,6 +56,10 @@ tr {
 img {
     height: 250px;
     width: 250px;
+}
+
+#mainCarIMG {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 }
 
 td:first-child {
@@ -122,11 +131,12 @@ tr:first-of-type {
     width: 100px;
     height: 27px;
     left: 272px;
+    z-index: 9;
 }
 
 .Usability-img {
     position: absolute;
-    z-index: 100;
+    z-index: 9;
     width: 100px;
     height: 27px;
     left: 272px;
@@ -140,12 +150,97 @@ tr:first-of-type {
 .headerCarDiv { 
     height: 40px;
     background-color: #F5F5F5;
+    box-shadow: 1px 1px 10px 1px rgba(0.10, 0.10, 0.10, 0.15);
 }
 
 #headerCarTh {
     height: 40px;
     background-color: #F5F5F5;
     border: none;
+}
+
+#kilometrageBTN {
+    position:relative;
+    bottom: 6px;
+    height: 32px;
+}
+
+::placeholder {
+    font-size: small;
+}
+
+.editKilometrage {
+    border:black solid 1px;
+    position: absolute;
+    bottom: 134px;
+    left: -1.7px;
+    width: 505px;
+    height: 38px;
+    z-index: 10;
+    display: none;
+}
+.editVIN {
+    border:black solid 1px;
+    position: absolute;
+    bottom: 108px;
+    left: -1.7px;
+    width: 504px;
+    height: 28px;
+    z-index: 10;
+    display: none;
+}
+.editBranch {
+    border:black solid 1px;
+    position: absolute;
+    bottom: 81px;
+    left: -1.7px;
+    width: 504px;
+    height: 28px;
+    z-index: 10;
+    display: none;
+}
+.editAvailability {
+    border:black solid 1px;
+    position: absolute;
+    bottom: 54px;
+    left: -1.7px;
+    width: 504px;
+    height: 28px;
+    z-index: 10;
+    display: none;
+}
+.editUsability {
+    border:black solid 1px;
+    position: absolute;
+    bottom: 26px;
+    left: -1.7px;
+    width: 504px;
+    height: 30px;
+    z-index: 10;
+    display: none;
+}
+
+.editInput {
+    position: relative;
+    float: left;
+    width: 60%;
+    height: 100%;
+}
+.btnOK {
+    font-size: x-small;
+    width: 20%;
+    height:100%;
+    float: left;
+    background-color: green;
+}
+
+.btnCancel {
+    font-size: x-small;
+    align-items: center;
+    width: 20%;
+    height:100%;
+    float: left;
+    background-color: red;
 }
 
 
@@ -164,7 +259,7 @@ tr:first-of-type {
     background-size: cover;
     background-position: center center;
     padding:10px;
-    width: 504px;
+    width: 501.5px;
     border: black solid 0.5px;
 }
 .s003 form {
@@ -272,7 +367,7 @@ tr:first-of-type {
 }
 .s003 form .inner-form .input-field.first-wrap .choices__list--dropdown .choices__item--selectable.is-highlighted {
     background: #fff;
-    color: #63c76a;
+    color: #007BFF;
 }
 .s003 form .inner-form .input-field.first-wrap .choices__list--dropdown .choices__item {
     color: #555;
@@ -292,7 +387,7 @@ tr:first-of-type {
     color: #fff;
     border: 0;
     cursor: pointer;
-    background: #63c76a;
+    background: #007BFF;
     transition: all .2s ease-out, color .2s ease-out;
 }
 .s003 form .inner-form .input-field.third-wrap .btn-search svg {
@@ -345,4 +440,27 @@ tr:first-of-type {
         margin-bottom: 0;
         width: 100%;
     }
+}
+
+
+*{padding: 0; margin: 0; box-sizing: border-box;}
+body{height: 900px;}
+header {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+    position: relative;
+	overflow: hidden;
+}
+header .overlay{
+    position: relative;
+	width: 100%;
+	height: 100%;
+	color:black;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg, #566D7E 10%,#2B547E 80%);
+    opacity: 0.9;
+    z-index: 19;
 }

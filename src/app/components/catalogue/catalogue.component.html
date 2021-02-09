@@ -3,22 +3,17 @@
     <div class="s003">
         <form>
             <div class="inner-form">
-                <div class="input-field first-wrap">
-                    <div class="input-select">
-                        <select data-trigger="" name="choices-single-defaul">
-                            <option placeholder="">Category</option>
-                            <option>New Arrivals</option>
-                            <option>Sale</option>
-                            <option>Ladies</option>
-                            <option>Men</option>
-                            <option>Clothing</option>
-                            <option>Footwear</option>
-                            <option>Accessories</option>
-                        </select>
-                    </div>
+                <div class="input-field second-wrap">
+                    <select class="selectSearchType input-field second-wrap" id="selectOptionID" (change)="GetOptionValue($event)">
+                        <option value="0">Search by</option>
+                        <option value="1">Manufacturer</option>
+                        <option value="2">Model</option>
+                        <option value="3">Year of manufacture</option>
+                        <option value="4">Gear Box</option>
+                    </select>
                 </div>
                 <div class="input-field second-wrap">
-                    <input id="search" type="text" placeholder="Enter Manufacturer..."
+                    <input id="search" type="text" placeholder="Choose an option and enter your search phrase..."
                         (change)="onTextChange($event)" />
                 </div>
                 <div class="input-field third-wrap">
@@ -34,14 +29,6 @@
             </div>
         </form>
     </div>
-    <script src="../catalogue/js/extention/choices.js"></script>
-    <script>
-        const choices = new Choices('[data-trigger]',
-            {
-                searchEnabled: false,
-                itemSelectText: '',
-            });
-    </script>
 </div>
 <br>
 <table>
@@ -56,30 +43,33 @@
         <th> GearBox </th>
         <th> Usability </th>
         <th> Availability </th>
+        <th></th>
     </tr>
     <tr *ngFor="let c of allCars" tabindex="0">
         <td>
-            <img src="{{ImageCarsURL + c.imageFileName}}" width="100px" height="100px">
+            <img src="{{ImageCarsURL + c.imageFileName!}}" width="100px" height="100px">
         </td>
         <td> {{c.manufacturer}} </td>
         <td> {{c.model}} </td>
         <td> {{c.yearOfManufacture}} </td>
         <td> {{c.kilometrage | number:""}} </td>
-        <td> {{c.vin}} </td>
+        <td> {{c.vin | vinFormat}} </td>
         <td> {{c.branchName}} </td>
         <td> {{c.gearBox | uppercase}} </td>
         <td> {{c.availability | uppercase}} </td>
         <td> {{c.usability | uppercase}} </td>
+        <td><button pButton type="button" class="p-button-raised p-button-rounded" label="Order" routerLink="/discount"></button></td>
     </tr>
 </table>
 
 <div class="previousSearchDiv">
     <br>
-    <p-carousel [value]="allCars" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions" [autoplayInterval]="10000" [circular]="true">
+    <p-carousel [value]="allCars" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions"
+        [autoplayInterval]="10000" [circular]="true">
         <ng-template let-car pTemplate="item">
             <div class="carouselCarShow">
-                <br> 
-                <img src='https://localhost:44370/api/cars/images/{{carsModel.imageFileName}}' width="180px" height="180px">
+                <br>
+                <img [src]="images[0]" width="180px" height="180px">
             </div>
         </ng-template>
     </p-carousel>

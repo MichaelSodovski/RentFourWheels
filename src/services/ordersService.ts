@@ -47,6 +47,19 @@ export class OrdersService {
         return observable.toPromise();
     }
 
+    public PartialUpdateOrder(order: ordersModel): Promise<ordersModel> {
+        this.orderToUpdate = {
+            userId: Number(order.userId),
+            vin: Number(order.vin),
+            carId: Number(order.carId),
+            startDate: order.startDate,
+            endDate: order.endDate,
+            actualReturnDate: order.actualReturnDate
+        }
+        const observable = this.myHttpClient.patch<ordersModel>(environment.ordersURL + "/PartialUpdateOrder"  + "/" + order.orderId, this.orderToUpdate);
+        return observable.toPromise();
+    }
+
     public OrderDelete(id: number): Promise<undefined> {
         const observable = this.myHttpClient.delete<undefined>(environment.ordersURL + "/" + id);
         return observable.toPromise();

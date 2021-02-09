@@ -1,0 +1,168 @@
+<div class="flex-container">
+    <div>
+        <button id="adminMenuBTN" routerLink="/carsArea" routerLinkActive="active"> <span> Manage Cars </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/carTypesArea" routerLinkActive="active"> <span> Manage Types of Cars
+            </span> </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/usersArea" routerLinkActive="active"> <span> Manage Users </span>
+        </button>
+    </div>
+    <div>
+        <button id="adminMenuBTN" routerLink="/ordersArea" routerLinkActive="active"> <span> Manage Orders </span>
+        </button>
+    </div>
+</div>
+
+<div class="adminCoverUpdateCarDiv">
+    <div class="updateCarFormContentDiv">
+        <form class="UpdateCar" #AdminaddCarForm="ngForm">
+            <br>
+            <label id="userLBLfont" class="LBL-positioning" class="LBL-Car-Type-Id-positioning"> Car Type Id:
+            </label>
+            <div class="spacerCarDiv">
+                <div class="form-group ">
+                    <input id="inputFirstName" type="text" [(ngModel)]="car.typeId"
+                        class="form-control is-invalid is-valid flex-feedback" name="CarTypeid" required
+                        pattern="[0-9]+" #CarTypeidInfo="ngModel" placeholder="car type..."
+                         maxlength="50"
+                        [ngClass]="{'is-invalid': CarTypeidInfo.errors && CarTypeidInfo.touched, 'is-valid': CarTypeidInfo.valid}" />
+                    <div class="invalid-feedback" id="invalid-feedback-firstName"
+                        [hidden]="!CarTypeidInfo.errors?.required">
+                        Car type id required
+                    </div>
+                    <div class="invalid-feedback" id="invalid-feedback-firstName"
+                        [hidden]="!CarTypeidInfo.errors?.pattern">
+                        Numbers only
+                    </div>
+                    <div class="valid-feedback" id="invalid-feedback-firstName" [hidden]="CarTypeidInfo.invalid">
+                        Okay!
+                    </div>
+                </div>
+            </div>
+            <label id="userLBLfont" class="LBL-positioning" class="LBL-Current-Kilometrage-positioning"> Current
+                Kilometrage: </label>
+            <div class="spacerCarDiv">
+                <div class="form-group ">
+                    <input id="inputFirstName" type="text" [(ngModel)]="car.kilometrage"
+                        class="form-control is-invalid is-valid flex-feedback" name="CurrentKilometrage" required
+                        pattern="[0-9]+" #CurrentKilometrageInfo="ngModel" placeholder="Current Kilometrage..."
+                        maxlength="50"
+                        [ngClass]="{'is-invalid': CurrentKilometrageInfo.errors && CurrentKilometrageInfo.touched, 'is-valid': CurrentKilometrageInfo.valid}">
+                    <div class="invalid-feedback" id="invalid-feedback-Current-Kilometrage-Required"
+                        [hidden]="!CarTypeidInfo.errors?.required">
+                        Current kilometrage is required
+                    </div>
+                    <div class="invalid-feedback" id="invalid-feedback-Current-Kilometrage-numbers-only"
+                        [hidden]="!CurrentKilometrageInfo.errors?.pattern">
+                        Numbers only
+                    </div>
+                    <div class="valid-feedback" id="valid-feedback-Current-Kilometrage"
+                        [hidden]="CurrentKilometrageInfo.invalid">
+                        Okay!
+                    </div>
+                </div>
+            </div>
+            <label id="userLBLfont" class="LBL-positioning" class="LBL-Usability-positioning"> Usability: </label>
+            <div class="spacerCarDiv">
+                <div class="form-group ">
+                    <input id="inputFirstName" type="text" [(ngModel)]="car.usability"
+                        class="form-control is-invalid is-valid flex-feedback" name="Usability" required
+                        pattern="[a-zA-Z]+" #UsabilityInfo="ngModel" placeholder="Usability..." maxlength="50"
+                        [ngClass]="{'is-invalid': UsabilityInfo.errors && UsabilityInfo.touched, 'is-valid': UsabilityInfo.valid}">
+                    <div class="invalid-feedback" id="invalid-feedback-Usability-Required"
+                        [hidden]="!UsabilityInfo.errors?.required">
+                        Usability is required
+                    </div>
+                    <div class="invalid-feedback" id="invalid-feedback-Usability-Letters-only"
+                        [hidden]="!UsabilityInfo.errors?.pattern">
+                        Letters only
+                    </div>
+                    <div class="valid-feedback" id="valid-feedback-Usability-Okay" [hidden]="UsabilityInfo.invalid">
+                        Okay!
+                    </div>
+                </div>
+            </div>
+            <label id="userLBLfont" class="LBL-positioning" class="LBL-Availability-positioning"> Availability:
+            </label>
+            <div class="spacerCarDiv">
+                <div class="form-group ">
+                    <input type="text" [(ngModel)]="car.availability"
+                        class="form-control is-invalid is-valid flex-feedback" name="Availability" required
+                        pattern="[a-zA-Z]+" #AvailabilityInfo="ngModel" placeholder="Availability..." maxlength="50"
+                        [ngClass]="{'is-invalid': AvailabilityInfo.errors && AvailabilityInfo.touched, 'is-valid': AvailabilityInfo.valid}">
+                    <div class="invalid-feedback" id="invalid-feedback-Availability-required"
+                        [hidden]="!CarTypeidInfo.errors?.required">
+                        Availability is required
+                    </div>
+                    <div class="invalid-feedback" id="invalid-feedback-Availability-Letters-only"
+                        [hidden]="!AvailabilityInfo.errors?.pattern">
+                        Letters only
+                    </div>
+                    <div class="valid-feedback" id="valid-feedback-Availability-Okay"
+                        [hidden]="AvailabilityInfo.invalid">
+                        Okay!
+                    </div>
+                </div>
+            </div>
+            <label id="userLBLfont" class="LBL-positioning" class="LBL-Vehicle-Identification-Number-positioning">
+                Vehicle Identification Number: </label>
+            <div class="spacerCarDiv">
+                <div class="form-group ">
+                    <input type="text" [(ngModel)]="car.vin" class="form-control is-invalid is-valid flex-feedback"
+                        name="VehicleIdentificationNumber" required pattern="[0-9]+"
+                        #VehicleIdentificationNumberInfo="ngModel" placeholder="Vehicle Identification Number..."
+                        maxlength="50"
+                        [ngClass]="{'is-invalid': VehicleIdentificationNumberInfo.errors && VehicleIdentificationNumberInfo.touched, 'is-valid': VehicleIdentificationNumberInfo.valid}">
+                    <div class="invalid-feedback" id="invalid-feedback-Vehicle-Identification-Number-required"
+                        [hidden]="!CarTypeidInfo.errors?.required">
+                        Vehicle Identification Number is required
+                    </div>
+                    <div class="invalid-feedback" id="invalid-feedback-Vehicle-Identification-Number-Numbers-only"
+                        [hidden]="!VehicleIdentificationNumberInfo.errors?.pattern">
+                        Numbers only
+                    </div>
+                    <div class="valid-feedback" id="valid-feedback-Vehicle-Identification-Number-Okay"
+                        [hidden]="VehicleIdentificationNumberInfo.invalid">
+                        Okay!
+                    </div>
+                </div>
+            </div>
+            <label id="userLBLfont" class="LBL-positioning" class="LBL-branch-positioning"> Branch: </label>
+            <div class="spacerCarDiv">
+                <div class="form-group ">
+                    <input type="text" [(ngModel)]="car.branch" class="form-control is-invalid is-valid flex-feedback"
+                        name="Branch" required pattern="[0-9]+" #BranchInfo="ngModel" placeholder="Branch..."
+                        maxlength="50" minlength="1"
+                        [ngClass]="{'is-invalid': BranchInfo.errors && BranchInfo.touched, 'is-valid': BranchInfo.valid}">
+                    <div class="invalid-feedback" id="invalid-feedback-branch-required"
+                        [hidden]="!BranchInfo.errors?.required">
+                        Branch is required
+                    </div>
+                    <div class="invalid-feedback" id="invalid-feedback-branch-mib-length"
+                        [hidden]="!BranchInfo.errors?.minlength">
+                        supposed to be minimum 1 chars
+                    </div>
+                    <div class="valid-feedback" id="valid-feedback-branch-Okay" [hidden]="BranchInfo.invalid">
+                        Okay!
+                    </div>
+                </div>
+            </div>
+            <div class="imgPreviewCarDiv">
+                <img src="{{previewCar}}" class="imgCar">
+                <input required type="file" accept="image/*" #imageBoxCar name="image" id="avatarinput"
+                    [(ngModel)]="car.image" #imageBoxCarInfo="ngModel" (change)="DisplayPreviewUpdateCar($event)"
+                    class="form-control is-invalid is-valid"
+                    [ngClass]="{'is-invalid':imageBoxCarInfo.errors && imageBoxCarInfo.touched , 'is-valid': imageBoxCarInfo.valid}">
+                <button pButton pRipple type="button" label="Car Picture" class="p-button-raised" id="avatarInputBTN"
+                    (click)="imageBoxCar.click()"></button>
+            </div>
+        </form>
+        <div class="btn-flex-container-update-car-form">
+            <button routerLink="/carsArea" routerLinkActive="active"> Close </button>
+            <button (click)="updateCar()"> Update Editing </button>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ordersModel } from 'src/app/models/orders.model';
 import { OrdersService } from 'src/services/ordersService';
-import { NotificationService } from '@progress/kendo-angular-notification';
+import { NotificationS } from '../../../services/notificationService';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class UpdateOrderFormComponent implements OnInit {
     public updatedOrder = new ordersModel();
 
     constructor(private OrdersService: OrdersService, 
-        private notification: NotificationService, 
+        private notificationService: NotificationS, 
         private activetedRoute: ActivatedRoute) { }
 
     async ngOnInit() {
@@ -36,7 +36,7 @@ export class UpdateOrderFormComponent implements OnInit {
                 return;
             }
             this.updatedOrder = await this.OrdersService.UpdateOrder(this.order);
-            alert("Order has been updated");
+            this.notificationService.UpdateOrderNotification();
             location.reload()
         }
         catch (err) {

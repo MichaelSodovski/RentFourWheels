@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CarsService } from 'src/services/cars.service';
 import { environment } from 'src/environments/environment';
-import { NotificationService } from '@progress/kendo-angular-notification';
 import { addCarModel } from 'src/app/models/addCarModel';
 
 @Component({
@@ -22,13 +21,12 @@ export class AgentsSignInComponent {
     public usable: string = "Usable.jpg";
     public notUsable: string = "notUsable.jpg";  
 
-    constructor(
-        private carService: CarsService, 
-        private notification: NotificationService
-        ){}
+    public filesCar: any = null as any;
+    public previewCar?: string;
 
-    async ngOnInit() { 
-    }
+    constructor(private carService: CarsService){}
+
+    async ngOnInit(){}
 
     public GetIpnut(event: any) {
         this.inputID = event.target.value;
@@ -65,7 +63,10 @@ export class AgentsSignInComponent {
             if (!confirmUpdate) {
                 return;
             }
-            const updatedCar = await this.carService.updatePartialCar(this.car);
+            this.car.kilometrage = Number(this.car.kilometrage);
+            this.car.vin = Number(this.car.vin);
+            this.car.branch = Number(this.car.branch);
+            await this.carService.updatePartialCar(this.car);
             alert("car has been updated");
             location.reload()
         }
@@ -73,4 +74,55 @@ export class AgentsSignInComponent {
             alert(err.message);
         }
     }
+
+    public KilomentrageToggleInputVisibility() {
+        var x = document.getElementById("editKilometrageID");
+        if (x!.style.display === "none") {
+          x!.style.display = "block";
+        } else {
+          x!.style.display = "none";
+        }
+      }
+      public VINToggleInputVisibility() {
+        var x = document.getElementById("editVINiD");
+        if (x!.style.display === "none") {
+          x!.style.display = "block";
+        } else {
+          x!.style.display = "none";
+        }
+      }
+      public BranchToggleInputVisibility() {
+        var x = document.getElementById("editBranchID");
+        if (x!.style.display === "none") {
+          x!.style.display = "block";
+        } else {
+          x!.style.display = "none";
+        }
+      }
+    public AvailabilityToggleInputVisibility() {
+        var x = document.getElementById("editAvailabilityID");
+        if (x!.style.display === "none") {
+          x!.style.display = "block";
+        } else {
+          x!.style.display = "none";
+        }
+      }
+      public UsabilityToggleInputVisibility() {
+        var x = document.getElementById("editUsabilityID");
+        if (x!.style.display === "none") {
+          x!.style.display = "block";
+        } else {
+          x!.style.display = "none";
+        }
+      }
+
+    //   public DisplayPreviewAddCar(e: Event): void {
+    //     const target = e.target as HTMLInputElement;
+    //     this.filesCar = target.files?.[0];
+    //     this.car.image = this.filesCar;
+    //     const fileReader = new FileReader();
+    //     fileReader.onload = args => this.previewCar = args.target?.result?.toString();
+    //     fileReader.readAsDataURL(this.filesCar);
+    // }
+      
 }

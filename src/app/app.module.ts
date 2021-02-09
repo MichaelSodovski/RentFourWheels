@@ -15,7 +15,7 @@ import { AgentsSignInComponent } from './components/agents-sign-in/agents-sign-i
 import { AdministrationSignInComponent } from './components/administration-sign-in/administration-sign-in.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { UserSignInComponent } from './components/user-sign-in/user-sign-in.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { AccordionModule } from 'primeng/accordion';
 import { DataViewModule } from 'primeng/dataview';
@@ -47,7 +47,12 @@ import { RouterModule } from '@angular/router';
 import { VinPipePipe } from './pipes/vin-pipe.pipe';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
-
+import { EditCarFormComponent } from './components/edit-car-form/edit-car-form.component';
+import { EditCarTypeFormComponent } from './components/edit-car-type-form/edit-car-type-form.component';
+import { EditUserFormComponent } from './components/edit-user-form/edit-user-form.component';
+import { EditOrderFormComponent } from './components/edit-order-form/edit-order-form.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { JwtInterceptorService } from 'src/services/jwt-interceptor.service';
 
 @NgModule({
     declarations: [
@@ -72,7 +77,7 @@ import { MessageModule } from 'primeng/message';
         AddUserFormComponent, 
         AddCarTypeFormComponent, 
         AddOrderFormComponent, 
-        VinPipePipe,
+        VinPipePipe, EditCarFormComponent, EditCarTypeFormComponent, EditUserFormComponent, EditOrderFormComponent, LogoutComponent,
     ],
     imports: [
         BrowserModule, 
@@ -101,8 +106,11 @@ import { MessageModule } from 'primeng/message';
 ],exports: [
     RouterModule
 ],
-
-    providers: [],
+    providers: [{
+        provide: HTTP_INTERCEPTORS,
+        useClass: JwtInterceptorService,
+        multi: true
+    }],
     bootstrap: [LayoutComponent]
 })
 

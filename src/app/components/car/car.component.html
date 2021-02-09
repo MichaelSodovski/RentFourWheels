@@ -15,7 +15,6 @@
         </button>
     </div>
 </div>
-
 <div class="adminCoverDiv">
     <div class="carFormContentDiv">
         <div class="s003">
@@ -38,7 +37,6 @@
                 </div>
             </form>
         </div>
-
         <div class="carFormContentMainDiv">
             <table>
                 <tr>
@@ -61,7 +59,7 @@
                     <td> {{c.model | titlecase}} </td>
                     <td> {{c.yearOfManufacture}} </td>
                     <td> {{c.kilometrage | number:''}} </td>
-                    <td> {{c.vin}} </td>
+                    <td> {{c.vin | vinFormat}} </td>
                     <td> {{c.branchName}} </td>
                     <td> {{c.gearBox | uppercase}} </td>
                     <td> {{c.availability | uppercase}} </td>
@@ -71,7 +69,8 @@
         </div>
         <div class="btn-flex-container" style="position: absolute; bottom: 0;">
             <button id="adminMenuBTN" (click)="CarDelete()"> <span> Delete </span> </button>
-            <button id="adminMenuBTN"> <span> Edit </span> </button>
+            <button id="adminMenuBTN" routerLink="/editCarForm/{{selected}}" routerLinkActive="active"> <span> Edit
+                </span> </button>
             <button id="adminMenuBTN" routerLink="/UpdateCarForm/{{selected}}" routerLinkActive="active"> <span> Update
                 </span> </button>
             <button id="adminMenuBTN" routerLink="/AddCarForm" routerLinkActive="active"> <span> Add </span> </button>

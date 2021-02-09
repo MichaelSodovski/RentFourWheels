@@ -43,8 +43,30 @@ export class CarTypeService {
         const observable = this.myHttpClient.put<CarTypesModel>(environment.carTypesURL + "/UpdateFullCarType" + "/" + carType.carTypeId, formData);
         return observable.toPromise();
     }
+    public PartialUpdateCarType(carType: CarTypesModel): Promise<CarTypesModel> {
+        const formData = new FormData();
+        if (carType.icon == null) {
+            formData.append("manufacturer", carType.manufacturer as string);
+            formData.append("model", carType.model as string);
+            formData.append("dailyCost", carType.dailyCost as any);
+            formData.append("delayCost", carType.delayCost as any);
+            formData.append("yearOfManufacture", carType.yearOfManufacture as any);
+            formData.append("gearBox", carType.gearBox as string);
+        }
+        if (carType.icon != null) {
+            formData.append("manufacturer", carType.manufacturer as string);
+            formData.append("model", carType.model as string);
+            formData.append("dailyCost", carType.dailyCost as any);
+            formData.append("delayCost", carType.delayCost as any);
+            formData.append("yearOfManufacture", carType.yearOfManufacture as any);
+            formData.append("gearBox", carType.gearBox as string);
+            formData.append("icon", carType.icon as any, carType.icon?.name);
+        }
+        const observable = this.myHttpClient.patch<CarTypesModel>(environment.carTypesURL + "/UpdatePartialCarType" + "/" + carType.carTypeId, formData);
+        return observable.toPromise(); 
+    }
     public DeleteCarType(id: number): Promise<undefined> {
         const observable = this.myHttpClient.delete<undefined>(environment.carTypesURL + "/" + id);
-        return observable.toPromise();
+        return observable.toPromise(); 
     }
 }

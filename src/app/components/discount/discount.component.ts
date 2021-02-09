@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from 'src/services/ordersService';
-import { NotificationService } from '@progress/kendo-angular-notification';
 import { ordersModel } from 'src/app/models/orders.model';
 import * as moment from 'moment';
 import { addCarModel } from 'src/app/models/addCarModel';
@@ -10,25 +9,29 @@ import { CarTypeService } from 'src/services/carTypeService';
 import { userModel } from 'src/app/models/user.model';
 import { UserService } from 'src/services/userService';
 import { carsModel } from 'src/app/models/cars.model';
+import { HttpClient } from '@angular/common/http';
+import { store } from 'src/app/redux/store';
+import { actionType } from 'src/app/redux/action-type';
+import { environment } from 'src/environments/environment';
+import { NotificationS } from '../../../services/notificationService';
 
 @Component({
     selector: 'app-discount',
-    templateUrl:'./discount.component.html',
+    templateUrl: './discount.component.html',
     styleUrls: ['./discount.component.css']
 })
 
 export class DiscountComponent implements OnInit {
     public Orders?: ordersModel[];
     public order = new ordersModel();
-
     public car: addCarModel = new addCarModel();
     public carType: CarTypesModel = new CarTypesModel();
     public typeID: any;
     public user = new userModel();
     public s: any = null as any;
     public e: any = null as any;
-    public startD?: Date = new Date("2020-02-02"); 
-    public endD?: Date = new Date("2020-02-02"); 
+    public startD?: Date = new Date("2020-02-02");
+    public endD?: Date = new Date("2020-02-02");
     public start: Date = null as any;
     public end: Date = null as any;
 
@@ -37,24 +40,25 @@ export class DiscountComponent implements OnInit {
     a: any;
     b: any;
     c: any;
-    public images:string[] = [];
-
+    public images: string[] = [];
 
     constructor(private OrdersService: OrdersService,
-        private notification: NotificationService,
+        private notificationService: NotificationS,
         private carsService: CarsService,
         private carTypeService: CarTypeService,
-        private userService: UserService
+        private userService: UserService,
+        private http: HttpClient
     ) { }
 
-    async ngOnInit() { 
+    async ngOnInit() {
         this.allCars = await this.carsService.getAllCars();
-        for(const prop of this.allCars) {
+        for (const prop of this.allCars) {
             this.a = this.allCars[0].imageFileName;
             this.b = this.allCars[1].imageFileName;
             this.c = this.allCars[2].imageFileName;
         }
-        this.images = [this.a, this.b, this.c].map((n) => `https://localhost:44370/api/cars/images/${n}`); }
+        this.images = [this.a, this.b, this.c].map((n) => `https://localhost:44370/api/cars/images/${n}`);
+    }
     async SubmitOrder() {
         this.order.carId = this.car.id;
         this.order.userId = this.user.userId;
@@ -63,7 +67,7 @@ export class DiscountComponent implements OnInit {
         this.order.startDate = this.startD;
         try {
             await this.OrdersService.AddOrder(this.order);
-            this.showAddOrder();
+            this.notificationService.showAddOrder();
             setTimeout(() => {
                 location.reload()
             }, 1500);
@@ -71,16 +75,6 @@ export class DiscountComponent implements OnInit {
         catch (err) {
             alert(err.message);
         }
-    }
-    public showAddOrder(): void {
-        this.notification.show({
-            content: 'Order has been added',
-            cssClass: 'button-notification',
-            animation: { type: 'slide', duration: 400 },
-            position: { horizontal: 'center', vertical: 'top' },
-            type: { style: 'success', icon: true },
-            closable: true
-        });
     }
     public setStartDate(event: any) {
         this.start = event.target.value;
@@ -99,10 +93,9 @@ export class DiscountComponent implements OnInit {
     public async GetUser(id: number) {
         try {
             this.user = await this.userService.GetSingleUserByIdentificationNumber(id);
-            console.log(this.user);
         }
         catch (err) {
-            alert("something went wrong! GetUser");
+            this.notificationService.ShowErrorUserNotification();
         }
     }
     public async GetCar(vin: number) {
@@ -134,14 +127,25 @@ export class DiscountComponent implements OnInit {
         let day = event.day <= 9 ? '0' + event.day : event.day;
         let StartDate = `${year}-${month}-${day}`;
         this.s = StartDate;
-       }
-       public onEndDateSelect(event: any) {
+    }
+    public onEndDateSelect(event: any) {
         let year = event.year;
         let month = event.month <= 9 ? '0' + event.month : event.month;
         let day = event.day <= 9 ? '0' + event.day : event.day;
         let EndDate = year + "-" + month + "-" + day;
         this.e = EndDate;
         console.log(this.e);
-       }
-
+    }
+    public async GetUserRedux(): Promise<boolean> {
+        try {
+            const options = { headers: { Authorization: "bearer" + store.getState().user.JwtToken } };
+            const user = await this.http.get<userModel>(environment.usersURL, options).toPromise();
+            store.dispatch({ type: actionType.GetUser, payLoad: user });
+            return true;
+        }
+        catch (httpErrorResponse) {
+            store.dispatch({ type: actionType.GotError, payLoad: httpErrorResponse });
+            return false;
+        }
+    }
 }

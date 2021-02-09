@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ordersModel } from 'src/app/models/orders.model';
 import { OrdersService } from 'src/services/ordersService';
-import { NotificationService } from '@progress/kendo-angular-notification';
+import { NotificationS } from '../../../services/notificationService';
 
 @Component({
     selector: 'app-add-order-form',
@@ -12,15 +12,14 @@ export class AddOrderFormComponent implements OnInit {
     public Orders?: ordersModel[];
     public order = new ordersModel();
 
-    constructor(private OrdersService: OrdersService, private notification: NotificationService) { }
+    constructor(private OrdersService: OrdersService, private notificationService: NotificationS) { }
 
     ngOnInit(): void { }
-
 
     async AddOrder() {
         try {
             await this.OrdersService.AddOrder(this.order);
-            this.showAddOrder();
+            this.notificationService.showAddOrder();
             setTimeout(() => {
                 location.reload()
             }, 1500);
@@ -28,16 +27,5 @@ export class AddOrderFormComponent implements OnInit {
         catch (err) {
             alert(err.message);
         }
-    }
-
-    public showAddOrder(): void {
-        this.notification.show({
-            content: 'Order has been added',
-            cssClass: 'button-notification',
-            animation: { type: 'slide', duration: 400 },
-            position: { horizontal: 'center', vertical: 'top' },
-            type: { style: 'success', icon: true },
-            closable: true
-        });
     }
 }

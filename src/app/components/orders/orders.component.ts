@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ordersModel } from 'src/app/models/orders.model';
 import { OrdersService } from 'src/services/ordersService';
-import { NotificationService } from '@progress/kendo-angular-notification';
+import { NotificationS } from '../../../services/notificationService';
 
 @Component({
     selector: 'app-orders',
@@ -15,7 +15,7 @@ export class OrdersComponent implements OnInit {
     public selectedRow: string = null as any;
     public original: ordersModel[] = [];
 
-    constructor(private OrdersService: OrdersService, private notification: NotificationService) { }
+    constructor(private OrdersService: OrdersService, private notificationService: NotificationS) { }
 
     async ngOnInit() {
         this.GetAllOrders();
@@ -42,7 +42,7 @@ export class OrdersComponent implements OnInit {
             }
             if (this.selected !== null) {
                 await this.OrdersService.OrderDelete(this.selected!);
-                this.showDeleteOrder();
+                this.notificationService.showDeleteOrder();
             }
             setTimeout(() => {
                 location.reload()
@@ -52,23 +52,14 @@ export class OrdersComponent implements OnInit {
             alert(err.message);
         }
     }
-    public showDeleteOrder(): void {
-        this.notification.show({
-            content: 'Order has been Deleted',
-            cssClass: 'button-notification',
-            animation: { type: 'slide', duration: 400 },
-            position: { horizontal: 'center', vertical: 'top' },
-            type: { style: 'success', icon: true },
-            closable: true
-        });
-    }
+
     public onTextChange(event: Event) {
         let searchPhrase: any;
         if (event.target !== null) {
             searchPhrase = event.target;
             this.Orders = this.original.filter(o => o.orderId == searchPhrase.value);
         }
-        if(searchPhrase.value == "") {
+        if (searchPhrase.value == "") {
             this.Orders = this.original;
         }
     }

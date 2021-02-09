@@ -3,7 +3,7 @@ import { CarsService } from 'src/services/cars.service';
 import { addCarModel } from 'src/app/models/addCarModel';
 import { carsModel } from 'src/app/models/cars.model';
 import { environment } from 'src/environments/environment';
-import { NotificationService } from '@progress/kendo-angular-notification';
+import { NotificationS } from '../../../services/notificationService';
 
 @Component({
     selector: 'app-add-car-form',
@@ -18,16 +18,14 @@ export class AddCarFormComponent implements OnInit {
     public filesCar: any = null as any;
     public previewCar?: string;
 
-    constructor(private carService: CarsService, private notification: NotificationService) { }
+    constructor(private carService: CarsService, private notificationService: NotificationS) { }
 
-    ngOnInit(): void {
-
-    }
+    ngOnInit(): void {}
 
     public async AddCar() {
         try {
             await this.carService.addCar(this.car);
-            this.showAddCar();
+            this.notificationService.showAddCar();
             setTimeout(() => {
                 location.reload()
             }, 1500);
@@ -36,18 +34,6 @@ export class AddCarFormComponent implements OnInit {
             alert(err.message);
         }
     }
-
-    public showAddCar(): void {
-        this.notification.show({
-            content: 'Car has been added',
-            cssClass: 'button-notification',
-            animation: { type: 'slide', duration: 400 },
-            position: { horizontal: 'center', vertical: 'top' },
-            type: { style: 'success', icon: true },
-            closable: true
-        });
-    }
-
     public DisplayPreviewAddCar(e: Event): void {
         const target = e.target as HTMLInputElement;
         this.filesCar = target.files?.[0];
@@ -56,5 +42,4 @@ export class AddCarFormComponent implements OnInit {
         fileReader.onload = args => this.previewCar = args.target?.result?.toString();
         fileReader.readAsDataURL(this.filesCar);
     }
-
 }

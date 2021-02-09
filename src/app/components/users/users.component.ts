@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { userModel } from 'src/app/models/user.model';
 import { UserService } from 'src/services/userService';
 import { environment } from 'src/environments/environment';
-import { NotificationService } from '@progress/kendo-angular-notification';
+import { NotificationS } from '../../../services/notificationService';
 
 @Component({
     selector: 'app-users',
@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
     public selectedRow: string = null as any;
     public original: userModel[] = [];
 
-    constructor(private userService: UserService, private notification: NotificationService) { }
+    constructor(private userService: UserService, private notificationService: NotificationS) { }
 
     async ngOnInit() {
         this.GetAllUsers();
@@ -55,7 +55,7 @@ export class UsersComponent implements OnInit {
             }
             if (this.selected !== null) {
                 await this.userService.DeleteUser(this.selected!);
-                this.showDeleteUser();
+                this.notificationService.ShowDeleteUserNotification();
             }
             setTimeout(() => {
                 location.reload()
@@ -65,16 +65,7 @@ export class UsersComponent implements OnInit {
             alert(err.message);
         }
     }
-    public showDeleteUser(): void {
-        this.notification.show({
-            content: 'User has been Deleted',
-            cssClass: 'button-notification',
-            animation: { type: 'slide', duration: 400 },
-            position: { horizontal: 'center', vertical: 'top' },
-            type: { style: 'success', icon: true },
-            closable: true
-        });
-    }
+
     
     public onTextChange(event: Event) {
         let searchPhrase: any;

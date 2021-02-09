@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CarTypesModel } from 'src/app/models/carTypes.model';
 import { CarTypeService } from 'src/services/carTypeService';
 import { environment } from 'src/environments/environment';
-import { NotificationService } from '@progress/kendo-angular-notification';
 import { ActivatedRoute } from '@angular/router';
+import { NotificationS } from '../../../services/notificationService';
 
 @Component({
     selector: 'app-update-car-type-form',
@@ -17,18 +17,17 @@ export class UpdateCarTypeFormComponent implements OnInit {
     public filesCarType: any = null as any;
 
     constructor(private carTypeService: CarTypeService,
-        private notification: NotificationService, private activetedRoute:ActivatedRoute) { }
+        private notificationService: NotificationS, private activetedRoute: ActivatedRoute) { }
 
-    async ngOnInit() { 
-        const id=+this.activetedRoute.snapshot.params.id;
+    async ngOnInit() {
+        const id = +this.activetedRoute.snapshot.params.id;
         try {
             this.type = await this.carTypeService.getCarType(id);
         }
-        catch(err) {
+        catch (err) {
             alert(err.message);
         }
     }
-    
     public async UpdateCarType() {
         try {
             const confirmUpdate = confirm("Are you sure you want to update the details of this car Type?");
@@ -36,14 +35,13 @@ export class UpdateCarTypeFormComponent implements OnInit {
                 return;
             }
             await this.carTypeService.UpdateCarType(this.type);
-            alert("Car type has been updated");
+            this.notificationService.UpdateCarTypeNotification();
             location.reload()
         }
         catch (err) {
             alert(err.message);
         }
     }
-
     public DisplayPreviewAddCarType(e: Event): void {
         const target = e.target as HTMLInputElement;
         this.filesCarType = target.files?.[0];

@@ -63,15 +63,15 @@
                     <td> {{o.startDate  | date:'shortDate' }} </td>
                     <td> {{o.endDate  | date:'shortDate' }} </td>
                     <td> {{ o.actualReturnDate | date:'shortDate' }} </td>
-                    <td> {{o.vin}} </td>
+                    <td> {{o.vin | vinFormat}} </td>
                     <td> {{o.carId}} </td>
                 </tr>
             </table>
         </div>
         <div class="btn-flex-container" style="position: absolute; bottom:0;">
             <button id="adminMenuBTN" (click)="DeleteOrder()"> <span> Delete </span> </button>
-            <button id="adminMenuBTN"> <span> Edit </span> </button>
-            <button id="adminMenuBTN" > <span routerLink="/UpdateOrderForm/{{selected}}" > Update </span> </button>
+            <button id="adminMenuBTN" routerLink="/editOrderForm/{{selected}}" routerLinkActive="active"> <span> Edit </span> </button>
+            <button id="adminMenuBTN" routerLink="/UpdateOrderForm/{{selected}}" routerLinkActive="active"> <span> Update </span> </button>
             <button id="adminMenuBTN" routerLink="/AddOrderForm" routerLinkActive="active"> <span> Add </span> </button>
         </div>
     </div>

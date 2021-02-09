@@ -1,0 +1,325 @@
+.adminCoverDiv {
+    border: solid black 1px;
+    width: 100%;
+    height: 640px;
+    background-image: url(../../../assets/imgonline-com-ua-resize-vkWVRMwkLM7AOIZ.jpg);
+    background-repeat: no-repeat;
+    background-position: 0% 75%;
+    background-size: cover;
+}
+.flex-container {
+    border: solid black 1px;
+    background-color: #6D7B8D;
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#adminMenuBTN {
+    height: 30px;
+    width: 380px;
+    border-radius: 7px;
+    color: #007BFF;
+    background-color: black;
+}
+#adminMenuBTN span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+#adminMenuBTN span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+#adminMenuBTN:hover span {
+    padding-right: 25px;
+}
+#adminMenuBTN:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.carTypeFormContentDiv {
+    position: relative;
+    width: 100%;
+    height: 635px;
+    border-radius: 5px;
+    background-color: #EAEAEA;
+    box-shadow: 5px 5px;
+    opacity: 0.95;
+}
+
+.btn-flex-container {
+    border: solid black 1px;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #6D7B8D;
+    color: whitesmoke;
+}
+
+.btn-flex-container>button {
+    height: 65px;
+    width: 100%;
+    border-radius: 7px;
+    color: #007BFF;
+    background-color: black;
+}
+
+.btn-flex-container-add-car-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+    top: 605px;
+    border: black solid 1xp;
+}
+.btn-flex-container-add-car-form>button {
+    height: 30px;
+    width: 100%;
+    border-radius: 7px;
+    color: #007BFF;
+    background-color: black;
+}
+.carTypeFormContentMainDiv {
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 100%;
+    height: 90%;
+    background-color: whitesmoke;
+    overflow: auto;
+    display: inline-block;
+}
+
+input, select {
+    border-radius: 4px;
+    box-shadow: 2px 2px;
+    width: 220px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+::placeholder {
+    font-size: 13px;
+    font-style: italic;
+}
+input:focus {
+    border-color: #000;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    white-space: nowrap;
+    color: #007BFF;
+}
+
+.AddCarTypeDiv {
+    font-size: smaller;
+    border: black solid 1px;
+    background-color: whitesmoke;
+    opacity: 0.95;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 5px;
+}
+
+.CarType {
+    margin: 0px auto;
+    position: absolute;
+    left: 500px;
+    border: black solid 1px;
+    width: 600px;
+    height: 96%;
+    border-radius: 10px;
+    background-color: #EAEAEA;
+    box-shadow: 5px 5px;
+    display: block;
+    text-align: center;
+    border-spacing: 0 0px;
+
+}
+
+.flex-feedback {
+    display: flex;
+    flex-direction: row;
+}
+
+.spacerDiv{ 
+    height: 40px;
+}
+.spacerDivflex {
+    height: 55px;
+}
+
+#inputFirstName, #inputLastName, #inputUserID, #inputUserName {
+    width: 67%;
+}
+
+#inputUserName {
+    width: 95%;
+}
+
+.form-group>input,select {
+    
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+}
+
+#avatarInputBTN {
+    border-radius: 5px;
+    box-shadow: 1px 1px;
+    width: 153px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+img {
+    width: 150px;
+    height: 150px;
+    opacity: 100%;
+    background-image: url(../../../assets/images.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#avatarinput {
+    display: none;
+}
+#avatarLbL {
+    display: none;
+}
+.imgPreviewDiv {
+    position: absolute;
+    left: 70.5%;
+    bottom: 66.80%;
+    width: 152px;
+    height: 180px;
+}
+
+
+#orderLBLfont,#userLBLfont {
+    color: black;
+    font-size: 12px;
+}
+
+.imgPreviewCarDiv {
+    position: absolute;
+    left: 70.5%;
+    bottom: 62%;
+    width: 152px;
+    height: 180px;
+}
+.imgCar {
+    width: 150px;
+    height: 150px;
+    opacity: 100%;
+    background-image: url(../../../assets/default_car.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.spacerCarDiv { 
+    height: 50px;
+}
+
+.imgPreviewCarTypeDiv {
+    position: absolute;
+    left: 70.5%;
+    bottom: 62%;
+    width: 152px;
+    height: 180px;
+}
+.LBL-Car-Type-Manufacturer-positioning {
+    position: relative;
+    right: 255px;
+}
+.LBL-Car-Type-Model-positioning {
+    position: relative;
+    right: 270px;
+}
+.LBL-YearOfManufacture-positioning {
+    position: relative;
+    right: 235px;
+}
+.LBL-GearBox-positioning {
+    position: relative;
+    right: 265px;
+}
+.LBL-DailyCost-positioning {
+    position: relative;
+    right: 260px;
+}
+.LBL-DelayCost-positioning {
+    position: relative;
+    right: 260px;
+}
+
+#invalid-feedback-Manufacturer-required {
+    position: relative;
+    left: 30px;
+}
+#invalid-feedback-Manufacturer-Letters-only {
+    position: relative;
+    left: 30px;
+}
+#invalid-feedback-Model {
+    position: relative;
+    left: 30px;
+}
+#valid-feedback-Manufacturer {
+    position: relative;
+    left: 30px;
+}
+
+#invalid-feedback-YearOfManufacture-required {
+    position: relative;
+    left: 190px;
+}
+#invalid-feedback-GearBox-required {
+    position: relative;
+    left: 210px;
+}
+#invalid-feedback-DailyCost-daily-cost {
+    position: relative;
+    left: 210px;
+}
+#invalid-feedback-DelayCost-delay-cost {
+    position: relative;
+    left: 210px;
+}
+#invalid-feedback-Model-required {
+    position: relative;
+    left: 50px;
+}
+
+.invalid-feedback {
+    font-style: italic;
+    font-size: 12px;
+}
+.valid-feedback {
+    font-style: italic;
+    font-size: 12px;
+}

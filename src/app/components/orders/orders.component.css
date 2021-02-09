@@ -33,7 +33,7 @@
     width: 100%;
     height: 635px;
     border-radius: 5px;
-    background-color: #EAEAEA;
+    background-color: white;
     box-shadow: 5px 5px;
     opacity: 0.95;
 }
@@ -82,7 +82,6 @@
 
 input, select {
     border-radius: 4px;
-    box-shadow: 2px 2px;
     width: 220px;
     box-sizing: border-box;
     border: 1px solid black;
@@ -120,7 +119,8 @@ td {
 
 th {
     width: 10%;
-    background-color: #E6E6FA;
+    background-color:#E5E4E2;
+    color:black;
     white-space: nowrap;
 }
 
@@ -223,7 +223,7 @@ tr:focus {
     height: 60px;
 }
 
-.form-group > input, select {
+.form-group>input, select {
     width: 95%;
     display: flex;
     flex-direction: column;
@@ -420,7 +420,6 @@ img {
     background-position: center center;
     padding: 10px;
     width: 504px;
-    border: black solid 0.5px;
     left: 500px;
 }
 
@@ -569,7 +568,7 @@ img {
     color: #fff;
     border: 0;
     cursor: pointer;
-    background: #63c76a;
+    background: #007BFF;
     transition: all .2s ease-out, color .2s ease-out;
 }
 
@@ -578,7 +577,7 @@ img {
 }
 
 .s003 form .inner-form .input-field.third-wrap .btn-search:hover {
-    background: #50c058;
+    background: #007BFF;
 }
 
 .s003 form .inner-form .input-field.third-wrap .btn-search:focus {

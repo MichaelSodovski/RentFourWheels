@@ -38,7 +38,6 @@
                 </div>
             </form>
         </div>
-
         <div class="carTypeFormContentMainDiv">
             <table>
                 <tr>
@@ -56,8 +55,8 @@
                     </td>
                     <td> {{ct.manufacturer | titlecase}} </td>
                     <td> {{ct.model | titlecase}} </td>
-                    <td> {{ct.dailyCost  | currency:"ILS":true}} </td>
-                    <td> {{ct.delayCost  | currency:"ILS":true}} </td>
+                    <td> {{ct.dailyCost | currency:"ILS":true}} </td>
+                    <td> {{ct.delayCost | currency:"ILS":true}} </td>
                     <td> {{ct.yearOfManufacture}} </td>
                     <td> {{ct.gearBox | titlecase}} </td>
                 </tr>
@@ -65,9 +64,11 @@
         </div>
         <div class="btn-flex-container" style="position: absolute; bottom: 0;">
             <button id="adminMenuBTN"> <span (click)="DeleteCarType()"> Delete </span> </button>
-            <button id="adminMenuBTN"> <span> Edit </span> </button>
-            <button id="adminMenuBTN" routerLink="/UpdateCarTypeForm/{{selected}}" routerLinkActive="active"> <span> Update </span> </button>
-            <button id="adminMenuBTN" routerLink="/AddCarTypeForm" routerLinkActive="active"> <span> Add </span> </button>
+            <button id="adminMenuBTN" routerLink="/editCarTypeForm/{{selected}}" routerLinkActive="active"> <span> Edit </span> </button>
+            <button id="adminMenuBTN" routerLink="/UpdateCarTypeForm/{{selected}}" routerLinkActive="active"> <span>
+                    Update </span> </button>
+            <button id="adminMenuBTN" routerLink="/AddCarTypeForm" routerLinkActive="active"> <span> Add </span>
+            </button>
         </div>
     </div>
 </div>

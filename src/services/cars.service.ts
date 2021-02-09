@@ -69,17 +69,31 @@ export class CarsService {
         const observable = this.myHttpClient.get<addCarModel>(environment.carsURL + "/GetCarByVehicleID/" + vin);
         return observable.toPromise();
     }
-    public updatePartialCar(car: addCarModel): Promise<addCarModel> {
-        const formData = new FormData();
-        formData.append("typeId", Number(car.typeId) as any);
-        formData.append("kilometrage", Number(car.kilometrage) as any);
-        formData.append("usability", car.usability as string);
-        formData.append("availability", car.availability as string);
-        formData.append("vin", Number(car.vin) as any);
-        formData.append("branch", Number(car.branch) as any);
-        formData.append("image", car.image as any, car.image?.name);
+    public updatePartialCarWithImage(car: addCarModel): Promise<addCarModel> {
+        const formData = new FormData(); 
+        if(car.image == null) {
+            formData.append("typeId", Number(car.typeId) as any);
+            formData.append("kilometrage", Number(car.kilometrage) as any);
+            formData.append("usability", car.usability as string);
+            formData.append("availability", car.availability as string);
+            formData.append("vin", Number(car.vin) as any);
+            formData.append("branch", Number(car.branch) as any);
+        }
+        if(car.image != null) {
+            formData.append("typeId", Number(car.typeId) as any);
+            formData.append("kilometrage", Number(car.kilometrage) as any);
+            formData.append("usability", car.usability as string);
+            formData.append("availability", car.availability as string);
+            formData.append("vin", Number(car.vin) as any);
+            formData.append("branch", Number(car.branch) as any);
+            formData.append("image", car.image as any, car.image?.name);
+        }
         const observable = this.myHttpClient.patch<addCarModel>(environment.carsURL + "/UpdatePartialCar" + "/" + car.id, formData);
         return observable.toPromise();
     }
 
+    public updatePartialCar(car: addCarModel): Promise<addCarModel> {
+        const observable = this.myHttpClient.patch<addCarModel>(environment.carsURL + "/UpdatePartialCar" + "/" + car.id, car);
+        return observable.toPromise();
+    }
 }

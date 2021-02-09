@@ -3,6 +3,7 @@ import { carsModel } from 'src/app/models/cars.model';
 // import { store } from 'src/app/redux/store';
 import { CarsService } from 'src/services/cars.service';
 import { environment } from 'src/environments/environment';
+import { NotificationS } from '../../../services/notificationService';
 
 @Component({
     selector: 'app-catalogue',
@@ -18,11 +19,12 @@ export class CatalogueComponent implements OnInit {
     a: any;
     b: any;
     c: any;
-    public images:string[] = [];
+    public images: string[] = [];
     // private unsubscribe!: Unsubscribe;
     public responsiveOptions: any = null as any;
+    public option?: any;
 
-    constructor(private carsService: CarsService) {
+    constructor(private carsService: CarsService, private notificationService: NotificationS) {
         this.responsiveOptions = [
             {
                 breakpoint: '1000px',
@@ -40,14 +42,12 @@ export class CatalogueComponent implements OnInit {
                 numScroll: 1
             }
         ];
-     }
-
+    }
     async ngOnInit() {
         this.GetAllCars();
         this.original = await this.carsService.getAllCars();
         this.allCars = this.original;
-
-        for(const prop of this.allCars) {
+        for (const prop of this.allCars) {
             this.a = this.allCars[0].imageFileName;
             this.b = this.allCars[1].imageFileName;
             this.c = this.allCars[2].imageFileName;
@@ -75,6 +75,11 @@ export class CatalogueComponent implements OnInit {
         //     this.unsubscribe();
         // }
     }
+
+    public localStorageCar() {
+        
+    }
+
     async GetAllCars() {
         try {
             this.allCars = await this.carsService.getAllCars();
@@ -83,14 +88,25 @@ export class CatalogueComponent implements OnInit {
             alert(err.message);
         }
     }
-    public onTextChange(event: Event) {
-        let searchPhrase : any;
-        if( event.target !== null){
-            searchPhrase = event.target;
+    public onTextChange(event: any) {
+        let searchPhrase: any;
+        if(event.target.value == "" || null || " ") this.notificationService.ShowErrorEnterTextSearchNotification();
+        else searchPhrase = event.target;
+        switch (this.option) {
+            case "0": this.notificationService.ShowSearchPraseNotification();
+                break;
+            case "1": this.allCars = this.original.filter(c => c.manufacturer?.toLowerCase().includes(searchPhrase.value.toLowerCase()));
+                break;
+            case "2": this.allCars = this.original.filter(c => c.model?.toLowerCase().includes(searchPhrase.value.toLowerCase()));
+                break;
+            case "3": this.allCars = this.original.filter(c => c.yearOfManufacture?.toString().includes(searchPhrase.value));
+                break;
+            case "4": this.allCars = this.original.filter(c => c.gearBox?.toLowerCase().includes(searchPhrase.value.toLowerCase()));
+                break;
         }
-            this.allCars = this.original.filter(c => c.manufacturer?.toLowerCase().includes(searchPhrase.value.toLowerCase()));
     }
-
-    
+    public GetOptionValue(event: any): any {
+        this.option = event.target.value;
+    }
 }
 

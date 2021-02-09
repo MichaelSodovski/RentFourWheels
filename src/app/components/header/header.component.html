@@ -1,22 +1,36 @@
 <ul class="nav nav-tabs">
     <li class="nav-item">
-        <a class="nav-link active" routerLink="/home" routerLinkActive="active" id="navBar"> <span> Home </span> </a>
+        <a class="nav-link active navBar" routerLink="/home" routerLinkActive="active"> <span> Home </span> </a>
     </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-            aria-expanded="false" id="navBar"> <span> Actions </span> </a>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" routerLink="/browseCarCatalogue" routerLinkActive="active"> <span> Browse Car Catalog </span> </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/discount" routerLinkActive="active"> <span> Discount </span> </a>
-        </div>
+    <li class="nav-item">
+        <a class="nav-link active navBar" routerLink="/browseCarCatalogue" routerLinkActive="active"> <span>
+                Catalogue </span> </a>
     </li>
+    <li class="nav-item" *ngIf="user">
+        <a class="nav-link active navBar" routerLink="/discount" routerLinkActive="active"> <span> Discount </span>
+        </a>
+    </li>
+    <li class="nav-item Tab navBar" *ngIf="user?.role === 'Agent'">
+        <a class="nav-link active" routerLink="/agentsSignIn" routerLinkActive="active"> <span>
+                For Agents </span> </a>
+    </li>
+    <li class="nav-item Tab navBar" *ngIf="user?.role === 'Admin'">
+        <a class="nav-link active" routerLink="/administrationSignIn" routerLinkActive="active"> <span>
+                Manage </span> </a>
+    </li>
+    <ng-container *ngIf="!user">
+        <li class="nav-item Tab navBar">
+            <a class="nav-link active" routerLink="/signUp" routerLinkActive="active"> <span> Register </span>
+            </a>
+        </li>
 
-    <li class="nav-item" id="logInTab">
-        <a class="nav-link active" routerLink="/administrationSignIn" routerLinkActive="active" id="navBar"> <span> Manage </span> </a>
-    </li>
-    <li class="nav-item" id="logInTab">
-        <a class="nav-link active" routerLink="/login" routerLinkActive="active" id="navBar"> <span> Log In </span> </a>
+        <li class="nav-item Tab navBar">
+            <a class="nav-link active" routerLink="/login" routerLinkActive="active"> <span> Log In </span>
+            </a>
+        </li>
+    </ng-container>
+    <li class="nav-item Tab navBar logoutTab">
+        <a *ngIf="user" class="nav-link active" routerLink="/logout" routerLinkActive="active"> <span> Log Out </span>
+        </a>
     </li>
 </ul>
-

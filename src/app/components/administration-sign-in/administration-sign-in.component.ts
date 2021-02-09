@@ -11,6 +11,6 @@ export class AdministrationSignInComponent implements OnInit {
 
     constructor(private notification: NotificationService) { }
 
-    ngOnInit(): void {}
+    ngOnInit(): void { }
 
 }

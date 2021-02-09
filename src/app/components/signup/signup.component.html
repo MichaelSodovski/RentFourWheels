@@ -1,5 +1,4 @@
 <div class="bugattiImgDiv"></div>
-
 <form class="SignUpForm" #AddUserForm="ngForm">
     <h3> Fill your details </h3>
     <label id="userLBLfont" class="LBLFirstName-positioning"> First Name: </label>
@@ -196,5 +195,5 @@
             (click)="imageBox.click()"></button>
     </div>
     <button pButton pRipple type="button" label="Submit" class="p-button-raised" [disabled]="AddUserForm.form.invalid"
-        (click)="AddUser()"></button>
+        (click)="Register()"></button>
 </form>

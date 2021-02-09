@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { userModel } from 'src/app/models/user.model';
 import { UserService } from 'src/services/userService';
 import { environment } from 'src/environments/environment';
-import { NotificationService } from '@progress/kendo-angular-notification';
+import { NotificationS } from '../../../services/notificationService';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -17,33 +17,31 @@ export class UpdateUserFormComponent implements OnInit {
     public previewUser?: string;
     public filesUser: any = null as any;
 
-    constructor(private userService: UserService, private notification: NotificationService,private activetedRoute:ActivatedRoute) { }
+    constructor(private userService: UserService, private notificationService: NotificationS, private activetedRoute: ActivatedRoute) { }
 
     async ngOnInit() {
-        const id=+this.activetedRoute.snapshot.params.id;
+        const id = +this.activetedRoute.snapshot.params.id;
         try {
             this.user = await this.userService.GetSingleUser(id);
         }
-        catch(err) {
+        catch (err) {
             alert(err.message);
         }
-     }
-
-     public async UpdateUser() {
+    }
+    public async UpdateUser() {
         try {
             const confirmUpdate = confirm("Are you sure you want to update the details of this user?");
             if (!confirmUpdate) {
                 return;
             }
-            const updatedUser = await this.userService.UpdateFullUser(this.user);
-            alert("car has been updated");
+            await this.userService.UpdateFullUser(this.user);
+            this.notificationService.UpdateUserNotification();
             location.reload()
         }
         catch (err) {
             alert(err.message);
         }
     }
-
     public DisplayPreviewAddUser(e: Event): void {
         const target = e.target as HTMLInputElement;
         this.filesUser = target.files?.[0];

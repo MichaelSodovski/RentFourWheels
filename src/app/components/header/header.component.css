@@ -1,46 +1,32 @@
-.mainHeader {
-    color: whitesmoke;
-    font-family: 'Droid Sans', sans-serif;
-    font-size: 30px;
-    width: 78.9%
+.Tab {
+    white-space: nowrap;
 }
 
-#ManageTab {
-
-    right: 95px;
-}
-
-#logInTab {
-    position: relative;
-    left: 1035px;
-}
-
-#navBar {
+.navBar {
     width: 120px;
- }
-
+}
 
 #navBar span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
-  }
-  
-  #navBar span:after {
+}
+
+#navBar span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
     top: 0;
     right: -20px;
     transition: 0.5s;
-  }
-  
-  #navBar:hover span {
+}
+
+#navBar:hover span {
     padding-right: 25px;
-  }
-  
-  #navBar:hover span:after {
+}
+
+#navBar:hover span:after {
     opacity: 1;
     right: 0;
-  }
+}

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarTypesModel } from 'src/app/models/carTypes.model';
 import { CarTypeService } from 'src/services/carTypeService';
 import { environment } from 'src/environments/environment';
-import { NotificationService } from '@progress/kendo-angular-notification';
+import { NotificationS } from '../../../services/notificationService';
 
 @Component({
     selector: 'app-car-type',
@@ -20,7 +20,7 @@ export class CarTypeComponent implements OnInit {
     public original: CarTypesModel[] = [];
 
     constructor(private carTypeService: CarTypeService,
-        private notification: NotificationService) { }
+        private notificationService: NotificationS) { }
 
     async ngOnInit() {
         this.GetAllCarTypes();
@@ -46,7 +46,7 @@ export class CarTypeComponent implements OnInit {
             }
             if (this.selected !== null) {
                 await this.carTypeService.DeleteCarType(this.selected!);
-                this.showDeleteCarType();
+                this.notificationService.showDeleteCarType();
             }
             setTimeout(() => {
                 location.reload()
@@ -56,17 +56,6 @@ export class CarTypeComponent implements OnInit {
             alert(err.message);
         }
     }
-    public showDeleteCarType(): void {
-        this.notification.show({
-            content: 'Car Type has been Deleted',
-            cssClass: 'button-notification',
-            animation: { type: 'slide', duration: 400 },
-            position: { horizontal: 'center', vertical: 'top' },
-            type: { style: 'success', icon: true },
-            closable: true
-        });
-    }
-
     public onTextChange(event: Event) {
         let searchPhrase: any;
         if (event.target !== null) {
