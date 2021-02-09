@@ -90,6 +90,44 @@ namespace RentFourWheels
             return carTypeModel;
         }
 
+        public CarsTypeModel UpdatePartialCarType(CarsTypeModel carTypeModel)
+        {
+            CarsType carType = DB.CarsTypes.SingleOrDefault(ct => ct.CarTypeId == carTypeModel.CarTypeId);
+            if (carType == null)
+            {
+                return null;
+            }
+            if (carTypeModel.Manufacturer != null) carType.Manufacturer = carTypeModel.Manufacturer;
+            if (carTypeModel.Model != null) carType.Model = carTypeModel.Model;
+            if (carTypeModel.YearOfManufacture != null) carType.YearOfManufacture = carTypeModel.YearOfManufacture;
+            if (carTypeModel.GearBox != null) carType.Gear = carTypeModel.GearBox;
+            if (carTypeModel.DailyCost != null) carType.DailyCost = carTypeModel.DailyCost;
+            if (carTypeModel.DelayCost != null) carType.DelayCost = carTypeModel.DelayCost;
+            if (carTypeModel.IconFileName != null && carTypeModel.Icon == null)
+            {
+                carType.IconFileName = null;
+                carTypeModel.Icon = null;
+            }
+            if (carTypeModel.IconFileName == null && carTypeModel.Icon == null)
+            {
+                carType.IconFileName = null;
+                carTypeModel.Icon = null;
+            }
+            if (carTypeModel.Icon != null)
+            {
+                string extension = Path.GetExtension(carTypeModel.Icon.FileName);
+                carTypeModel.IconFileName = Guid.NewGuid() + extension;
+                using (FileStream fileStream = System.IO.File.Create("Uploads/" + carTypeModel.IconFileName))
+                {
+                    carTypeModel.Icon.CopyTo(fileStream);
+                }
+                carTypeModel.Icon = null;
+                carType.IconFileName = carTypeModel.IconFileName;
+            }
+            DB.SaveChanges();
+            return carTypeModel;
+        }
+
 
         public void DeleteCarType(int id)
         {

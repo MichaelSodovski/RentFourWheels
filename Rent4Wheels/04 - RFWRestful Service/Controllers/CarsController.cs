@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +11,7 @@ namespace RentFourWheels
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("EntireWorld")]
+
     public class CarsController : ControllerBase, IDisposable
     {
         private readonly CarsLogic logic = new CarsLogic();
@@ -117,12 +119,12 @@ namespace RentFourWheels
 
         [HttpPatch]
         [Route("UpdatePartialCar/{id}")]
-        public IActionResult UpdatePartialCar(int id, CarsModel carModel)
+        public IActionResult UpdatePartialCar(int id,[FromForm]CarsModel carModel)
         {
             try
             {
                 carModel.Id = id;
-                CarsModel CarPartialUpdate = logic.UpdateFullCar(carModel);
+                CarsModel CarPartialUpdate = logic.UpdatePartialCar(carModel);
                 if (CarPartialUpdate == null)
                 {
                     return NotFound($"a car with id {id} not found");

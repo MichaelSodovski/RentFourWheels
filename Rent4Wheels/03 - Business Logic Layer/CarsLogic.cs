@@ -80,23 +80,30 @@ namespace RentFourWheels
         public CarsModel UpdatePartialCar(CarsModel carModel)
         {
             Car car = DB.Cars.SingleOrDefault(p => p.CarId == carModel.Id);
-            if (car == null) {
-                return null;
+            if (car == null) return null;
+            if (carModel.TypeId != null) car.CarTypeId = carModel.TypeId;
+            if (carModel.Kilometrage != null) car.CurrentKilometrage = carModel.Kilometrage; 
+            if (carModel.Usability != null) car.Usability = carModel.Usability;
+            if (carModel.Availability != null) car.Availability = carModel.Availability;
+            if (carModel.Vin != null) car.Vin = carModel.Vin;
+            if (carModel.Branch != null) car.Branch = carModel.Branch;
+            if (carModel.ImageFileName != null && carModel.Image == null) { 
+                car.ImageFileName = null;
+                carModel.Image = null;
             }
-            if(car.CarType != null)
-            car.CarTypeId = carModel.TypeId;
-#pragma warning disable CS0472 // The result of the expression is always the same since a value of this type is never equal to 'null'
-            if (car.CurrentKilometrage != null)
-#pragma warning restore CS0472 // The result of the expression is always the same since a value of this type is never equal to 'null'
-                car.CurrentKilometrage = carModel.Kilometrage;
-            if (car.Usability != null)
-                car.Usability = carModel.Usability;
-            if (car.Availability != null)
-                car.Availability = carModel.Availability;
-            if (car.Vin != null)
-                car.Vin = carModel.Vin;
-            if (car.Branch != null)
-                car.Branch = carModel.Branch;
+            if (carModel.ImageFileName == null && carModel.Image == null) { 
+                car.ImageFileName = null;
+                carModel.Image = null;
+            }
+            if (carModel.Image != null) {
+                string extension = Path.GetExtension(carModel.Image.FileName);
+                carModel.ImageFileName = Guid.NewGuid() + extension;
+                using (FileStream fileStream = System.IO.File.Create("Uploads/" + carModel.ImageFileName)) {
+                    carModel.Image.CopyTo(fileStream);
+                }
+                carModel.Image = null;
+                car.ImageFileName = carModel.ImageFileName;
+            }
             DB.SaveChanges();
             return carModel;
         }

@@ -80,6 +80,26 @@ namespace RentFourWheels
             }
         }
 
+        [HttpPatch]
+        [Route("PartialUpdateOrder/{id}")]
+        public IActionResult PartialUpdateOrder(int id, OrdersModel orderModel)
+        {
+            try
+            {
+                orderModel.OrderId = id;
+                OrdersModel updatedOrder = logic.UpdatePartialOrder(orderModel);
+                if (updatedOrder == null)
+                {
+                    return NotFound($"a car with id {id} not found");
+                }
+                return Ok(updatedOrder);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
         [HttpDelete]
         [Route("{id}")]
         public IActionResult OrderDelete(int id)

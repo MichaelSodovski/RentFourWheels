@@ -63,8 +63,6 @@ namespace RentFourWheels
             }
         }
 
-
-
         [HttpGet]
         [Route("images/{fileName}")]
         public IActionResult GetImage(string fileName)
@@ -105,6 +103,26 @@ namespace RentFourWheels
                 if (updatedUser == null)
                 {
                     return NotFound($"a car with id {id} not found");
+                }
+                return Ok(updatedUser);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPatch]
+        [Route("UpdatePartialUser/{id}")]
+        public IActionResult UpdatePartialUser(int id, [FromForm] UserModel UserModel)
+        {
+            try
+            {
+                UserModel.UserId = id;
+                UserModel updatedUser = logic.UpdatePartialUser(UserModel);
+                if (updatedUser == null)
+                {
+                    return NotFound($"a user with id {id} not found");
                 }
                 return Ok(updatedUser);
             }

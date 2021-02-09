@@ -95,6 +95,26 @@ namespace RentFourWheels
             }
         }
 
+        [HttpPatch]
+        [Route("UpdatePartialCarType/{id}")]
+        public IActionResult UpdatePartialCarType(int id, [FromForm] CarsTypeModel carTypeModel)
+        {
+            try
+            {
+                carTypeModel.CarTypeId = id;
+                CarsTypeModel CarTypePartialUpdate = logic.UpdatePartialCarType(carTypeModel);
+                if (CarTypePartialUpdate == null)
+                {
+                    return NotFound($"a car with id {id} not found");
+                }
+                return Ok(CarTypePartialUpdate);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
         [HttpDelete]
         [Route("{id}")]
         public IActionResult CarTypeDelete(int id)

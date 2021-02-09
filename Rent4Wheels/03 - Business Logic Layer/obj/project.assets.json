@@ -7568,6 +7568,7 @@
   },
   "packageFolders": {
     "C:\\Users\\micha\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
@@ -7580,11 +7581,14 @@
       "outputPath": "C:\\Users\\micha\\source\\repos\\Rent4Wheels\\03 - Business Logic Layer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages",
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\micha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WinForms.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Telerik UI for WPF.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7592,7 +7596,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/nuget": {}
       },
       "frameworks": {
         "netcoreapp3.1": {

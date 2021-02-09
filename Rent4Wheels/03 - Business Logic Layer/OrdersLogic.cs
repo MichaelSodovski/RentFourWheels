@@ -64,6 +64,23 @@ namespace RentFourWheels
             DB.SaveChanges();
             return orderModel;
         }
+
+        public OrdersModel UpdatePartialOrder(OrdersModel orderModel)
+        {
+            Order order = DB.Orders.SingleOrDefault(o => o.OrderId == orderModel.OrderId);
+            if (order == null)
+            {
+                return null;
+            }
+            if (orderModel.StartDate != null) order.StartDate = orderModel.StartDate;
+            if (orderModel.EndDate != null)  order.EndDate = orderModel.EndDate;
+            if (orderModel.ActualReturnDate != null)  order.ActualReturnDate = (DateTime)orderModel.ActualReturnDate;
+            if (orderModel.UserId != null)  order.UserId = (int)orderModel.UserId;
+            if (orderModel.Vin != null)  order.Vin = orderModel.Vin;
+            if (orderModel.CarId != null)  order.CarId = orderModel.CarId;
+            DB.SaveChanges();
+            return orderModel;
+        }
         public void DeleteOrder(int id)
         {
             Order orderToDelete = DB.Orders.SingleOrDefault(o => o.OrderId == id);
