@@ -15,8 +15,8 @@ export class EditCarTypeFormComponent implements OnInit {
     public ImageCarsTypeURL: string = environment.carTypesURL + "/images/";
     public previewCarType?: string;
     public filesCarType: any = null as any;
-
     public picURL: string = null as any;
+    public fileName?: string = "default_car.jpg";
 
     constructor(private carTypeService: CarTypeService,
         private notificationService: NotificationS, private activetedRoute: ActivatedRoute) { }
@@ -25,11 +25,11 @@ export class EditCarTypeFormComponent implements OnInit {
         const id = +this.activetedRoute.snapshot.params.id;
         try {
             this.type = await this.carTypeService.getCarType(id);
-            var picOnLoad = this.type.iconFileName;
-            this.picURL = this.ImageCarsTypeURL + picOnLoad;
+            this.previewCarType = "https://localhost:44370/api/cars/images/" + this.type.iconFileName;
+            this.fileName = this.type.iconFileName;
         }
         catch (err) {
-            alert(err.message);
+            this.notificationService.errMessage(err.message);
         }
     }
     public async UpdateCarType() {
@@ -38,6 +38,7 @@ export class EditCarTypeFormComponent implements OnInit {
             if (!confirmUpdate) {
                 return;
             }
+            this.type.iconFileName = this.fileName;
             await this.carTypeService.PartialUpdateCarType(this.type);
             setTimeout(() => {
                 location.reload();
@@ -45,7 +46,7 @@ export class EditCarTypeFormComponent implements OnInit {
             this.notificationService.ShowEditCarTypeNotification();
         }
         catch (err) {
-            alert(err.message);
+            this.notificationService.errMessage(err.message);
         }
     }
     public DisplayPreviewAddCarType(e: Event): void {

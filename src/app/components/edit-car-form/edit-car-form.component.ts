@@ -15,6 +15,7 @@ export class EditCarFormComponent implements OnInit {
     public filesCar: any = null as any;
     public previewCar?: string;
     public formData = new FormData();
+    public fileName?: string = "default_car.jpg";
 
     constructor(private carService: CarsService,
         private notificationService: NotificationS,
@@ -24,9 +25,11 @@ export class EditCarFormComponent implements OnInit {
         const id = +this.activetedRoute.snapshot.params.id;
         try {
             this.car = await this.carService.getCar(id);
+            this.previewCar = "https://localhost:44370/api/cars/images/" + this.car.imageFileName;
+            this.fileName = this.car.imageFileName;
         }
         catch (err) {
-            alert(err.message);
+            this.notificationService.errMessage(err.message);
         }
     }
     public async updateCar() {
@@ -35,14 +38,15 @@ export class EditCarFormComponent implements OnInit {
             if (!confirmUpdate) {
                 return;
             }
-            await this.carService.updatePartialCarWithImage(this.car);
+            this.car.imageFileName = this.fileName;
+            await this.carService.updatePartialCar(this.car);
             setTimeout(() => {
                 location.reload();
             }, 1500);
-            this.notificationService.ShowEditOrderNotification();
+            this.notificationService.ShowEditCarNotification();
         }
         catch (err) {
-            alert(err.message);
+            this.notificationService.errMessage(err.message);
         }
     }
     public DisplayPreviewUpdateCar(e: Event): void {
@@ -52,5 +56,6 @@ export class EditCarFormComponent implements OnInit {
         const fileReader = new FileReader();
         fileReader.onload = args => this.previewCar = args.target?.result?.toString();
         fileReader.readAsDataURL(this.filesCar);
+        
     }
 }

@@ -62,7 +62,7 @@
                         <th>
                             <div class="editDiv">
                                 <p id="Vehicle-identification-numberLBL">Vehicle identification number:</p>
-                                <p id="Vehicle-identification-number-info">{{car.vin |vinFormat}}</p><button pButton
+                                <p id="Vehicle-identification-number-info">{{car.vin | vinFormat}}</p><button pButton
                                     type="button" label="Edit" class="p-button-warning"
                                     (click)="VINToggleInputVisibility()"></button>
                             </div>
@@ -140,11 +140,9 @@
                                     (click)="UsabilityToggleInputVisibility()"></button>
                             </div>
                         </th>
-
                     </tr>
                 </table>
             </div>
         </div>
     </header>
-
 </div>

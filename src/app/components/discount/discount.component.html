@@ -30,14 +30,12 @@
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary calendar" (click)="sd.toggle()" type="button"></button>
+                        <button class="btn btn-outline-secondary calendar" type="button"></button>
                     </div>
-                    <input id="startDate" type="text" ngbDatepicker placeholder="Start Date"
+                    <input id="startDate" type="date" placeholder="Start Date"
                         [(ngModel)]="order.startDate" class="form-control is-invalid is-valid" name="dp-startDate"
-                        required #sd="ngbDatepicker" #startDateInfo="ngModel"
-                        [ngClass]="{'is-invalid': startDateInfo.errors && startDateInfo.touched, 'is-valid': startDateInfo.valid}"
-                        (change)="setStartDate($event)" (dateSelect)="onStartDateSelect($event)">
-
+                        required #startDateInfo="ngModel"
+                        [ngClass]="{'is-invalid': startDateInfo.errors && startDateInfo.touched, 'is-valid': startDateInfo.valid}">
                     <div class="invalid-feedback" id="invalid-feedback-startDate-Required"
                         [hidden]="!startDateInfo.errors?.required">
                         Start Date Required
@@ -50,13 +48,12 @@
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary calendar" (click)="ed.toggle()" type="button"></button>
+                        <button class="btn btn-outline-secondary calendar" type="button"></button>
                     </div>
-                    <input id="EndDate" type="text" ngbDatepicker placeholder="End Date" [(ngModel)]="order.endDate"
-                        class="form-control is-invalid is-valid" name="dp-endDate" required #ed="ngbDatepicker"
+                    <input id="EndDate" type="date" placeholder="End Date" [(ngModel)]="order.endDate"
+                        class="form-control is-invalid is-valid" name="dp-endDate" required
                         #endDateInfo="ngModel"
-                        [ngClass]="{'is-invalid': endDateInfo.errors && endDateInfo.touched, 'is-valid': endDateInfo.valid}"
-                        (change)="setEndDate($event)" (dateSelect)="onEndDateSelect($event)">
+                        [ngClass]="{'is-invalid': endDateInfo.errors && endDateInfo.touched, 'is-valid': endDateInfo.valid}">
 
                     <div class="invalid-feedback" id="invalid-feedback-endDate-Required"
                         [hidden]="!endDateInfo.errors?.required">
@@ -81,12 +78,12 @@
                 <div class="input-group-append">
                     <img class="btn" type="button" id="vinBTNImg">
                 </div>
-                <input id="VehicleIdentificationNumberInput" type="text" [(ngModel)]="order.vin"
+                <input id="VehicleIdentificationNumberInput" type="text" [(ngModel)]="vinLocalStorage"
                     class="form-control is-invalid is-valid flex-feedback" name="VehicleIdentificationNumber" required
                     pattern="[0-9]+" #VehicleIdentificationNumberInfo="ngModel"
                     placeholder="Vehicle Identification Number..." maxlength="50"
                     [ngClass]="{'is-invalid': VehicleIdentificationNumberInfo.errors && VehicleIdentificationNumberInfo.touched,'is-valid': VehicleIdentificationNumberInfo.valid}"
-                    (blur)="GetCar(order.vin!)">
+                    (blur)="GetCar(vinLocalStorage!)">
                 <div class="invalid-feedback" id="invalid-feedback-Vehicle-Identification-Number-required"
                     [hidden]="!VehicleIdentificationNumberInfo.errors?.required">
                     Vehicle Identification Number is required

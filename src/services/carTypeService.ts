@@ -45,13 +45,14 @@ export class CarTypeService {
     }
     public PartialUpdateCarType(carType: CarTypesModel): Promise<CarTypesModel> {
         const formData = new FormData();
-        if (carType.icon == null) {
+        if (!carType.icon) {
             formData.append("manufacturer", carType.manufacturer as string);
             formData.append("model", carType.model as string);
             formData.append("dailyCost", carType.dailyCost as any);
             formData.append("delayCost", carType.delayCost as any);
             formData.append("yearOfManufacture", carType.yearOfManufacture as any);
             formData.append("gearBox", carType.gearBox as string);
+            formData.append("iconFileName", carType.iconFileName as string);
         }
         if (carType.icon != null) {
             formData.append("manufacturer", carType.manufacturer as string);
@@ -60,6 +61,7 @@ export class CarTypeService {
             formData.append("delayCost", carType.delayCost as any);
             formData.append("yearOfManufacture", carType.yearOfManufacture as any);
             formData.append("gearBox", carType.gearBox as string);
+            formData.append("iconFileName", carType.iconFileName as string);
             formData.append("icon", carType.icon as any, carType.icon?.name);
         }
         const observable = this.myHttpClient.patch<CarTypesModel>(environment.carTypesURL + "/UpdatePartialCarType" + "/" + carType.carTypeId, formData);

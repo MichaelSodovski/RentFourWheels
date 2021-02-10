@@ -1,7 +1,5 @@
 export class carsModel {
 
-    static cars: carsModel[];
-
     constructor (
         public id?: number, 
         public carTypeId?: number, 
@@ -17,6 +15,5 @@ export class carsModel {
         public branchName?: number,
         public image?: File,
         public imageFileName?: string,
-        public cars?: carsModel[]
         ) {}
 }

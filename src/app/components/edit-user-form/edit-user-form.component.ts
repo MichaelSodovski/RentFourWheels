@@ -16,6 +16,7 @@ export class EditUserFormComponent implements OnInit {
     public ImageURL: string = environment.usersURL + "/images/";
     public previewUser?: string;
     public filesUser: any = null as any;
+    public fileName?: string = "default_car.jpg";
 
     constructor(private userService: UserService, private notificationService: NotificationS, private activetedRoute: ActivatedRoute) { }
 
@@ -23,9 +24,11 @@ export class EditUserFormComponent implements OnInit {
         const id = +this.activetedRoute.snapshot.params.id;
         try {
             this.user = await this.userService.GetSingleUser(id);
+            this.previewUser = "https://localhost:44370/api/cars/images/" + this.user.imageFileName;
+            this.fileName = this.user.imageFileName;
         }
         catch (err) {
-            alert(err.message);
+            this.notificationService.errMessage(err.message);
         }
     }
 
@@ -35,6 +38,7 @@ export class EditUserFormComponent implements OnInit {
             if (!confirmUpdate) {
                 return;
             }
+            this.user.imageFileName = this.fileName;
             await this.userService.UpdatePartialUser(this.user);
             setTimeout(() => {
                 location.reload();
@@ -43,7 +47,7 @@ export class EditUserFormComponent implements OnInit {
 
         }
         catch (err) {
-            alert(err.message);
+            this.notificationService.errMessage(err.message);
         }
     }
 

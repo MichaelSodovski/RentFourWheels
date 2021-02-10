@@ -4,7 +4,8 @@
         <form>
             <div class="inner-form">
                 <div class="input-field second-wrap">
-                    <select class="selectSearchType input-field second-wrap" id="selectOptionID" (change)="GetOptionValue($event)">
+                    <select class="selectSearchType input-field second-wrap" id="selectOptionID"
+                        (change)="GetOptionValue($event)">
                         <option value="0">Search by</option>
                         <option value="1">Manufacturer</option>
                         <option value="2">Model</option>
@@ -58,18 +59,40 @@
         <td> {{c.gearBox | uppercase}} </td>
         <td> {{c.availability | uppercase}} </td>
         <td> {{c.usability | uppercase}} </td>
-        <td><button pButton type="button" class="p-button-raised p-button-rounded" label="Order" routerLink="/discount"></button></td>
+        <td><button pButton type="button" class="p-button-raised p-button-rounded" label="Order now"
+                routerLink="/discount"></button></td>
     </tr>
 </table>
 
-<div class="previousSearchDiv">
+<div class="previousSearchDiv" >
     <br>
-    <p-carousel [value]="allCars" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions"
-        [autoplayInterval]="10000" [circular]="true">
-        <ng-template let-car pTemplate="item">
-            <div class="carouselCarShow">
-                <br>
-                <img [src]="images[0]" width="180px" height="180px">
+    <p-carousel [value]="original" [numVisible]="1" [numScroll]="1" [responsiveOptions]="responsiveOptions"
+        [autoplayInterval]="10000" [circular]="true" styleClass="custom-carousel">
+        <ng-template pTemplate="header">
+            <h5> Cars you were interested in</h5>
+        </ng-template>
+        <ng-template let-car pTemplate="car">
+            <div class="product-item">
+                <div class="product-item-content visibility" [ngClass]="{'visibility': !ImageFileName}">
+                    <h4 class="p-mb-1"> {{ManufacturerName}} {{ModelName}}
+                        {{yearOfManufacture}}</h4>
+                    <div class="p-mb-3" >
+                        <img id="orderNowID">
+                        <img src="{{ImageCarsURL + ImageFileName!}}" class="product-image" routerLink="/discount" />
+                    </div>
+                    <div>
+                        <h6 class="p-mt-0 p-mb-3"> Vin: {{VehicleIdentificationNumber | vinFormat}} </h6>
+                        <h6 class="p-mt-0 p-mb-3"> Kilometrage: {{Kilometrage | number:""}} </h6>
+                        <h6 class="p-mt-0 p-mb-3"> Location: {{BranchName}} </h6>
+                        <h6 class="p-mt-0 p-mb-3"> Gear Box: {{GearBox}} </h6>
+                        <h6 class="p-mt-0 p-mb-3"> Usability: {{Usability}} </h6>
+                        <h6 class="p-mt-0 p-mb-3"> Availability: {{Availability}} </h6>
+                    </div>
+                    <div class="car-buttons p-mt-5">
+                        <button pButton type="button" id="btnCarouselOrder" class="p-button-raised p-button-rounded"
+                            label="Order now" routerLink="/discount"></button>
+                    </div>
+                </div>
             </div>
         </ng-template>
     </p-carousel>

@@ -41,7 +41,6 @@
         <div class="ordersFormContentMainDiv">
             <table>
                 <tr>
-                    <th> Image </th>
                     <th> First Name </th>
                     <th> Last Name </th>
                     <th> Email </th>
@@ -53,9 +52,6 @@
                     <th> Car Id </th>
                 </tr>
                 <tr *ngFor="let o of Orders" (click)="Selected(o.orderId)" tabindex="0">
-                    <td>
-                        <img src="{{o.avatar}}" width="100px" height="100px">
-                    </td>
                     <td> {{o.firstName | titlecase}} </td>
                     <td> {{o.lastName  | titlecase}} </td>
                     <td> {{o.email}} </td>

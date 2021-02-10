@@ -26,8 +26,7 @@
                 <div class="form-group ">
                     <input id="inputFirstName" type="text" [(ngModel)]="car.typeId"
                         class="form-control is-invalid is-valid flex-feedback" name="CarTypeid" required
-                        pattern="[0-9]+" #CarTypeidInfo="ngModel" placeholder="car type..."
-                         maxlength="50"
+                        pattern="[0-9]+" #CarTypeidInfo="ngModel" placeholder="car type..." maxlength="50"
                         [ngClass]="{'is-invalid': CarTypeidInfo.errors && CarTypeidInfo.touched, 'is-valid': CarTypeidInfo.valid}" />
                     <div class="invalid-feedback" id="invalid-feedback-firstName"
                         [hidden]="!CarTypeidInfo.errors?.required">

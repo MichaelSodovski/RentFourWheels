@@ -13,7 +13,7 @@ import { NotificationService } from '@progress/kendo-angular-notification';
         }
     `],
     encapsulation: ViewEncapsulation.None,
-    })
+})
 
 @Injectable({
     providedIn: 'root'
@@ -22,7 +22,7 @@ import { NotificationService } from '@progress/kendo-angular-notification';
 export class NotificationS {
 
     constructor(private notificationService: NotificationService) { }
-    
+
     public UserAddedNotification(): void {
         this.notificationService.show({
             content: 'User has been added',
@@ -227,7 +227,6 @@ export class NotificationS {
             closable: true
         });
     }
-
     public ShowSearchPraseNotification(): void {
         this.notificationService.show({
             content: 'Please Choose an option',
@@ -240,7 +239,7 @@ export class NotificationS {
     }
     public ShowErrorUserNotification(): void {
         this.notificationService.show({
-            content: 'A user with this id is not found. either sign in or create an account in order to submit orders..',
+            content: 'A user with this id is not found: Please enter the same Identification number you entered while registering.',
             cssClass: 'button-notification',
             animation: { type: 'slide', duration: 400 },
             position: { horizontal: 'center', vertical: 'top' },
@@ -258,7 +257,25 @@ export class NotificationS {
             closable: true
         });
     }
-
-
+    public errMessage(err: string): void {
+        this.notificationService.show({
+            content: err,
+            cssClass: 'button-notification',
+            animation: { type: 'slide', duration: 400 },
+            position: { horizontal: 'center', vertical: 'top' },
+            type: { style: 'error', icon: true },
+            closable: true
+        });
+    }
+    public errMessageGetCar(): void {
+        this.notificationService.show({
+            content: "Error: The Vehicle Identification number you provided is either invalid or non existent. please provide a valid Vin number..",
+            cssClass: 'button-notification',
+            animation: { type: 'slide', duration: 400 },
+            position: { horizontal: 'center', vertical: 'top' },
+            type: { style: 'error', icon: true },
+            closable: true
+        });
+    }
 }
 

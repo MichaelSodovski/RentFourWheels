@@ -30,10 +30,8 @@ export class DiscountComponent implements OnInit {
     public user = new userModel();
     public s: any = null as any;
     public e: any = null as any;
-    public startD?: Date = new Date("2020-02-02");
-    public endD?: Date = new Date("2020-02-02");
-    public start: Date = null as any;
-    public end: Date = null as any;
+
+    public vinLocalStorage: any = localStorage.getItem("VehicleIdentificationNumber");
 
     public allCars?: carsModel[];
     options: any;
@@ -62,9 +60,8 @@ export class DiscountComponent implements OnInit {
     async SubmitOrder() {
         this.order.carId = this.car.id;
         this.order.userId = this.user.userId;
-        this.order.actualReturnDate = this.endD;
-        this.order.endDate = this.endD;
-        this.order.startDate = this.startD;
+        this.order.actualReturnDate = this.order.endDate;
+        this.order.vin = localStorage.getItem("VehicleIdentificationNumber") as any as number;
         try {
             await this.OrdersService.AddOrder(this.order);
             this.notificationService.showAddOrder();
@@ -73,16 +70,8 @@ export class DiscountComponent implements OnInit {
             }, 1500);
         }
         catch (err) {
-            alert(err.message);
+            this.notificationService.errMessage(err.message);
         }
-    }
-    public setStartDate(event: any) {
-        this.start = event.target.value;
-        sessionStorage.setItem('end', this.start.toString());
-    }
-    public setEndDate(event: any) {
-        this.end = event.target.value;
-        sessionStorage.setItem('end', this.end.toString());
     }
     public TotalRentalDays(start: Date, end: Date) {
         const s = moment(start);
@@ -102,39 +91,23 @@ export class DiscountComponent implements OnInit {
         try {
             this.car = await this.carsService.getCarByVin(vin);
             this.typeID = this.car.typeId;
+            this.GetCarType(this.typeID);
         }
         catch (err) {
-            alert("something went wrong! GerCar");
+            this.notificationService.errMessageGetCar();
         }
-
-        this.GetCarType(this.typeID);
     }
     public async GetCarType(typeID: any) {
         try {
             this.carType = await this.carTypeService.getCarType(typeID);
         }
         catch (err) {
-            alert("something went wrong!");
+            this.notificationService.errMessage(err.message);
         }
     }
     public CalculateTotalPrice(): number {
         let totalPrice = this.TotalRentalDays(this.order.startDate!, this.order.endDate!) * this.carType.dailyCost!;
         return totalPrice;
-    }
-    public onStartDateSelect(event: any) {
-        let year = event.year.toString();
-        let month = event.month <= 9 ? '0' + event.month : event.month;
-        let day = event.day <= 9 ? '0' + event.day : event.day;
-        let StartDate = `${year}-${month}-${day}`;
-        this.s = StartDate;
-    }
-    public onEndDateSelect(event: any) {
-        let year = event.year;
-        let month = event.month <= 9 ? '0' + event.month : event.month;
-        let day = event.day <= 9 ? '0' + event.day : event.day;
-        let EndDate = year + "-" + month + "-" + day;
-        this.e = EndDate;
-        console.log(this.e);
     }
     public async GetUserRedux(): Promise<boolean> {
         try {

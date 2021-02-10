@@ -25,7 +25,7 @@ export class AddOrderFormComponent implements OnInit {
             }, 1500);
         }
         catch (err) {
-            alert(err.message);
+            this.notificationService.errMessage(err.message);
         }
     }
 }
