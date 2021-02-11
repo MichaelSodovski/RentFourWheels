@@ -161,7 +161,7 @@ namespace RentFourWheels
             if (userModel.PassWord != null) user.PassWord = userModel.PassWord;
             if (userModel.RoleId != null) user.RoleId = userModel.RoleId;
             if (userModel.ImageFileName != null && userModel.Image == null) {
-                user.ImageFileName = null;
+                user.ImageFileName = userModel.ImageFileName;
                 user.Image = null;
             }
             if (userModel.ImageFileName == null && userModel.Image == null)

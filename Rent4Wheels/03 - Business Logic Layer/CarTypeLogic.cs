@@ -103,9 +103,8 @@ namespace RentFourWheels
             if (carTypeModel.GearBox != null) carType.Gear = carTypeModel.GearBox;
             if (carTypeModel.DailyCost != null) carType.DailyCost = carTypeModel.DailyCost;
             if (carTypeModel.DelayCost != null) carType.DelayCost = carTypeModel.DelayCost;
-            if (carTypeModel.IconFileName != null && carTypeModel.Icon == null)
-            {
-                carType.IconFileName = null;
+            if (carTypeModel.IconFileName != null && carTypeModel.Icon == null) {
+                carType.IconFileName = carTypeModel.IconFileName;
                 carTypeModel.Icon = null;
             }
             if (carTypeModel.IconFileName == null && carTypeModel.Icon == null)

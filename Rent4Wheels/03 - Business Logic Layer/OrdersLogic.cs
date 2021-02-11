@@ -34,6 +34,18 @@ namespace RentFourWheels
             CarId = o.CarId
             }).SingleOrDefault();
         }
+        public List<OrdersModel> GetAllOrdersByUserID(int id) {
+            return DB.Orders.Where(o => o.UserId == id).Select(o => new OrdersModel
+            {
+                OrderId = o.OrderId,
+                StartDate = o.StartDate,
+                EndDate = o.EndDate,
+                ActualReturnDate = o.ActualReturnDate,
+                UserId = (int)o.UserId,
+                Vin = o.Vin,
+                CarId = o.CarId
+            }).ToList();
+        }
         public OrdersModel AddOrder(OrdersModel orderModel) {
             Order order = new Order
             {

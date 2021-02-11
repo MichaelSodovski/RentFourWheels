@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace RentFourWheels
 {
@@ -19,14 +18,34 @@ namespace RentFourWheels
         {
                 try
                 {
-                    List<OrdersModel> cars = logic.GetAllOrders();
-                    return Ok(cars);
+                    List<OrdersModel> orders = logic.GetAllOrders();
+                    return Ok(orders);
                 }
                 catch (Exception ex)
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
                 }
             }
+
+        [HttpGet]
+        [Route("GetOrderHistoryByUserID/{Userid}")]
+        public IActionResult GetOrderHistoryByUserID(int Userid)
+        {
+            try
+            {
+                List<OrdersModel> orders = logic.GetAllOrdersByUserID(Userid);
+                if (orders == null)
+                {
+                    return NotFound($"no orders with user id {Userid} found");
+                }
+                return Ok(orders);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
         [HttpPost]
         [Route("OrderAdd")]
         public IActionResult OrderAdd(OrdersModel orderModel)

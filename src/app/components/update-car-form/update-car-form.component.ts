@@ -23,6 +23,7 @@ export class UpdateCarFormComponent implements OnInit {
         const id = +this.activetedRoute.snapshot.params.id;
         try {
             this.car = await this.carService.getCar(id);
+            this.previewCar = "https://localhost:44370/api/cars/images/" + this.car.imageFileName;
         }
         catch (err) {
             alert(err.message);

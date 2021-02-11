@@ -25,10 +25,9 @@ export class OrdersComponent implements OnInit {
     async GetAllOrders() {
         try {
             this.Orders = await this.OrdersService.getAllOrders();
-
         }
         catch (err) {
-            alert(err.message);
+            this.notificationService.errMessage(err.message);
         }
     }
     public Selected(id: any) {
@@ -49,10 +48,9 @@ export class OrdersComponent implements OnInit {
             }, 1500);
         }
         catch (err) {
-            alert(err.message);
+            this.notificationService.errMessage(err.message);
         }
     }
-
     public onTextChange(event: Event) {
         let searchPhrase: any;
         if (event.target !== null) {

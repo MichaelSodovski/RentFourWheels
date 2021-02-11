@@ -1,1 +1,65 @@
-
+<div id="coverDiv">
+    <div class="ordersTable">
+        <h1>Orders History</h1>
+        <table>
+            <tr>
+                <th> Order Id </th>
+                <th> Start Date </th>
+                <th> End Date </th>
+                <th> Actual Return Date </th>
+                <th> VIN </th>
+                <th> Car Id </th>
+            </tr>
+            <tr *ngFor="let o of Orders">
+                <td> {{o.orderId}} </td>
+                <td> {{o.startDate | date:'shortDate' }} </td>
+                <td> {{o.endDate | date:'shortDate' }} </td>
+                <td> {{ o.actualReturnDate | date:'shortDate' }} </td>
+                <td> {{o.vin | vinFormat}} </td>
+                <td> {{o.carId}} </td>
+            </tr>
+        </table>
+    </div>
+    <div class="userDetails">
+        <div class="userImage">
+            <img src="{{ImageURL}}">
+        </div>
+        <div class="userProfileDetails">
+            <div class="Flex-Details">
+                <ul class="my-row">
+                    <li>
+                        <label> First name: <span>{{this.user.firstName | titlecase}}</span></label>
+                    </li>
+                    <br>
+                    <li>
+                        <label> Last name: <span>{{this.user.lastName | titlecase}}</span> </label>
+                    </li>
+                    <br>
+                    <li>
+                        <label> Identification number: <span>{{this.user.identificationNumber}}</span></label>
+                    </li>
+                    <br>
+                    <li>
+                        <label> User name: <span>{{this.user.userName}}</span></label>
+                    </li>
+                    <br>
+                    <li>
+                        <label> Date of birth: <span>{{this.user.dateOfBirth | date:"M/d/YYYY"}}</span></label>
+                    </li>
+                    <br>
+                    <li>
+                        <label> Gender: <span>{{this.user.gender | uppercase}}</span></label>
+                    </li>
+                    <br>
+                    <li>
+                        <label> Email: <span>{{this.user.email}}</span></label>
+                    </li>
+                </ul>
+            </div>
+            <br>
+        </div>
+        <div class="userRole">
+            <span id="userRoleSPN">{{this.user.role | uppercase}}&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+</div>

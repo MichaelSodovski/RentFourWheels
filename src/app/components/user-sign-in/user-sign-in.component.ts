@@ -1,15 +1,33 @@
 import { Component, OnInit } from '@angular/core';
+import { userModel } from 'src/app/models/user.model';
+import { environment } from 'src/environments/environment';
+import { ordersModel } from 'src/app/models/orders.model';
+import { OrdersService } from 'src/services/ordersService';
+import { NotificationS } from 'src/services/notificationService';
 
 @Component({
-  selector: 'app-user-sign-in',
-  templateUrl: './user-sign-in.component.html',
-  styleUrls: ['./user-sign-in.component.css']
+    selector: 'app-user-sign-in',
+    templateUrl: './user-sign-in.component.html',
+    styleUrls: ['./user-sign-in.component.css']
 })
 export class UserSignInComponent implements OnInit {
+    public user = new userModel();
+    public ImageURL: any = environment.usersURL + "/images/";
+    public Orders?: ordersModel[];
 
-  constructor() { }
+    constructor(private OrdersService: OrdersService, private notificationService: NotificationS) { }
 
-  ngOnInit(): void {
-  }
-
+    ngOnInit() {
+        this.user = JSON.parse(sessionStorage.getItem("user")!);
+        this.ImageURL = environment.usersURL + "/images/" + this.user.imageFileName;
+        this.GetUserOrderHistory();
+    }
+    async GetUserOrderHistory() {
+        try {
+            this.Orders = await this.OrdersService.getOrderHistoryByID(Number(this.user.userId)!);
+        }
+        catch (err) {
+            this.notificationService.errMessage(err.message);
+        }
+    }
 }

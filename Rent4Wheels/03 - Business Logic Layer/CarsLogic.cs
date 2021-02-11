@@ -88,7 +88,7 @@ namespace RentFourWheels
             if (carModel.Vin != null) car.Vin = carModel.Vin;
             if (carModel.Branch != null) car.Branch = carModel.Branch;
             if (carModel.ImageFileName != null && carModel.Image == null) { 
-                car.ImageFileName = null;
+                car.ImageFileName = carModel.ImageFileName;
                 carModel.Image = null;
             }
             if (carModel.ImageFileName == null && carModel.Image == null) { 

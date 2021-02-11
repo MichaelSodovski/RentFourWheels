@@ -97,7 +97,7 @@ namespace RentFourWheels
 
         [HttpPatch]
         [Route("UpdatePartialCarType/{id}")]
-        public IActionResult UpdatePartialCarType(int id, [FromForm] CarsTypeModel carTypeModel)
+        public IActionResult UpdatePartialCarType(int id,[FromForm]CarsTypeModel carTypeModel)
         {
             try
             {

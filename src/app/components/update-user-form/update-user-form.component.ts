@@ -23,6 +23,7 @@ export class UpdateUserFormComponent implements OnInit {
         const id = +this.activetedRoute.snapshot.params.id;
         try {
             this.user = await this.userService.GetSingleUser(id);
+            this.previewUser = "https://localhost:44370/api/cars/images/" + this.user.imageFileName;
         }
         catch (err) {
             alert(err.message);

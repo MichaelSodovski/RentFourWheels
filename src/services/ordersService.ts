@@ -22,6 +22,10 @@ export class OrdersService {
         const observable = this.myHttpClient.get<ordersModel>(environment.ordersURL + "/" + id);
         return observable.toPromise();
     }
+    public getOrderHistoryByID(userId: number): Promise<ordersModel[]> {
+        const observable = this.myHttpClient.get<ordersModel[]>(environment.ordersURL + "/GetOrderHistoryByUserID/" + userId);
+        return observable.toPromise();
+    }
     public AddOrder(order: ordersModel): Promise<ordersModel> {
         this.orderCar = {
             userId: Number(order.userId),

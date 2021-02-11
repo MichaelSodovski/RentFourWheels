@@ -1,0 +1,150 @@
+#coverDiv {
+    border: solid black 1px;
+    width: 100%;
+    height: 670px;
+    background-image: url(../../../assets/2157466.jpg);
+    background-repeat: no-repeat;
+    background-position: 0% 75%;
+    background-size: cover;
+}
+
+.ordersTable {
+    border: solid black 1px;
+    width: 50%;
+    height: 100%;
+    background-color: whitesmoke;
+    overflow: auto;
+    opacity: 0.8;
+    float: right;
+}
+
+table {
+    table-layout: fixed;
+}
+
+td {
+    width: 10%;
+}
+
+th {
+    width: 10%;
+    background-color: #E5E4E2;
+    color: black;
+    white-space: nowrap;
+}
+
+td:first-child {
+    text-align: center;
+}
+
+tr:nth-of-type(even) {
+    background-color: whitesmoke;
+}
+
+tr:nth-of-type(odd) {
+    background-color: lightgrey;
+}
+
+tr:first-of-type {
+    background-color: lightslategrey;
+}
+
+.userDetails {
+    border: solid black 1px;
+    width: 50%;
+    height: 100%;
+    background-color: whitesmoke;
+    overflow: auto;
+    opacity: 0.8;
+    float: left;
+}
+
+.userImage {
+    position: relative;
+    float: left;
+    left: 50px;
+    top: 50px;
+    border: black solid 1px;
+    width: 152px;
+    height: 180px;
+    background-image: url(../../../assets/images.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    z-index: 9;
+}
+
+img {
+    position: absolute;
+    float: left;
+    border: black solid 1px;
+    width: 153px;
+    height: 180px;
+    z-index: 10;
+    right: -2px;
+}
+
+.userProfileDetails {
+    position: relative;
+    border-radius: 5px;
+    float: left;
+    left: 70px;
+    top: 50px;
+    border: black solid 1px;
+    width: 67%;
+    height: 90%;
+    background-color: #E5E4E2;
+}
+
+.Flex-Details {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    position: relative;
+    left: 20px;
+    top: 10px;
+}
+
+span {
+    position: relative;
+    left: 5px;
+    width: 200px;
+}
+
+.userRole {
+    position: relative;
+    top: 230px;
+    left: 50px;
+    border: black solid 1px;
+    border-radius: 5px;
+    background-color: #E5E4E2;
+    width: 153px;
+    height: 5%;
+}
+
+#userRoleSPN {
+    font-weight: bolder;
+    width: 50px;
+    position: relative;
+    height: 50px;
+    bottom: 595px;
+}
+
+label {
+    font-weight: bold;
+}
+
+span {
+    font-weight: lighter;
+}
+
+ul.my-row {
+    display: table-column;
+    width: 100%;
+    text-align: center;
+}
+
+ul.my-row>li {
+    display: table-cell;
+}
