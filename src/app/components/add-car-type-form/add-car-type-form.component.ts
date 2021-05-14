@@ -24,7 +24,7 @@ export class AddCarTypeFormComponent implements OnInit {
     public async AddCarType() {
         try {
             await this.carTypeService.AddCarType(this.type);
-            this.notificationService.showAddCarType();
+            this.notificationService.ShowAddCarType();
             setTimeout(() => {
                 location.reload()
             }, 1500);

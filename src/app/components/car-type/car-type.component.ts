@@ -46,7 +46,7 @@ export class CarTypeComponent implements OnInit {
             }
             if (this.selected !== null) {
                 await this.carTypeService.DeleteCarType(this.selected!);
-                this.notificationService.showDeleteCarType();
+                this.notificationService.ShowDeleteCarType();
             }
             setTimeout(() => {
                 location.reload()

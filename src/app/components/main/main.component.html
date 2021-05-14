@@ -1,5 +1,8 @@
+
+<!-- תמונת הקאבר --> 
 <div class="porsheCoverDiv"></div>
 
+<!-- התפריט של האייקונים. האייקונים נלקחו מ materializecss.com --> 
 <div class="blackDiv">
     <div class="directionsCarDiv">
         <i class="material-icons" style="font-size:48px;color:white">directions_car</i>
@@ -23,8 +26,10 @@
     </div>
 </div>
 
+<!-- מפה של גוגל --> 
 <p-gmap [options]="options" [style]="{'width':'100%','height':'350px'}"></p-gmap>
 
+<!-- זה החלק של התמונה עם המכונית, בתוך האלמנט הזה יש 2 חלקים --> 
 <div class="descriptionDiv">
     <div class="r4wDescription">
         <header>
@@ -34,7 +39,7 @@
             </div>
         </header>
         <div class="pointersDiv">
-            <li> Financing the purchase of a car </li>
+            <li> Financing the purchase of a car </li> <!-- LI כי אני רוצה נקודות  --> 
             <li> Full insurance package available in Israel (AC/OC/NNW/KR) </li>
             <li> All-inclusive technical service </li>
             <li> Substitute car in case of a mechanical failure/accident </li>
@@ -45,6 +50,7 @@
             <li> Risk management of the value loss </li>
         </div>
     </div>
+    <!-- קרוסלה של אנגולר מטריאל -->  
     <div class="carouselDiv">
         <ngb-carousel *ngIf="images">
             <ng-template ngbSlide>

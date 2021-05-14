@@ -10,11 +10,7 @@ namespace RentFourWheels
     {
         private readonly JwtHelper jwtHelper;
         private readonly UsersLogic logic;
-        public AuthController(JwtHelper jwtHelper, UsersLogic logic)
-        {
-            this.jwtHelper = jwtHelper;
-            this.logic = logic;
-        }
+
         [HttpPost]
         [Route("register")]
         public IActionResult register([FromForm]UserModel user)

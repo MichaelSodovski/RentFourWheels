@@ -44,7 +44,7 @@ export class UsersComponent implements OnInit {
             this.user = await this.userService.GetSingleUser(id);
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
     public async DeleteUser() {
@@ -62,7 +62,7 @@ export class UsersComponent implements OnInit {
             }, 1500);
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
 

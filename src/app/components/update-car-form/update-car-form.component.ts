@@ -22,7 +22,7 @@ export class UpdateCarFormComponent implements OnInit {
     async ngOnInit() {
         const id = +this.activetedRoute.snapshot.params.id;
         try {
-            this.car = await this.carService.getCar(id);
+            this.car = await this.carService.GetCar(id);
             this.previewCar = "https://localhost:44370/api/cars/images/" + this.car.imageFileName;
         }
         catch (err) {
@@ -35,7 +35,7 @@ export class UpdateCarFormComponent implements OnInit {
             if (!confirmUpdate) {
                 return;
             }
-            await this.carService.updateCar(this.car);
+            await this.carService.UpdateCar(this.car);
             this.notificationService.UpdateCarNotification();
             location.reload()
         }

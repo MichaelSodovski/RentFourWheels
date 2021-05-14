@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2021-02-14T17:11:39.586901Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2021-02-14T17:12:47.1743524Z"
+    }
+  },
+  "parameters": {
+    "secrets1.resourceGroupName": {
+      "Name": "secrets1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "RentFourWheels"
+    },
+    "secrets1.subscriptionId": {
+      "Name": "secrets1.subscriptionId",
+      "Type": "subscription",
+      "Value": "e64848ab-050c-49fe-a5df-68222efdb06f"
+    }
+  }
+}

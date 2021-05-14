@@ -1,10 +1,10 @@
 export const environment = {
   production: true,
-  branchURL: "https://Rent4Wheels.com/api/Branch",
-  carsURL: "https://Rent4Wheels.com/api/cars",
-  carTypesURL: "https://Rent4Wheels.com/api/CarType",
-  ordersURL: "https://Rent4Wheels.com/api/Orders",
-  usersURL: "https://Rent4Wheels.com/api/Users",
-  userTypesURL: "https://Rent4Wheels.com/api/UserTypes",
-  authURL: "https://Rent4Wheels.com/api/Auth",
+  branchURL: "https://rent4wheels.azurewebsites.net/api/Branch",
+  carsURL: "https://rent4wheels.azurewebsites.net/api/cars",
+  carTypesURL: "https://rent4wheels.azurewebsites.net/api/CarType",
+  ordersURL: "https://rent4wheels.azurewebsites.net/api/Orders",
+  usersURL: "https://rent4wheels.azurewebsites.net/api/Users",
+  userTypesURL: "https://rent4wheels.azurewebsites.net/api/UserTypes",
+  authURL: "https://rent4wheels.azurewebsites.net/api/Auth",
 };

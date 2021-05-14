@@ -13,16 +13,16 @@ export class OrdersService {
     public orderToUpdate: ordersModel = new ordersModel();
     public order: ordersModel = new ordersModel();
 
-    public getAllOrders(): Promise<ordersModel[]> {
+    public GetAllOrders(): Promise<ordersModel[]> {
         const observable = this.myHttpClient.get<ordersModel[]>(environment.ordersURL + "/");
         return observable.toPromise();
     }
 
-    public getOrder(id: number): Promise<ordersModel> {
+    public GetOrder(id: number): Promise<ordersModel> {
         const observable = this.myHttpClient.get<ordersModel>(environment.ordersURL + "/" + id);
         return observable.toPromise();
     }
-    public getOrderHistoryByID(userId: number): Promise<ordersModel[]> {
+    public GetOrderHistoryByID(userId: number): Promise<ordersModel[]> {
         const observable = this.myHttpClient.get<ordersModel[]>(environment.ordersURL + "/GetOrderHistoryByUserID/" + userId);
         return observable.toPromise();
     }
@@ -31,7 +31,7 @@ export class OrdersService {
             userId: Number(order.userId),
             vin: Number(order.vin),
             carId: Number(order.carId),
-            startDate: order.startDate,
+            startDate: order.startDate, 
             endDate: order.endDate,
             actualReturnDate: order.actualReturnDate
         }

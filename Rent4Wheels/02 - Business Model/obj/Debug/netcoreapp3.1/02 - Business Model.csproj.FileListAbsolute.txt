@@ -11,3 +11,6 @@ C:\Users\micha\source\repos\Rent4Wheels\02 - Business Model\obj\Debug\netcoreapp
 C:\Users\micha\source\repos\Rent4Wheels\02 - Business Model\obj\Debug\netcoreapp3.1\02 - Business Model.csproj.CopyComplete
 C:\Users\micha\source\repos\Rent4Wheels\02 - Business Model\obj\Debug\netcoreapp3.1\02 - Business Model.dll
 C:\Users\micha\source\repos\Rent4Wheels\02 - Business Model\obj\Debug\netcoreapp3.1\02 - Business Model.pdb
+C:\Users\micha\source\repos\Rent4Wheels\02 - Business Model\bin\Debug\netcoreapp3.1\01 - Data Access Layer.deps.json
+C:\Users\micha\source\repos\Rent4Wheels\02 - Business Model\bin\Debug\netcoreapp3.1\01 - Data Access Layer.runtimeconfig.json
+C:\Users\micha\source\repos\Rent4Wheels\02 - Business Model\bin\Debug\netcoreapp3.1\01 - Data Access Layer.runtimeconfig.dev.json

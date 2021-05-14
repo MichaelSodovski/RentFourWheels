@@ -49,7 +49,7 @@ export class DiscountComponent implements OnInit {
     ) { }
 
     async ngOnInit() {
-        this.allCars = await this.carsService.getAllCars();
+        this.allCars = await this.carsService.GetAllCars();
         for (const prop of this.allCars) {
             this.a = this.allCars[0].imageFileName;
             this.b = this.allCars[1].imageFileName;
@@ -64,13 +64,13 @@ export class DiscountComponent implements OnInit {
         this.order.vin = localStorage.getItem("VehicleIdentificationNumber") as any as number;
         try {
             await this.OrdersService.AddOrder(this.order);
-            this.notificationService.showAddOrder();
+            this.notificationService.ShowAddOrder();
             setTimeout(() => {
                 location.reload()
             }, 1500);
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
     public TotalRentalDays(start: Date, end: Date) {
@@ -89,20 +89,20 @@ export class DiscountComponent implements OnInit {
     }
     public async GetCar(vin: number) {
         try {
-            this.car = await this.carsService.getCarByVin(vin);
+            this.car = await this.carsService.GetCarByVin(vin);
             this.typeID = this.car.typeId;
             this.GetCarType(this.typeID);
         }
         catch (err) {
-            this.notificationService.errMessageGetCar();
+            this.notificationService.ErrMessageGetCar();
         }
     }
     public async GetCarType(typeID: any) {
         try {
-            this.carType = await this.carTypeService.getCarType(typeID);
+            this.carType = await this.carTypeService.GetCarType(typeID);
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
     public CalculateTotalPrice(): number {

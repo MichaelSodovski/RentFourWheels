@@ -28,7 +28,7 @@ export class EditUserFormComponent implements OnInit {
             this.fileName = this.user.imageFileName;
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
 
@@ -47,7 +47,7 @@ export class EditUserFormComponent implements OnInit {
 
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
 

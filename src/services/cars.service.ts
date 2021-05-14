@@ -27,11 +27,11 @@ export class CarsService {
     //             });
     //     })
     // }
-    public getAllCars(): Promise<carsModel[]> {
+    public GetAllCars(): Promise<carsModel[]> {
         const observable = this.myHttpClient.get<carsModel[]>(environment.carsURL);
         return observable.toPromise();
     }
-    public addCar(car: addCarModel): Promise<addCarModel> {
+    public AddCar(car: addCarModel): Promise<addCarModel> {
         const formData = new FormData();
         formData.append("typeId", Number(car.typeId) as any);
         formData.append("kilometrage", Number(car.kilometrage) as any);
@@ -43,7 +43,7 @@ export class CarsService {
         const observable = this.myHttpClient.post<addCarModel>(environment.carsURL + "/AddCar", formData);
         return observable.toPromise();
     }
-    public updateCar(car: addCarModel): Promise<addCarModel> {
+    public UpdateCar(car: addCarModel): Promise<addCarModel> {
         const formData = new FormData();
         formData.append("typeId", Number(car.typeId) as any);
         formData.append("kilometrage", Number(car.kilometrage) as any);
@@ -59,15 +59,15 @@ export class CarsService {
         const observable = this.myHttpClient.delete<undefined>(environment.carsURL + "/" + id);
         return observable.toPromise();
     }
-    public getCar(id: number): Promise<addCarModel> {
+    public GetCar(id: number): Promise<addCarModel> {
         const observable = this.myHttpClient.get<addCarModel>(environment.carsURL + "/" + id);
         return observable.toPromise();
     }
-    public getCarByVin(vin: number): Promise<addCarModel> {
+    public GetCarByVin(vin: number): Promise<addCarModel> {
         const observable = this.myHttpClient.get<addCarModel>(environment.carsURL + "/GetCarByVehicleID/" + vin);
         return observable.toPromise();
     }
-    public updatePartialCar(car: addCarModel): Promise<addCarModel> {
+    public UpdatePartialCar(car: addCarModel): Promise<addCarModel> {
         const formData = new FormData();
         if (!car.image) {
             formData.append("typeId", Number(car.typeId) as any);

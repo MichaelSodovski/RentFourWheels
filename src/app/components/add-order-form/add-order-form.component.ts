@@ -19,13 +19,13 @@ export class AddOrderFormComponent implements OnInit {
     async AddOrder() {
         try {
             await this.OrdersService.AddOrder(this.order);
-            this.notificationService.showAddOrder();
+            this.notificationService.ShowAddOrder();
             setTimeout(() => {
                 location.reload()
             }, 1500);
-        }
+        } 
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
 }

@@ -22,7 +22,7 @@ export class UpdateCarTypeFormComponent implements OnInit {
     async ngOnInit() {
         const id = +this.activetedRoute.snapshot.params.id;
         try {
-            this.type = await this.carTypeService.getCarType(id);
+            this.type = await this.carTypeService.GetCarType(id);
             this.previewCarType = "https://localhost:44370/api/cars/images/" + this.type.iconFileName;
         }
         catch (err) {

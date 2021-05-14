@@ -21,7 +21,7 @@ export class UpdateOrderFormComponent implements OnInit {
     async ngOnInit() {
         const id =+this.activetedRoute.snapshot.params.id;
         try {
-            this.order = await this.OrdersService.getOrder(id);
+            this.order = await this.OrdersService.GetOrder(id);
         }
         catch (err) {
             alert(err.message);

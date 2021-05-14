@@ -24,7 +24,7 @@ export class AddUserFormComponent implements OnInit {
     public async AddUser() {
         try {
             await this.userService.AddUser(this.user);
-            this.notificationService.showAddUser();
+            this.notificationService.ShowAddUser();
             setTimeout(() => {
                 location.reload()
             }, 1500);

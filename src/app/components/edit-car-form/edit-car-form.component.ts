@@ -24,29 +24,29 @@ export class EditCarFormComponent implements OnInit {
     async ngOnInit() {
         const id = +this.activetedRoute.snapshot.params.id;
         try {
-            this.car = await this.carService.getCar(id);
+            this.car = await this.carService.GetCar(id);
             this.previewCar = "https://localhost:44370/api/cars/images/" + this.car.imageFileName;
             this.fileName = this.car.imageFileName;
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
-    public async updateCar() {
+    public async UpdateCar() {
         try {
             const confirmUpdate = confirm("Are you sure you want to update the details of this car?");
             if (!confirmUpdate) {
                 return;
             }
             this.car.imageFileName = this.fileName;
-            await this.carService.updatePartialCar(this.car);
+            await this.carService.UpdatePartialCar(this.car);
             setTimeout(() => {
                 location.reload();
             }, 1500);
             this.notificationService.ShowEditCarNotification();
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
     public DisplayPreviewUpdateCar(e: Event): void {

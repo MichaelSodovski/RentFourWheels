@@ -13,7 +13,7 @@ export class UserService {
 
     public GetAllUsers(): Promise<userModel[]> {
         const observable = this.myHttpClient.get<userModel[]>(environment.usersURL + "/");
-        return observable.toPromise();
+        return observable.toPromise(); 
     }
     public GetSingleUser(id: number): Promise<userModel> {
         const observable = this.myHttpClient.get<userModel>(environment.usersURL + "/" + id);
@@ -21,7 +21,7 @@ export class UserService {
     }
     public GetSingleUserByIdentificationNumber(identificationNumber: number): Promise<userModel> {
         const observable = this.myHttpClient.get<userModel>(environment.usersURL + "/GetSingleUserByIdentificationNumber" + "/" + identificationNumber);
-        return observable.toPromise();
+        return observable.toPromise(); 
     }
     public AddUser(user: userModel): Promise<userModel> {
         const formData = new FormData();

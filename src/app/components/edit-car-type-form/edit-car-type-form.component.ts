@@ -24,12 +24,12 @@ export class EditCarTypeFormComponent implements OnInit {
     async ngOnInit() {
         const id = +this.activetedRoute.snapshot.params.id;
         try {
-            this.type = await this.carTypeService.getCarType(id);
+            this.type = await this.carTypeService.GetCarType(id);
             this.previewCarType = "https://localhost:44370/api/cars/images/" + this.type.iconFileName;
             this.fileName = this.type.iconFileName;
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
     public async UpdateCarType() {
@@ -46,7 +46,7 @@ export class EditCarTypeFormComponent implements OnInit {
             this.notificationService.ShowEditCarTypeNotification();
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
     public DisplayPreviewAddCarType(e: Event): void {

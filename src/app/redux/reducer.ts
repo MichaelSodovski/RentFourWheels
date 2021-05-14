@@ -10,7 +10,7 @@ export function reducer(currentState: appState = defaultAppState, action: action
         case actionType.Register:
         case actionType.login: 
         newState.user = action.payLoad;
-        sessionStorage.setItem("user", JSON.stringify(newState.user));
+        sessionStorage.setItem("user", JSON.stringify(newState.user)); 
             break;
         case actionType.LogOut: newState.user = null as any;
             sessionStorage.removeItem("user");

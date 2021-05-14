@@ -20,12 +20,12 @@ export class CarComponent implements OnInit {
 
     async ngOnInit() {
         this.GetAllCars();
-        this.original = await this.carService.getAllCars();
+        this.original = await this.carService.GetAllCars();
         this.allCars = this.original;
     }
     async GetAllCars() {
         try {
-            this.allCars = await this.carService.getAllCars();
+            this.allCars = await this.carService.GetAllCars();
         }
         catch (err) {
             alert(err.message);
@@ -42,7 +42,7 @@ export class CarComponent implements OnInit {
             }
             if (this.selected !== null) {
                 await this.carService.DeleteCar(this.selected!);
-                this.notificationService.showDeleteCar();
+                this.notificationService.ShowDeleteCar();
             }
             setTimeout(() => {
                 location.reload()
@@ -52,7 +52,7 @@ export class CarComponent implements OnInit {
             alert(err.message);
         }
     }
-    public onTextChange(event: Event) {
+    public OnTextChange(event: Event) {
         let searchPhrase: any;
         if (event.target !== null) {
             searchPhrase = event.target;

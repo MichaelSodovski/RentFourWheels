@@ -15,7 +15,7 @@ export class CarTypeService {
         const observable = this.myHttpClient.get<CarTypesModel[]>(environment.carTypesURL + "/");
         return observable.toPromise();
     }
-    public getCarType(id: number): Promise<CarTypesModel> {
+    public GetCarType(id: number): Promise<CarTypesModel> {
         const observable = this.myHttpClient.get<CarTypesModel>(environment.carTypesURL + "/" + id);
         return observable.toPromise();
     }

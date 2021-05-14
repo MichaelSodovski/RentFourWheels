@@ -1,7 +1,13 @@
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.csprojAssemblyReference.cache
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.AssemblyInfoInputs.cache
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.AssemblyInfo.cs
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.csproj.CoreCompileInputs.cache
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\01 - Data Access Layer.exe
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\03 - Business Logic Layer.exe
-C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\appsettings.json
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\appsettings.production.json
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\04 - RFWRestful Service.exe
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\04 - RFWRestful Service.deps.json
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\04 - RFWRestful Service.runtimeconfig.json
@@ -12,6 +18,7 @@ C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\FluentAssertions.dll
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\Microsoft.AspNetCore.SpaServices.Extensions.dll
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
@@ -52,12 +59,6 @@ C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\03 - Business Logic Layer.pdb
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\01 - Data Access Layer.pdb
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\02 - Business Model.pdb
-C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.csprojAssemblyReference.cache
-C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.AssemblyInfoInputs.cache
-C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.AssemblyInfo.cs
-C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.csproj.CoreCompileInputs.cache
-C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\staticwebassets\04 - RFWRestful Service.StaticWebAssets.Manifest.cache
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\staticwebassets\04 - RFWRestful Service.StaticWebAssets.xml
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\scopedcss\bundle\04 - RFWRestful Service.styles.css
@@ -67,3 +68,9 @@ C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\ref\04 - RFWRestful Service.dll
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.pdb
 C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\obj\Debug\net5.0\04 - RFWRestful Service.genruntimeconfig.cache
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\03 - Business Logic Layer.deps.json
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\03 - Business Logic Layer.runtimeconfig.json
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\03 - Business Logic Layer.runtimeconfig.dev.json
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\01 - Data Access Layer.deps.json
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\01 - Data Access Layer.runtimeconfig.json
+C:\Users\micha\source\repos\Rent4Wheels\04 - RFWRestful Service\bin\Debug\net5.0\01 - Data Access Layer.runtimeconfig.dev.json

@@ -64,7 +64,7 @@ export class NotificationS {
         });
     }
 
-    public showAddCar(): void {
+    public ShowAddCar(): void {
         this.notificationService.show({
             content: 'Car has been added',
             cssClass: 'button-notification',
@@ -74,7 +74,7 @@ export class NotificationS {
             closable: true
         });
     }
-    public showAddCarType(): void {
+    public ShowAddCarType(): void {
         this.notificationService.show({
             content: 'Car Type has been added',
             cssClass: 'button-notification',
@@ -84,7 +84,7 @@ export class NotificationS {
             closable: true
         });
     }
-    public showAddOrder(): void {
+    public ShowAddOrder(): void {
         this.notificationService.show({
             content: 'Order has been added',
             cssClass: 'button-notification',
@@ -94,7 +94,7 @@ export class NotificationS {
             closable: true
         });
     }
-    public showAddUser(): void {
+    public ShowAddUser(): void {
         this.notificationService.show({
             content: 'User has been added',
             cssClass: 'button-notification',
@@ -105,7 +105,7 @@ export class NotificationS {
         });
     }
 
-    public showDeleteCar(): void {
+    public ShowDeleteCar(): void {
         this.notificationService.show({
             content: 'Car has been Deleted',
             cssClass: 'button-notification',
@@ -115,7 +115,7 @@ export class NotificationS {
             closable: true
         });
     }
-    public showDeleteCarType(): void {
+    public ShowDeleteCarType(): void {
         this.notificationService.show({
             content: 'Car Type has been Deleted',
             cssClass: 'button-notification',
@@ -135,7 +135,7 @@ export class NotificationS {
             closable: true
         });
     }
-    public showDeleteOrder(): void {
+    public ShowDeleteOrder(): void {
         this.notificationService.show({
             content: 'Order has been Deleted',
             cssClass: 'button-notification',
@@ -257,7 +257,7 @@ export class NotificationS {
             closable: true
         });
     }
-    public errMessage(err: string): void {
+    public ErrMessage(err: string): void {
         this.notificationService.show({
             content: err,
             cssClass: 'button-notification',
@@ -267,7 +267,7 @@ export class NotificationS {
             closable: true
         });
     }
-    public errMessageGetCar(): void {
+    public ErrMessageGetCar(): void {
         this.notificationService.show({
             content: "Error: The Vehicle Identification number you provided is either invalid or non existent. please provide a valid Vin number..",
             cssClass: 'button-notification',

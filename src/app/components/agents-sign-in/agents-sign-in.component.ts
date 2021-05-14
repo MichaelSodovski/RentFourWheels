@@ -30,11 +30,11 @@ export class AgentsSignInComponent {
     }
     public async GetCar(vin: number) {
         try {
-            this.car = await this.carService.getCarByVin(vin);
+            this.car = await this.carService.GetCarByVin(vin);
             this.fileName = this.car.imageFileName;
         }
         catch (err) {
-            this.notificationService.errMessageGetCar();
+            this.notificationService.ErrMessageGetCar();
         }
         this.changeAvailabilityStatus();
         this.changeUsabilityStatus();
@@ -61,14 +61,14 @@ export class AgentsSignInComponent {
             this.car.vin = Number(this.car.vin);
             this.car.branch = Number(this.car.branch);
             this.car.imageFileName = this.fileName;
-            await this.carService.updatePartialCar(this.car);
+            await this.carService.UpdatePartialCar(this.car);
             this.notificationService.UpdateCarNotification();
             setTimeout(() => {
                 location.reload()
             }, 1500);
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
     public KilomentrageToggleInputVisibility() {

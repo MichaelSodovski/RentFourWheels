@@ -18,16 +18,16 @@ export class UserSignInComponent implements OnInit {
     constructor(private OrdersService: OrdersService, private notificationService: NotificationS) { }
 
     ngOnInit() {
-        this.user = JSON.parse(sessionStorage.getItem("user")!);
+        this.user = JSON.parse(sessionStorage.GetItem("user")!);
         this.ImageURL = environment.usersURL + "/images/" + this.user.imageFileName;
         this.GetUserOrderHistory();
     }
     async GetUserOrderHistory() {
         try {
-            this.Orders = await this.OrdersService.getOrderHistoryByID(Number(this.user.userId)!);
+            this.Orders = await this.OrdersService.GetOrderHistoryByID(Number(this.user.userId)!);
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
 }

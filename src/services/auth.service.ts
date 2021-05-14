@@ -28,7 +28,7 @@ export class AuthService {
         try {
             const registeredUser = await this.http.post<userModel>(environment.authURL + "/register", formData).toPromise();
             store.dispatch({ type: actionType.Register, payLoad: registeredUser });
-            return true;
+            return true; 
         }
         catch (httpErrorResponse) {
             store.dispatch({ type: actionType.GotError, payLoad: httpErrorResponse });

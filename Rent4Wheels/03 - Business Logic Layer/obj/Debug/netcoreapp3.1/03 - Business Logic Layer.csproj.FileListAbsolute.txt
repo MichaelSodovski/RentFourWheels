@@ -138,3 +138,6 @@ C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Debug\netc
 C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Debug\netcoreapp3.1\03 - Business Logic Layer.dll
 C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Debug\netcoreapp3.1\03 - Business Logic Layer.pdb
 C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Debug\netcoreapp3.1\03 - Business Logic Layer.genruntimeconfig.cache
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Debug\netcoreapp3.1\01 - Data Access Layer.deps.json
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Debug\netcoreapp3.1\01 - Data Access Layer.runtimeconfig.json
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Debug\netcoreapp3.1\01 - Data Access Layer.runtimeconfig.dev.json

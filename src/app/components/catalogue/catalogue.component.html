@@ -1,11 +1,14 @@
 <div class="carCatalogueCoverIMGDiv"></div>
+
+<!-- searchBar: -->
 <div class="searchBarDiv">
     <div class="s003">
         <form>
             <div class="inner-form">
+                <!-- select part of the search Bar: -->
                 <div class="input-field second-wrap">
                     <select class="selectSearchType input-field second-wrap" id="selectOptionID"
-                        (change)="GetOptionValue($event)">
+                        (change)="GetOptionValue($event)"> <!-- listens to changes at selection -->
                         <option value="0">Search by</option>
                         <option value="1">Manufacturer</option>
                         <option value="2">Model</option>
@@ -13,10 +16,12 @@
                         <option value="4">Gear Box</option>
                     </select>
                 </div>
+                <!-- input part of the search Bar: -->
                 <div class="input-field second-wrap">
                     <input id="search" type="text" placeholder="Choose an option and enter your search phrase..."
-                        (change)="onTextChange($event)" />
+                        (change)="OnTextChange($event)" /> <!-- listens to changes at input -->
                 </div>
+                <!-- button part of the search Bar: -->
                 <div class="input-field third-wrap">
                     <button class="btn-search" type="button">
                         <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas"
@@ -48,7 +53,7 @@
     </tr>
     <tr *ngFor="let c of allCars" tabindex="0">
         <td>
-            <img src="{{ImageCarsURL + c.imageFileName!}}" width="100px" height="100px">
+            <img src="{{ImageCarsURL + c.imageFileName!}}" width="100px" height="100px"> <!-- img consists of URL and the GUI of the image from the array c -->
         </td>
         <td> {{c.manufacturer}} </td>
         <td> {{c.model}} </td>
@@ -64,6 +69,7 @@
     </tr>
 </table>
 
+<!-- History of search: -->
 <div class="previousSearchDiv" >
     <br>
     <p-carousel [value]="original" [numVisible]="1" [numScroll]="1" [responsiveOptions]="responsiveOptions"
@@ -97,3 +103,4 @@
         </ng-template>
     </p-carousel>
 </div>
+

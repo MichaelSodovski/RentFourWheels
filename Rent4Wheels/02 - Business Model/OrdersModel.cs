@@ -8,7 +8,7 @@ namespace RentFourWheels
         public int OrderId { get; set; }
         [Required(ErrorMessage = "Missing Start date")]
         [DataType(DataType.DateTime, ErrorMessage = "property StartDate is supposed to be of type DateTime")]
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; } 
         [Required(ErrorMessage = "Missing end date")]
         [DataType(DataType.DateTime, ErrorMessage = "property EndDate is supposed to be of type DateTime")]
         public DateTime EndDate { get; set; }

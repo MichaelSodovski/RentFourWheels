@@ -43,7 +43,7 @@ export class CatalogueComponent implements OnInit {
 
     async ngOnInit() {
         this.GetAllCars();
-        this.original = await this.carsService.getAllCars();
+        this.original = await this.carsService.GetAllCars();
         this.allCars = this.original;
         //     this.unsubscribe = store.subscribe(() => {
         //         this.cars = store.getState().cars;
@@ -68,36 +68,41 @@ export class CatalogueComponent implements OnInit {
     }
     async GetAllCars() {
         try {
-            this.allCars = await this.carsService.getAllCars();
+            this.allCars = await this.carsService.GetAllCars();
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
-    public onTextChange(event: any) {
+
+    // reach by options: ---------------------------------------------------------------------------------------------------------------------------------------------------
+    public OnTextChange(event: any) {
         let searchPhrase: any;
-        if (event.target.value !== null) { searchPhrase = event.target.value; }
-        switch (this.option) {
+        if (event.target.value !== null) { searchPhrase = event.target.value; } // if there is something in the target value it becomes what we search. 
+        switch (this.option) { // receives the value of the option that the used choose 
             case "0": this.notificationService.ShowSearchPraseNotification();
                 break;
             case "1": this.allCars = this.original.filter(c => c.manufacturer?.toLowerCase().includes(searchPhrase.toLowerCase()));
-                this.setLocalStorageValues()
+                this.SetLocalStorageValues()
                 break;
             case "2": this.allCars = this.original.filter(c => c.model?.toLowerCase().includes(searchPhrase.toLowerCase()));
-                this.setLocalStorageValues()
+                this.SetLocalStorageValues()
                 break;
             case "3": this.allCars = this.original.filter(c => c.yearOfManufacture?.toString().includes(searchPhrase));
-                this.setLocalStorageValues()
+                this.SetLocalStorageValues()
                 break;
             case "4": this.allCars = this.original.filter(c => c.gearBox?.toLowerCase().includes(searchPhrase.toLowerCase()));
-                this.setLocalStorageValues()
+                this.SetLocalStorageValues()
                 break;
         }
     }
     public GetOptionValue(event: any): any {
         this.option = event.target.value;
     }
-    public setLocalStorageValues() {
+    // set last : ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    public SetLocalStorageValues() {
         for (const car of this.allCars) {
             localStorage.setItem("ManufacturerName", this.allCars[0].manufacturer!);
             localStorage.setItem("ModelName", this.allCars[0].model!);

@@ -1,0 +1,73 @@
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\01 - Data Access Layer.exe
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\03 - Business Logic Layer.exe
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\03 - Business Logic Layer.deps.json
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\03 - Business Logic Layer.runtimeconfig.json
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\03 - Business Logic Layer.runtimeconfig.dev.json
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\03 - Business Logic Layer.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\03 - Business Logic Layer.pdb
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Nancy.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.ComponentModel.Annotations.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.Security.Permissions.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\System.Windows.Extensions.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\01 - Data Access Layer.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\02 - Business Model.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\02 - Business Model.pdb
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\bin\Release\netcoreapp3.1\01 - Data Access Layer.pdb
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Release\netcoreapp3.1\03 - Business Logic Layer.csprojAssemblyReference.cache
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Release\netcoreapp3.1\03 - Business Logic Layer.AssemblyInfoInputs.cache
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Release\netcoreapp3.1\03 - Business Logic Layer.AssemblyInfo.cs
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Release\netcoreapp3.1\03 - Business Logic Layer.csproj.CoreCompileInputs.cache
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Release\netcoreapp3.1\03 - Business Logic Layer.csproj.CopyComplete
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Release\netcoreapp3.1\03 - Business Logic Layer.dll
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Release\netcoreapp3.1\03 - Business Logic Layer.pdb
+C:\Users\micha\source\repos\Rent4Wheels\03 - Business Logic Layer\obj\Release\netcoreapp3.1\03 - Business Logic Layer.genruntimeconfig.cache

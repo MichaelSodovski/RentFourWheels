@@ -19,15 +19,15 @@ export class OrdersComponent implements OnInit {
 
     async ngOnInit() {
         this.GetAllOrders();
-        this.original = await this.OrdersService.getAllOrders();
+        this.original = await this.OrdersService.GetAllOrders();
         this.Orders = this.original;
     }
     async GetAllOrders() {
         try {
-            this.Orders = await this.OrdersService.getAllOrders();
+            this.Orders = await this.OrdersService.GetAllOrders();
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
     public Selected(id: any) {
@@ -41,17 +41,17 @@ export class OrdersComponent implements OnInit {
             }
             if (this.selected !== null) {
                 await this.OrdersService.OrderDelete(this.selected!);
-                this.notificationService.showDeleteOrder();
+                this.notificationService.ShowDeleteOrder();
             }
             setTimeout(() => {
                 location.reload()
             }, 1500);
         }
         catch (err) {
-            this.notificationService.errMessage(err.message);
+            this.notificationService.ErrMessage(err.message);
         }
     }
-    public onTextChange(event: Event) {
+    public OnTextChange(event: Event) {
         let searchPhrase: any;
         if (event.target !== null) {
             searchPhrase = event.target;
