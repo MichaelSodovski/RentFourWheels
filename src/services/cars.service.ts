@@ -14,19 +14,7 @@ import { addCarModel } from 'src/app/models/addCarModel';
 export class CarsService {
 
     constructor(private myHttpClient: HttpClient) { }
-    // public loadAllTheCarsAsync(): Promise<boolean> {
-    //     return new Promise<boolean>((resolve, reject) => {
-    //         this.myHttpClient
-    //             .get<carsModel[]>(environment.carsURL + "/")
-    //             .subscribe(cars => {
-    //                 const action: action = { type: actionType.getAllCars, payLoad: cars };
-    //                 store.dispatch(action);
-    //                 resolve(true);
-    //             }, err => {
-    //                 reject(err);
-    //             });
-    //     })
-    // }
+
     public GetAllCars(): Promise<carsModel[]> {
         const observable = this.myHttpClient.get<carsModel[]>(environment.carsURL);
         return observable.toPromise();

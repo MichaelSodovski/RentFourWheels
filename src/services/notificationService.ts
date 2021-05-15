@@ -277,5 +277,15 @@ export class NotificationS {
             closable: true
         });
     }
+    public NoAccessNotification(): void {
+        this.notificationService.show({
+            content: `Forbidden: Only the administrator can access this section.`,
+            cssClass: 'button-notification',
+            animation: { type: 'slide', duration: 400 },
+            position: { horizontal: 'center', vertical: 'top' },
+            type: { style: 'success', icon: true },
+            closable: true
+        });
+    }
 }
 
